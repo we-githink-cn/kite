@@ -141,6 +141,7 @@ class Analysis extends Component {
             selectDate={this.selectDate}
           />
         </Suspense>
+
         <div className={styles.twoColLayout}>
           <Row gutter={24}>
             <Col xl={12} lg={24} md={24} sm={24} xs={24}>

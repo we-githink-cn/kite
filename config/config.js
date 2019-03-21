@@ -110,7 +110,7 @@ export default {
     },
   },
   manifest: {
-    basePath: '/',
+    basePath: '/we',
   },
 
   chainWebpack: webpackPlugin,

@@ -6,7 +6,6 @@ import { Row, Col, Card, List, Avatar } from 'antd';
 import { Radar } from '@/components/Charts';
 import EditableLinkGroup from '@/components/EditableLinkGroup';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-
 import styles from './Workplace.less';
 
 const links = [

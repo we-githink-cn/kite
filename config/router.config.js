@@ -16,6 +16,29 @@ export default [
         component: '404',
       },
     ],
+  }, // user
+  {
+    path: '/we',
+    component: '../layouts/IndexLayout',
+    routes: [
+      { path: '/we', redirect: '/we/analysis' },
+      {
+        name: 'index',
+        icon: 'warning',
+        path: '/we',
+        routes: [
+          // exception
+          {
+            path: '/we/analysis',
+            name: 'index',
+            component: './Dashboard/Analysis',
+          },
+        ],
+      },
+      {
+        component: '404',
+      },
+    ],
   },
   // app
   {
