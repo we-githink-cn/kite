@@ -3,6 +3,7 @@ import Link from 'umi/link';
 import Debounce from 'lodash-decorators/debounce';
 import { Menu } from 'semantic-ui-react';
 import { Row, Col } from 'antd';
+import router from 'umi/router';
 import styles from './index.less';
 import RightContent from './RightContent';
 
@@ -13,7 +14,14 @@ export default class GlobalHeader extends PureComponent {
     this.triggerResizeEvent.cancel();
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (e, { name }) => {
+    switch (name) {
+      case '首页':
+        router.push('/we');
+        break;
+    }
+    this.setState({ activeItem: name });
+  };
 
   /* eslint-disable*/
   @Debounce(600)
@@ -41,24 +49,24 @@ export default class GlobalHeader extends PureComponent {
                 <Menu.Item
                   name="首页"
                   icon="compass outline"
-                  active={activeItem === 'home'}
+                  active={activeItem === '首页'}
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
                   name="问答"
-                  active={activeItem === 'messages'}
+                  active={activeItem === '问答'}
                   onClick={this.handleItemClick}
                   icon="question circle outline"
                 />
                 <Menu.Item
                   name="关注"
-                  active={activeItem === 'friends'}
+                  active={activeItem === '关注'}
                   onClick={this.handleItemClick}
                   icon="heart outline"
                 />
                 <Menu.Item
                   name="最新"
-                  active={activeItem === 'friends'}
+                  active={activeItem === '最新'}
                   onClick={this.handleItemClick}
                   icon="clock outline"
                 />

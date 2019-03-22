@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FormattedMessage, formatMessage } from 'umi/locale';
 import { Spin, Tag, Menu, Icon, Avatar, Tooltip, message } from 'antd';
+import router from 'umi/router';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import NoticeIcon from '../NoticeIcon';
@@ -62,6 +63,10 @@ export default class GlobalHeaderRight extends PureComponent {
     });
   };
 
+  handleArticleCreateClick = () => {
+    router.push('/we/create');
+  };
+
   render() {
     const {
       currentUser,
@@ -115,7 +120,12 @@ export default class GlobalHeaderRight extends PureComponent {
             console.log('enter', value); // eslint-disable-line
           }}
         />
-        <Tooltip placement="bottom" title="创作" className={styles.action}>
+        <Tooltip
+          placement="bottom"
+          title="创作"
+          className={styles.action}
+          onClick={this.handleArticleCreateClick.bind(this)}
+        >
           <Icon type="edit" /> 创作
         </Tooltip>
         <NoticeIcon

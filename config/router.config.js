@@ -33,6 +33,11 @@ export default [
             name: 'index',
             component: './Dashboard/Analysis',
           },
+          {
+            path: '/we/create',
+            name: 'create',
+            component: './Article/Create',
+          },
         ],
       },
       {
