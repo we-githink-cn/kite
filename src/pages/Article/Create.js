@@ -12,7 +12,7 @@ class Create extends Component {
 
   render() {
     return (
-      <Row type="flex" justify="space-around" align="middle" className={styles.content} gutter={16}>
+      <Row type="flex" justify="space-around" align="middle" className={styles.content} gutter={24}>
         <Col span={12}>
           <div className={styles.item}>
             <Icon name="pen square" size="massive" />
