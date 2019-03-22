@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { FormattedMessage, formatMessage } from 'umi/locale';
 import { Spin, Tag, Menu, Icon, Avatar, Tooltip, message } from 'antd';
-import * as Semantic from 'semantic-ui-react';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import NoticeIcon from '../NoticeIcon';
@@ -117,7 +116,7 @@ export default class GlobalHeaderRight extends PureComponent {
           }}
         />
         <Tooltip placement="bottom" title="创作" className={styles.action}>
-          <Semantic.Icon loading name="pen square" size="large" />
+          <Icon type="edit" /> 创作
         </Tooltip>
         <NoticeIcon
           className={styles.action}
