@@ -9,7 +9,7 @@ const GlobalFooter = ({ className, links, copyright }) => {
   return (
     <footer className={clsString}>
       <Row>
-        <Col span={12} offset={6} style={{ marginTop: '16px' }}>
+        <Col span={12} offset={6} style={{ marginTop: '10px' }}>
           {links && (
             <div className={styles.links}>
               {links.map(link => (
@@ -26,6 +26,15 @@ const GlobalFooter = ({ className, links, copyright }) => {
           )}
           <div className={styles.links}>
             {copyright && <a className={styles.copyright}>{copyright}</a>}
+          </div>
+          <div className={styles.links}>
+            <a
+              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37011202000741"
+              target="_blank"
+            >
+              <img src="https://githink.cn/govbeian.png" />
+              &nbsp; 鲁公网安备 37011202000741号
+            </a>
           </div>
         </Col>
         <Col span={6}>

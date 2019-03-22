@@ -8,7 +8,7 @@ const FooterView = () => (
     <GlobalFooter
       links={[
         {
-          key: 'blog',
+          key: 'Blog',
           title: 'Blog',
           href: 'https://blog.githink.cn/',
           blankTarget: true,
@@ -20,19 +20,19 @@ const FooterView = () => (
           blankTarget: true,
         },
         {
-          key: 'github',
+          key: 'Github',
           title: <Icon type="github" />,
           href: 'https://github.com/we-githink-cn',
           blankTarget: true,
         },
         {
-          key: 'jl',
+          key: 'Resume',
           title: 'Resume',
           href: 'https://jl.githink.cn',
           blankTarget: true,
         },
         {
-          key: 'git',
+          key: 'Git',
           title: 'Git',
           href: 'http://code.githink.cn/',
           blankTarget: true,
@@ -40,7 +40,7 @@ const FooterView = () => (
       ]}
       copyright={
         <Fragment>
-          Copyright <Icon type="copyright" /> 2018-2020 Githink.cn 出品
+          Copyright <Icon type="copyright" /> 2018-2020 鲁ICP备18040779号
         </Fragment>
       }
     />
