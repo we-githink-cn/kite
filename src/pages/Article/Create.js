@@ -13,13 +13,17 @@ class Create extends Component {
   render() {
     return (
       <Row type="flex" justify="space-around" align="middle" className={styles.content} gutter={16}>
-        <Col span={12} className={styles.item}>
-          <Icon name="pen square" size="massive" />
-          <Row>发文</Row>
+        <Col span={12}>
+          <div className={styles.item}>
+            <Icon name="pen square" size="massive" />
+            <Row>发文</Row>
+          </div>
         </Col>
-        <Col span={12} className={styles.item}>
-          <Icon name="question circle" size="massive" />
-          <Row>发问</Row>
+        <Col span={12}>
+          <div className={styles.item}>
+            <Icon name="question circle" size="massive" />
+            <Row>发问</Row>
+          </div>
         </Col>
       </Row>
     );
