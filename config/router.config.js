@@ -38,6 +38,11 @@ export default [
             name: 'create',
             component: './Article/Create',
           },
+          {
+            path: '/we/create/article',
+            name: 'createArticle',
+            component: './Article/CreateArticle',
+          },
         ],
       },
       {

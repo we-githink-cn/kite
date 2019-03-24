@@ -45,7 +45,7 @@ export default class GlobalHeader extends PureComponent {
           </Col>
           <Col span={8}>
             <div className={styles.menu}>
-              <Menu secondary>
+              <Menu secondary style={{ margin: '0 auto' }}>
                 <Menu.Item
                   name="首页"
                   icon="compass outline"

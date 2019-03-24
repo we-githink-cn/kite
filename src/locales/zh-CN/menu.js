@@ -42,4 +42,5 @@ export default {
   'menu.index': 'We!',
   'menu.index.index': 'We!',
   'menu.index.create': '创作',
+  'menu.index.createArticle': '发文',
 };
