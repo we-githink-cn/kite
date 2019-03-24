@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Input } from 'semantic-ui-react';
+import Vditor from 'vditor';
+
 import styles from './CreateArticle.less';
 
 export default class CreateArticle extends Component {
-  state = {};
+  state = {
+    vditor: null
+  };
 
-  componentDidMount() {}
+  componentDidMount() {
+    let vditor2 = new Vditor(id, {options...})
+  }
 
   componentWillUnmount() {}
 
