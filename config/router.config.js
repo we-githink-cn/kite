@@ -38,9 +38,26 @@ export default [
             name: 'create',
             component: './Article/Create',
           },
+        ],
+      },
+      {
+        component: '404',
+      },
+    ],
+  },{
+    path: '/create',
+    component: '../layouts/CreateLayout',
+    routes: [
+      { path: '/create', redirect: '/create' },
+      {
+        name: 'create',
+        icon: 'warning',
+        path: '/create',
+        routes: [
+          // exception
           {
-            path: '/we/create/article',
-            name: 'createArticle',
+            path: '/create/article',
+            name: 'article',
             component: './Article/CreateArticle',
           },
         ],

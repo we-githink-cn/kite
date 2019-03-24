@@ -12,7 +12,7 @@ export default class CreateArticle extends Component {
   render() {
     return (
       <div className={styles.content}>
-        <Input label="http://" placeholder="mysite.com" />
+        <Input label="标题" placeholder="请输入标题" />
       </div>
     );
   }
