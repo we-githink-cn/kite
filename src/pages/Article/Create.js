@@ -13,7 +13,7 @@ class Create extends Component {
   handleItemClick = index => {
     switch (index) {
       case 1:
-        router.push('/create/article/1');
+        router.push('/create/article');
         break;
 
       default:
