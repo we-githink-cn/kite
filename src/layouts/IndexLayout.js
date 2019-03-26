@@ -93,7 +93,7 @@ class BasicLayout extends React.Component {
         <Layout
           style={{
             minHeight: '100vh',
-            backgroundColor: '#FFF',
+            backgroundColor: '#DBE0E5',
           }}
         >
           <IndexHeader menuData={menuData} logo={black_logo} {...this.props} />
