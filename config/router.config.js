@@ -1,5 +1,5 @@
 export default [
-  // user
+  // 登录注册
   {
     path: '/user',
     component: '../layouts/UserLayout',
@@ -16,39 +16,13 @@ export default [
         component: '404',
       },
     ],
-  }, // user
+  },
+  //文章创作
   {
-    path: '/we',
-    component: '../layouts/IndexLayout',
-    routes: [
-      { path: '/we', redirect: '/we/analysis' },
-      {
-        name: 'index',
-        icon: 'warning',
-        path: '/we',
-        routes: [
-          // exception
-          {
-            path: '/we/analysis',
-            name: 'index',
-            component: './Dashboard/Analysis',
-          },
-          {
-            path: '/we/create',
-            name: 'create',
-            component: './Article/Create',
-          },
-        ],
-      },
-      {
-        component: '404',
-      },
-    ],
-  },{
     path: '/create',
     component: '../layouts/CreateLayout',
     routes: [
-      { path: '/create', redirect: '/create' },
+      { path: '/create', redirect: '/create/article' },
       {
         name: 'create',
         icon: 'warning',
@@ -67,14 +41,43 @@ export default [
       },
     ],
   },
-  // app
+  //首页
   {
     path: '/',
+    component: '../layouts/IndexLayout',
+    routes: [
+      { path: '/', redirect: '/index/index' },
+      {
+        name: 'index',
+        icon: 'warning',
+        path: '/index',
+        routes: [
+          // exception
+          {
+            path: '/index/index',
+            name: 'index',
+            component: './Home/Index',
+          },
+          {
+            path: '/index/create',
+            name: 'create',
+            component: './Article/Create',
+          },
+        ],
+      },
+      {
+        component: '404',
+      },
+    ],
+  },
+  // app
+  {
+    path: '/dashboard',
     component: '../layouts/BasicLayout',
     Routes: ['src/pages/Authorized'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
+      { path: '/dashboard', redirect: '/dashboard/analysis' },
       {
         path: '/dashboard',
         name: 'dashboard',

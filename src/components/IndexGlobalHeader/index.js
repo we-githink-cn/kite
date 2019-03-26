@@ -17,7 +17,7 @@ export default class GlobalHeader extends PureComponent {
   handleItemClick = (e, { name }) => {
     switch (name) {
       case '首页':
-        router.push('/we');
+        router.push('/');
         break;
     }
     this.setState({ activeItem: name });
@@ -37,11 +37,11 @@ export default class GlobalHeader extends PureComponent {
     return (
       <div className={styles.header}>
         <Row>
-          <Col span={8}>
-            <Link to="/we" className={styles.logo} key="logo">
+          <Col span={8} className={styles.logo} onClick={()=>{
+            router.push('/')
+          }}>
               <img src={logo} alt="logo" width="32" />
               <span className={styles.title}>We!</span>
-            </Link>
           </Col>
           <Col span={8}>
             <div className={styles.menu}>

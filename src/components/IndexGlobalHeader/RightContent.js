@@ -64,7 +64,7 @@ export default class GlobalHeaderRight extends PureComponent {
   };
 
   handleArticleCreateClick = () => {
-    router.push('/we/create');
+    router.push('/index/create');
   };
 
   render() {

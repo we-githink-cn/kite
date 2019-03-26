@@ -234,7 +234,7 @@ export default class CreateArticle extends Component {
                 <h4>其他</h4>
               </div>
               <div className={styles.postModule}>
-                <Checkbox toggle defaultChecked label={{ children: '私密文集' }} />
+                <Checkbox toggle label={{ children: '私密文集' }} />
               </div>
             </div>
           </Modal.Content>
