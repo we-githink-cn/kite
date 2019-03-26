@@ -141,7 +141,22 @@ export default class Index extends Component {
               </Ant.Breadcrumb>
             </div>
             <div className={styles.postContent}>
-              <div />
+              <div className={styles.postItem}>
+                <div className={styles.postItemAction}>
+                  <div className={styles.postItemActionIcon}>
+                    <div className={`${styles.postItemActionIconItem} ${styles.postItemActionIconItemUp}`}>
+                      <Icon name='hand point up' size='large'/>
+                    </div>
+                    <div className={styles.postItemActionText}>
+                      49.8k
+                    </div>
+                    <div className={`${styles.postItemActionIconItem} ${styles.postItemActionIconItemDown}`}>
+                      <Icon name='hand point down' size='large'/>
+                    </div>
+                  </div>
+                </div>
+                1
+              </div>
             </div>
           </div>
           <div className={styles.postRight} />

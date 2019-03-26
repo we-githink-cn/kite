@@ -135,3 +135,65 @@
   height: 500px;
   background-color: #4285f4;
 }
+.postItem {
+  padding-left: 40px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  color: rgb(135, 138, 140);
+  fill: rgb(135, 138, 140);
+  cursor: pointer;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  transition: color 0.5s ease 0s, fill 0.5s ease 0s, box-shadow 0.5s ease 0s;
+  height: 200px;
+}
+.postItem:hover {
+  border-color: #878A8C;
+}
+.postItemAction {
+  background-color: #F6F8F9;
+  width: 40px;
+  border-left: 4px solid transparent;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  padding: 8px 4px 8px 0;
+  position: absolute;
+  top: 0;
+  height: 200px;
+}
+.postItemActionIcon {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  fill: inherit;
+  flex-direction: column;
+  padding-top: 5px;
+}
+.postItemActionIconItem {
+
+}
+.postItemActionText {
+  color: #1A1A1B;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 50px;
+  height: 42px;
+}
+.postItemActionIconItemUp:hover {
+  color: #D04135;
+}
+.postItemActionIconItemDown:hover {
+  color: #0D568B;
+}
