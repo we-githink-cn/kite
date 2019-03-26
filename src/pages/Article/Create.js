@@ -38,7 +38,7 @@ class Create extends Component {
               <br />
               <div className={styles.title}>发问</div>
             </a>
-            <div className={styles.text}>遇到难题了，找小伙伴问一问吧</div>
+            <div className={styles.text}>遇到难题了，找小伙伴问一问吧。</div>
           </div>
         </div>
         <div className={styles.wrapper} style={{ marginTop: '40px' }}>
