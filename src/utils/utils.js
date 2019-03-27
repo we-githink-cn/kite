@@ -192,3 +192,10 @@ export const importCDN = (url, name) =>
     };
     document.head.appendChild(dom);
   });
+
+export const scrollToAnchor = (anchorName) => {
+  if (anchorName) {
+    let anchorElement = document.getElementById(anchorName);
+    if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
+  }
+}
