@@ -237,7 +237,18 @@ export default class Index extends Component {
             </div>
           </div>
           <div className={styles.postRight}>
-
+            <div className={styles.userCard}>
+              <div className={styles.userCardContent}>
+                <div className={styles.userCardHeader}>
+                  <div className={styles.userCardHeaderBd} style={{backgroundImage: `url("https://styles.redditmedia.com/t5_spi1u/styles/profileBanner_qsylndybb0a21.jpg?width=1280&height=384&crop=1280:384,smart&s=d73ee78c44b2174b8f80a3b707356af370602dfb")`}}></div>
+                </div>
+                <div className={styles.userCardAvatar}>
+                  <div className={styles.userAvatar} style={{backgroundImage: `url("https://styles.redditmedia.com/t5_spi1u/styles/profileIcon_f9143x0bb0a21.jpg?width=256&height=256&crop=256:256,smart&s=7a4730d43a44ba9b77668806d9bdbec3e976495a")`}}></div>
+                </div>
+                <span className={styles.userName}>Githinkcn</span>
+                <span>大梦初醒，荒唐了一生。</span>
+              </div>
+            </div>
             <a href="" className={styles.rightAd} style={{backgroundImage: `url(${url})`}}>
               <span className={styles.aDbadge}>广告</span>
             </a>
