@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Label, Segment} from 'semantic-ui-react';
+import { Icon, Image, Pagination, Button} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './Index.less';
 import {scrollToAnchor} from '../../utils/utils'
@@ -246,7 +246,42 @@ export default class Index extends Component {
                   <div className={styles.userAvatar} style={{backgroundImage: `url("https://styles.redditmedia.com/t5_spi1u/styles/profileIcon_f9143x0bb0a21.jpg?width=256&height=256&crop=256:256,smart&s=7a4730d43a44ba9b77668806d9bdbec3e976495a")`}}></div>
                 </div>
                 <span className={styles.userName}>Githinkcn</span>
-                <span>大梦初醒，荒唐了一生。</span>
+                <span className={styles.userDesc}>大梦初醒，荒唐了一生。</span>
+                <div className={styles.userActionContent}>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='新手/第 8 号会员'>
+                      <Icon name='user' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='粉丝 109.8k'>
+                      <Icon name='chess queen' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='关注 9'>
+                      <Icon name='heart' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='收获点赞 109.8k'>
+                      <Icon name='thumbs up' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='文章 22 篇'>
+                      <Icon name='book' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItem}>
+                    <Ant.Tooltip placement="top" title='https://blog.githink.cn'>
+                      <Icon name='linkify' />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.userActionItemBtn}>
+                    <Button compact color='orange' className={styles.userActionBtn}>发新帖</Button>
+                  </div>
+                </div>
               </div>
             </div>
             <a href="" className={styles.rightAd} style={{backgroundImage: `url(${url})`}}>
