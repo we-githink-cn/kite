@@ -214,6 +214,10 @@ export default class Index extends Component {
                   <Icon name="chart line" color="blue" />
                   <span>上升最快</span>
                 </Ant.Breadcrumb.Item>
+                <Ant.Breadcrumb.Item href="">
+                  <Icon name="location arrow" color="violet" />
+                  <span>济南</span>
+                </Ant.Breadcrumb.Item>
               </Ant.Breadcrumb>
             </div>
             <div className={styles.postPagesContent} style={{marginTop: '10px'}}>

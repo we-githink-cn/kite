@@ -70,6 +70,12 @@ export default class GlobalHeader extends PureComponent {
                   onClick={this.handleItemClick}
                   icon="clock outline"
                 />
+                <Menu.Item
+                  name="济南"
+                  active={activeItem === '济南'}
+                  onClick={this.handleItemClick}
+                  icon="dot circle outline"
+                />
               </Menu>
             </div>
           </Col>

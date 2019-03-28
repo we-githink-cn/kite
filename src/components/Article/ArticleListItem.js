@@ -10,13 +10,13 @@ const ArticleListItem = (item) => {
         <div className={styles.postItemAction}>
           <div className={styles.postItemActionIcon}>
             <div className={`${styles.postItemActionIconItem} ${styles.postItemActionIconItemUp}`}>
-              <Icon name='thumbs up' size='large' />
+              <Icon name='arrow alternate circle up' size='large' />
             </div>
             <div className={styles.postItemActionText}>
               49.8k
             </div>
             <div className={`${styles.postItemActionIconItem} ${styles.postItemActionIconItemDown}`}>
-              <Icon name='thumbs down' size='large' />
+              <Icon name='arrow alternate circle down' size='large' />
             </div>
           </div>
         </div>
