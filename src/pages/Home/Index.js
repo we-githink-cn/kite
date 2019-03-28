@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Button, } from 'semantic-ui-react';
+import { Icon, Image, Pagination, Button, Label} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './Index.less';
 import {scrollToAnchor} from '../../utils/utils'
@@ -266,7 +266,7 @@ export default class Index extends Component {
             </a>
 
             {/*推荐作者*/}
-            <div>
+            <div className={styles.marginTop20}>
               <div className={styles.trendingHeader}>
                 <h4>
                   <Icon name="star" color="teal" /> 推荐作者
@@ -283,6 +283,92 @@ export default class Index extends Component {
               </div>
               <div className={styles.recCardBtn}>
                 <Button color='brown' compact fluid content='查看更多' />
+              </div>
+            </div>
+
+            {/*热门标签*/}
+            <div className={styles.marginTop20}>
+              <div className={styles.trendingHeader}>
+                <h4>
+                  <Icon name="tag" color="red" /> 热门标签
+                </h4>
+              </div>
+              <div className={styles.tagCard}>
+                <div className={styles.tagCardContent}>
+                  <div className={`${styles.tagCardItem}`}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+                      JoejjJoejjJoejj
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      Elliot
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      Stevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      Elliot
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      StevieStevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      Stevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      ElliotStevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      Stevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      ElliotStevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      ElliotStevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      ElliotStevie
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as='a' image>
+                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      Stevie
+                    </Label>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
