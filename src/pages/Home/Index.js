@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Button} from 'semantic-ui-react';
+import { Icon, Image, Pagination, Button, } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './Index.less';
 import {scrollToAnchor} from '../../utils/utils'
 import ArticleListItem from "../../components/Article/ArticleListItem";
+import UserCard from "../../components/User/UserCard";
+import logo from '../../assets/black_logo.svg';
+import UnLoginCard from "../../components/User/UnLoginCard";
+import RecCard from "../../components/Index/RecCard";
 
 const options = [
   { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
@@ -15,6 +19,7 @@ export default class Index extends Component {
   state = {
     totalPages: 0,
     page: 1,
+    isLogin: false,
     pageSize: 20,
     articleList: [
       {key: '1'},
@@ -68,7 +73,20 @@ export default class Index extends Component {
   }
 
   render() {
-    const { articleList, totalPages } = this.state;
+    const { articleList, totalPages, isLogin } = this.state;
+    const recList = [{
+      avatar: 'https://react.semantic-ui.com/images/avatar/large/matthew.png'
+    },{
+      avatar: 'https://react.semantic-ui.com/images/avatar/small/stevie.jpg'
+    },{
+      avatar: 'https://react.semantic-ui.com/images/avatar/small/elliot.jpg'
+    },{
+      avatar: 'https://react.semantic-ui.com/images/avatar/small/joe.jpg'
+    },{
+      avatar: 'https://react.semantic-ui.com/images/avatar/small/veronika.jpg'
+    },{
+      avatar: 'https://react.semantic-ui.com/images/avatar/small/jenny.jpg'
+    },];
     let url = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
     return (
       <div className={styles.content}>
@@ -237,56 +255,36 @@ export default class Index extends Component {
             </div>
           </div>
           <div className={styles.postRight}>
-            <div className={styles.userCard}>
-              <div className={styles.userCardContent}>
-                <div className={styles.userCardHeader}>
-                  <div className={styles.userCardHeaderBd} style={{backgroundImage: `url("https://styles.redditmedia.com/t5_spi1u/styles/profileBanner_qsylndybb0a21.jpg?width=1280&height=384&crop=1280:384,smart&s=d73ee78c44b2174b8f80a3b707356af370602dfb")`}}></div>
-                </div>
-                <div className={styles.userCardAvatar}>
-                  <div className={styles.userAvatar} style={{backgroundImage: `url("https://styles.redditmedia.com/t5_spi1u/styles/profileIcon_f9143x0bb0a21.jpg?width=256&height=256&crop=256:256,smart&s=7a4730d43a44ba9b77668806d9bdbec3e976495a")`}}></div>
-                </div>
-                <span className={styles.userName}>Githinkcn</span>
-                <span className={styles.userDesc}>大梦初醒，荒唐了一生。</span>
-                <div className={styles.userActionContent}>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='新手/第 8 号会员'>
-                      <Icon name='user' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='粉丝 109.8k'>
-                      <Icon name='chess queen' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='关注 9'>
-                      <Icon name='heart' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='收获点赞 109.8k'>
-                      <Icon name='thumbs up' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='文章 22 篇'>
-                      <Icon name='book' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItem}>
-                    <Ant.Tooltip placement="top" title='https://blog.githink.cn'>
-                      <Icon name='linkify' />
-                    </Ant.Tooltip>
-                  </div>
-                  <div className={styles.userActionItemBtn}>
-                    <Button compact color='orange' className={styles.userActionBtn}>发新帖</Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/*用户信息卡*/}
+            {
+              !isLogin ? (<UserCard user={null}/>) : (<UnLoginCard/>)
+            }
+
+            {/*广告位*/}
             <a href="" className={styles.rightAd} style={{backgroundImage: `url(${url})`}}>
               <span className={styles.aDbadge}>广告</span>
             </a>
+
+            {/*推荐作者*/}
+            <div>
+              <div className={styles.trendingHeader}>
+                <h4>
+                  <Icon name="star" color="teal" /> 推荐作者
+                </h4>
+              </div>
+              <div className={styles.recCard}>
+                <div className={styles.recCardContent}>
+                  {
+                    recList.map((item,index)=>(
+                      <RecCard user={item} key={index} />
+                    ))
+                  }
+                </div>
+              </div>
+              <div className={styles.recCardBtn}>
+                <Button color='brown' compact fluid content='查看更多' />
+              </div>
+            </div>
           </div>
         </div>
       </div>
