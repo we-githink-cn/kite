@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Button, Label} from 'semantic-ui-react';
+import { Icon, Image, Pagination, Button, Label, Search, List} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './Index.less';
 import {scrollToAnchor} from '../../utils/utils'
@@ -265,6 +265,60 @@ export default class Index extends Component {
               <span className={styles.aDbadge}>广告</span>
             </a>
 
+            {/*热门问答*/}
+
+            <div className={styles.marginTop20}>
+              <div className={styles.trendingHeader}>
+                <h4>
+                  <Icon name="question circle" color="violet" /> 热门问答
+                </h4>
+              </div>
+              <div className={`${styles.questCardSearch} quest`}>
+                <Search/>
+              </div>
+              <div className={styles.questCard}>
+                <div className={`${styles.questCardContent} questCard`}>
+                  <List relaxed>
+                    <List.Item>
+                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
+                      <List.Content>
+                        <List.Header as='a'>Daniel Louise</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching Arrested Development
+                            just now.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      <List.Content>
+                        <List.Header as='a'>Stevie Feliciano</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching 10 hours ago.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      <List.Content>
+                        <List.Header as='a'>Elliot Fu</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching The Godfather Part 2
+                            yesterday.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </div>
+              </div>
+            </div>
+
             {/*推荐作者*/}
             <div className={styles.marginTop20}>
               <div className={styles.trendingHeader}>
@@ -298,73 +352,73 @@ export default class Index extends Component {
                   <div className={`${styles.tagCardItem}`}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
-                      JoejjJoejjJoejj
+                      IT
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      Elliot
+                      Docker
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
-                      Stevie
+                      Kubernetes
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      Elliot
+                      支付
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
-                      StevieStevie
+                      股票
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
-                      Stevie
+                      新闻
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      ElliotStevie
+                      文学
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
-                      Stevie
+                      视频剪辑
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      ElliotStevie
+                      动漫
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      ElliotStevie
+                      女装大佬
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-                      ElliotStevie
+                      前方高能
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
                     <Label as='a' image>
                       <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
-                      Stevie
+                      运动
                     </Label>
                   </div>
 

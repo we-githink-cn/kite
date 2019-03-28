@@ -5,7 +5,7 @@ import styles from './Index.less';
 
 const ArticleListItem = (item) => {
   return (
-    <div className={styles.postContent}>
+    <div className={`${styles.postContent} index`}>
       <div className={styles.postItem}>
         <div className={styles.postItemAction}>
           <div className={styles.postItemActionIcon}>
