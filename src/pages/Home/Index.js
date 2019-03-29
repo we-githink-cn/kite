@@ -8,6 +8,7 @@ import UserCard from "../../components/User/UserCard";
 import logo from '../../assets/black_logo.svg';
 import UnLoginCard from "../../components/User/UnLoginCard";
 import RecCard from "../../components/Index/RecCard";
+import {AdCard} from "../../components/Index/AdCard";
 
 const options = [
   { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
@@ -62,14 +63,7 @@ export default class Index extends Component {
 
   handlePageChange = (event, { activePage }) =>{
     const { articleList } = this.state;
-    if(activePage != 1) {
-      scrollToAnchor('postId');
-      this.setState({
-        articleList: articleList
-      })
-    }else{
-      this._init()
-    }
+    scrollToAnchor('postId');
   }
 
   render() {
@@ -263,14 +257,9 @@ export default class Index extends Component {
             {
               !isLogin ? (<UserCard user={null}/>) : (<UnLoginCard/>)
             }
-
             {/*广告位*/}
-            <a href="" className={styles.rightAd} style={{backgroundImage: `url(${url})`}}>
-              <span className={styles.aDbadge}>广告</span>
-            </a>
-
+            <AdCard url={url}/>
             {/*热门问答*/}
-
             <div className={styles.marginTop20}>
               <div className={styles.trendingHeader}>
                 <h4>

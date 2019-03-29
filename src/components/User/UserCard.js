@@ -1,10 +1,13 @@
 import React from 'react';
 import { Icon, Button, Popup, Progress} from 'semantic-ui-react';
 import * as Ant from 'antd';
+import {getUser} from "../../utils/utils";
 import styles from './UserCard.less'
 import svip6 from '../../assets/vip/svip6.png';
 
 export const UserCard = user => {
+  let currentUser = getUser();
+  console.log(!(user.uid === 'id'));
   return (
     <div className={styles.userCard}>
       <div className={styles.userCardContent}>
@@ -68,11 +71,13 @@ export const UserCard = user => {
             </Ant.Tooltip>
           </div>
           <div className={styles.userActionItemBtn}>
-            <Button compact color='orange' className={styles.userActionBtn}>发新帖</Button>
+            {!(user.uid === 'id') ?
+              (<Button compact color='orange' className={styles.userActionBtn}>发新帖</Button>):
+              (<Button compact color='orange' className={styles.userActionBtn}>关注</Button>)}
           </div>
         </div>
       </div>
     </div>
   )
-}
+};
 export default UserCard;

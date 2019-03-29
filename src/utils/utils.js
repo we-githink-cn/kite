@@ -199,3 +199,10 @@ export const scrollToAnchor = (anchorName) => {
     if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
   }
 }
+
+export const getUser  = () => {
+  return JSON.parse(localStorage.getItem("we_user"));
+}
+export const setUser =(user)=> {
+  localStorage.setItem("we_user",JSON.stringify(user));
+}

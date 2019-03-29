@@ -4,7 +4,6 @@ import styles from './RecCard.less'
 import {Icon} from "semantic-ui-react";
 
 const RecCard = ({user}) => {
-  console.log(user);
   return (
     <div className={styles.recCardItem}>
       <div className={styles.recCardItemContent}>
