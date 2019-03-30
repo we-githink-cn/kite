@@ -90,6 +90,10 @@ export default class ArticleDetail extends PureComponent {
                   <div id='ArticleContent' style={{width: '816px!important'}}></div>
                 </div>
                 <div className={styles.ArticleCommentContent}>
+                  <Form reply>
+                    <Form.TextArea />
+                    <Button style={{float: 'right'}} content='Add Reply' labelPosition='left' icon='edit' primary />
+                  </Form>
                   <div className={styles.trendingHeader}>
                     <h4>
                       32 评论
@@ -156,11 +160,6 @@ export default class ArticleDetail extends PureComponent {
                           </Comment.Actions>
                         </Comment.Content>
                       </Comment>
-
-                      <Form reply>
-                        <Form.TextArea />
-                        <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-                      </Form>
                     </Comment.Group>
                   </div>
                 </div>
