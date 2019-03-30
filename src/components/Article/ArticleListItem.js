@@ -5,6 +5,7 @@ import GoodPng from '../../assets/good.png'
 import styles from './ArticleListItem.less';
 import UserCard from "../User/UserCard";
 import {AdCard} from "../Index/AdCard";
+import ArticleDetail from "./ArticleDetail";
 
 export default class ArticleListItem extends PureComponent {
   state = {
@@ -109,61 +110,7 @@ export default class ArticleListItem extends PureComponent {
           </Item.Group>
         </div>
         <Modal open={open} onClose={()=>{this.setState({open: false})}} size='fullscreen' id='articleItem'>
-          <div className={styles.ArticleWrapperHeader}>
-            <div className={styles.ArticleHeaderContent}>
-              <div className={styles.ArticleHeader}>
-                <div className={styles.ArticleUpDownContent}>
-                  <div className={styles.ArticleUpIcon}>
-                    <Icon name='arrow alternate circle up' />
-                  </div>
-                  <div className={styles.ArticleIconText}>
-                    49.8k
-                  </div>
-                  <div className={styles.ArticleDownIcon}>
-                    <Icon name='arrow alternate circle down' />
-                  </div>
-                </div>
-                <div className={styles.ArticleMiddleIcon}>
-                  <Icon name='file alternate'/>
-                </div>
-                <div className={styles.ArticleHeaderTitleContent}>
-                  <span className={styles.ArticleHeaderTitleBody}>
-                    <h2 className={styles.ArticleHeaderTitle}>
-                      Has anyone ever honoured one of those “if we’re still single at 40 let’s get married” commitments? How did it go?
-                    </h2>
-                  </span>
-                </div>
-              </div>
-              <div className={styles.ArticleHeaderAction}>
-                  <div className={styles.ArticleHeaderActionClose} onClick={this.handleWrapperCloseClick}>
-                    <Icon name='close' style={{color: '#FFF',alignSelf: 'center'}} size="large"/>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.articleContent}>
-            <div className={styles.articleContentBody}>
-              <div className={styles.ArticleWrapper}>
-                <div className={styles.ArticleWrapperContent}>
-                  <div className={styles.ArticleTitle}>
-                    <h2 className={styles.ArticleTitleH2}>
-                      <Ant.Tooltip placement="left" title='优选'>
-                        <img src={GoodPng} alt="" style={{width: '36px', height: '36px'}}/>
-                      </Ant.Tooltip>
-                      We创作介绍Android进阶：六、在子线程中直接使用 Toast 及其原理
-                    </h2>
-                  </div>
-                  <div className={styles.ArticleContent}>
-
-                  </div>
-                </div>
-              </div>
-              <div className={styles.ArticleWrapperRight}>
-                <UserCard item={null}/>
-                <AdCard url={"https://react.semantic-ui.com/images/avatar/large/matthew.png"}/>
-              </div>
-            </div>
-          </div>
+          <ArticleDetail handleWrapperCloseClick={this.handleWrapperCloseClick}/>
         </Modal>
       </div>
     )

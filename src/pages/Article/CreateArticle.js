@@ -124,6 +124,14 @@ export default class CreateArticle extends Component {
   show = () => this.setState({ open: true });
   close = () => this.setState({ open: false });
 
+  handleSaveClick =()=>{
+    const { vditor } = this.state;
+    vditor.getHTML(true).then(res =>{
+      console.log(res)
+      localStorage.setItem('content',res);
+    });
+  }
+
   render() {
     const { currentTags, open } = this.state;
     return (
@@ -200,7 +208,7 @@ export default class CreateArticle extends Component {
               <Button.Group size="small">
                 <Button onClick={this.handleSettingClick}>设置</Button>
                 <Button.Or text="or" style={{ marginBottom: '2px' }} />
-                <Button positive>保存</Button>
+                <Button positive onClick={this.handleSaveClick}>保存</Button>
               </Button.Group>
             </div>
           </div>
