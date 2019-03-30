@@ -42,7 +42,7 @@ export default class ArticleDetail extends PureComponent {
         show: true,
       },
       height: '100%',
-      counter: 4096,
+      counter: 102400,
     });
   };
 
@@ -58,7 +58,7 @@ export default class ArticleDetail extends PureComponent {
         },
       },
       height: data.height,
-      counter: 102400,
+      counter: 4096,
       resize: {
         position: 'top',
         enable: data.resize,
@@ -233,7 +233,7 @@ export default class ArticleDetail extends PureComponent {
                       Elliot
                     </Label>
                   </div>
-                  <div onClick={this.handleReplyCloseClick}>
+                  <div className={styles.ReplyVditorHeaderIcon} onClick={this.handleReplyCloseClick}>
                     <Icon name='caret down' size='large'/>
                   </div>
                 </div>
