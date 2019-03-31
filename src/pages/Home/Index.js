@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Button, Label, Search, List} from 'semantic-ui-react';
+import { Icon, Image, Pagination, Button, Label, Search, List } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './Index.less';
-import {scrollToAnchor} from '../../utils/utils'
-import ArticleListItem from "../../components/Article/ArticleListItem";
-import UserCard from "../../components/User/UserCard";
+import { scrollToAnchor } from '../../utils/utils';
+import ArticleListItem from '../../components/Article/ArticleListItem';
+import UserCard from '../../components/User/UserCard';
 import logo from '../../assets/black_logo.svg';
-import UnLoginCard from "../../components/User/UnLoginCard";
-import RecCard from "../../components/Index/RecCard";
-import {AdCard} from "../../components/Index/AdCard";
+import UnLoginCard from '../../components/User/UnLoginCard';
+import RecCard from '../../components/Index/RecCard';
+import { AdCard } from '../../components/Index/AdCard';
 
 const options = [
   { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
   { key: 'delete', icon: 'delete', text: 'Remove Post', value: 'delete' },
   { key: 'hide', icon: 'hide', text: 'Hide Post', value: 'hide' },
-]
+];
 
 export default class Index extends Component {
   state = {
@@ -23,12 +23,12 @@ export default class Index extends Component {
     isLogin: false,
     pageSize: 20,
     articleList: [
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
     ],
   };
 
@@ -39,48 +39,47 @@ export default class Index extends Component {
   componentWillUnmount() {}
 
   _init = () => {
-    const {articleList} = this.state;
-    const list = [
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-      {key: '1'},
-    ];
+    const { articleList } = this.state;
+    const list = [{ key: '1' }, { key: '1' }, { key: '1' }, { key: '1' }, { key: '1' }];
     this.setState({
-      articleList: list
-    },);
-  }
-
-  _initTotalPages = () =>{
-    const { articleList, pageSize } = this.state;
-    this.setState({
-      totalPages: Math.ceil(9999 /pageSize)
-    })
+      articleList: list,
+    });
   };
 
+  _initTotalPages = () => {
+    const { articleList, pageSize } = this.state;
+    this.setState({
+      totalPages: Math.ceil(9999 / pageSize),
+    });
+  };
 
-
-  handlePageChange = (event, { activePage }) =>{
+  handlePageChange = (event, { activePage }) => {
     const { articleList } = this.state;
     scrollToAnchor('postId');
-  }
+  };
 
   render() {
     const { articleList, totalPages, isLogin } = this.state;
-    const recList = [{
-      avatar: 'https://react.semantic-ui.com/images/avatar/large/matthew.png'
-    },{
-      avatar: 'https://react.semantic-ui.com/images/avatar/small/stevie.jpg'
-    },{
-      avatar: 'https://react.semantic-ui.com/images/avatar/small/elliot.jpg'
-    },{
-      avatar: 'https://react.semantic-ui.com/images/avatar/small/joe.jpg'
-    },{
-      avatar: 'https://react.semantic-ui.com/images/avatar/small/veronika.jpg'
-    },{
-      avatar: 'https://react.semantic-ui.com/images/avatar/small/jenny.jpg'
-    },];
+    const recList = [
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+      },
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/small/stevie.jpg',
+      },
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/small/elliot.jpg',
+      },
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/small/joe.jpg',
+      },
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/small/veronika.jpg',
+      },
+      {
+        avatar: 'https://react.semantic-ui.com/images/avatar/small/jenny.jpg',
+      },
+    ];
     let url = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
     return (
       <div className={styles.content}>
@@ -130,7 +129,7 @@ export default class Index extends Component {
                       </div>
                       <div className={`${styles.trendingAuthorInfo}`}>
                         <Image
-                          src="https://styles.redditmedia.com/t5_2qhfg/styles/communityIcon_xm0illyxmid01.png"
+                          src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
                           avatar
                         />
                         <span>r/news and more</span>
@@ -153,7 +152,7 @@ export default class Index extends Component {
                       </div>
                       <div className={`${styles.trendingAuthorInfo}`}>
                         <Image
-                          src="https://a.thumbs.redditmedia.com/E0Bkwgwe5TkVLflBA7WMe9fMSC7DV2UOeff-UpNJeb0.png"
+                          src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
                           avatar
                         />
                         <span>r/news and more</span>
@@ -176,7 +175,7 @@ export default class Index extends Component {
                       </div>
                       <div className={`${styles.trendingAuthorInfo}`}>
                         <Image
-                          src="https://styles.redditmedia.com/t5_2qhwp/styles/communityIcon_xirfqw6qgs811.png"
+                          src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
                           avatar
                         />
                         <span>r/news and more</span>
@@ -188,7 +187,7 @@ export default class Index extends Component {
             </div>
           </div>
         </div>
-        <div className={styles.postWrapper} id='postId'>
+        <div className={styles.postWrapper} id="postId">
           <div className={styles.postContent}>
             <div className={styles.trendingHeader}>
               <Ant.Breadcrumb>
@@ -214,38 +213,36 @@ export default class Index extends Component {
                 </Ant.Breadcrumb.Item>
               </Ant.Breadcrumb>
             </div>
-            <div className={styles.postPagesContent} style={{marginTop: '10px'}}>
+            <div className={styles.postPagesContent} style={{ marginTop: '10px' }}>
               <div className={styles.postPages}>
                 <Pagination
                   defaultActivePage={1}
                   pointing
                   secondary
-                  ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
-                  firstItem={{ content: <Icon name='angle double left' />, icon: true }}
-                  lastItem={{ content: <Icon name='angle double right' />, icon: true }}
-                  prevItem={{ content: <Icon name='angle left' />, icon: true }}
-                  nextItem={{ content: <Icon name='angle right' />, icon: true }}
+                  ellipsisItem={{ content: <Icon name="ellipsis horizontal" />, icon: true }}
+                  firstItem={{ content: <Icon name="angle double left" />, icon: true }}
+                  lastItem={{ content: <Icon name="angle double right" />, icon: true }}
+                  prevItem={{ content: <Icon name="angle left" />, icon: true }}
+                  nextItem={{ content: <Icon name="angle right" />, icon: true }}
                   totalPages={totalPages}
                   onPageChange={this.handlePageChange.bind(this)}
                 />
               </div>
             </div>
-            {
-              articleList.map((item, index) => (
-                <ArticleListItem item={item} key={index}/>
-              ))
-            }
+            {articleList.map((item, index) => (
+              <ArticleListItem item={item} key={index} />
+            ))}
             <div className={styles.postPagesContent}>
               <div className={styles.postPages}>
                 <Pagination
                   defaultActivePage={1}
                   pointing
                   secondary
-                  ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
-                  firstItem={{ content: <Icon name='angle double left' />, icon: true }}
-                  lastItem={{ content: <Icon name='angle double right' />, icon: true }}
-                  prevItem={{ content: <Icon name='angle left' />, icon: true }}
-                  nextItem={{ content: <Icon name='angle right' />, icon: true }}
+                  ellipsisItem={{ content: <Icon name="ellipsis horizontal" />, icon: true }}
+                  firstItem={{ content: <Icon name="angle double left" />, icon: true }}
+                  lastItem={{ content: <Icon name="angle double right" />, icon: true }}
+                  prevItem={{ content: <Icon name="angle left" />, icon: true }}
+                  nextItem={{ content: <Icon name="angle right" />, icon: true }}
                   totalPages={totalPages}
                   onPageChange={this.handlePageChange.bind(this)}
                 />
@@ -254,11 +251,9 @@ export default class Index extends Component {
           </div>
           <div className={styles.postRight}>
             {/*用户信息卡*/}
-            {
-              !isLogin ? (<UserCard user={null}/>) : (<UnLoginCard/>)
-            }
+            {!isLogin ? <UserCard user={null} /> : <UnLoginCard />}
             {/*广告位*/}
-            <AdCard url={url}/>
+            <AdCard url={url} />
             {/*热门问答*/}
             <div className={styles.marginTop20}>
               <div className={styles.trendingHeader}>
@@ -267,27 +262,32 @@ export default class Index extends Component {
                 </h4>
               </div>
               <div className={`${styles.questCardSearch} quest`}>
-                <Search/>
+                <Search />
               </div>
               <div className={styles.questCard}>
                 <div className={`${styles.questCardContent} questCard`}>
                   <List relaxed>
                     <List.Item>
-                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                      />
                       <List.Content>
-                        <List.Header as='a'>Daniel Louise</List.Header>
+                        <List.Header as="a">Daniel Louise</List.Header>
                         <List.Description>
                           <div className={styles.questCardDesc}>
-                            Last seen watching Arrested Development
-                            just now.
+                            Last seen watching Arrested Development just now.
                           </div>
                         </List.Description>
                       </List.Content>
                     </List.Item>
                     <List.Item>
-                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg"
+                      />
                       <List.Content>
-                        <List.Header as='a'>Stevie Feliciano</List.Header>
+                        <List.Header as="a">Stevie Feliciano</List.Header>
                         <List.Description>
                           <div className={styles.questCardDesc}>
                             Last seen watching 10 hours ago.
@@ -296,13 +296,15 @@ export default class Index extends Component {
                       </List.Content>
                     </List.Item>
                     <List.Item>
-                      <Image size='mini' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                      />
                       <List.Content>
-                        <List.Header as='a'>Elliot Fu</List.Header>
+                        <List.Header as="a">Elliot Fu</List.Header>
                         <List.Description>
                           <div className={styles.questCardDesc}>
-                            Last seen watching The Godfather Part 2
-                            yesterday.
+                            Last seen watching The Godfather Part 2 yesterday.
                           </div>
                         </List.Description>
                       </List.Content>
@@ -321,15 +323,13 @@ export default class Index extends Component {
               </div>
               <div className={styles.recCard}>
                 <div className={styles.recCardContent}>
-                  {
-                    recList.map((item,index)=>(
-                      <RecCard user={item} key={index} />
-                    ))
-                  }
+                  {recList.map((item, index) => (
+                    <RecCard user={item} key={index} />
+                  ))}
                 </div>
               </div>
               <div className={styles.recCardBtn}>
-                <Button color='brown' compact fluid content='查看更多' />
+                <Button color="brown" compact fluid content="查看更多" />
               </div>
             </div>
 
@@ -343,78 +343,77 @@ export default class Index extends Component {
               <div className={styles.tagCard}>
                 <div className={styles.tagCardContent}>
                   <div className={`${styles.tagCardItem}`}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/joe.jpg" />
                       IT
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       Docker
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
                       Kubernetes
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       支付
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
                       股票
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
                       新闻
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       文学
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
                       视频剪辑
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       动漫
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       女装大佬
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
                       前方高能
                     </Label>
                   </div>
                   <div className={styles.tagCardItem}>
-                    <Label as='a' image>
-                      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+                    <Label as="a" image>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
                       运动
                     </Label>
                   </div>
-
                 </div>
               </div>
             </div>

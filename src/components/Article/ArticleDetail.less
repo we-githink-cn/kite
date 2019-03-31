@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   //background-color: #DADFE4;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .articleContentBody {
   margin-top: 32px;
@@ -60,7 +60,7 @@
 }
 .ArticleHeaderActionClose:hover {
   border-radius: 4px;
-  background-color: #283A43;
+  background-color: #283a43;
 }
 .ArticleUpDownContent {
   fill: inherit;
@@ -74,16 +74,16 @@
 }
 .ArticleUpDownContent::before {
   border-right: 2px solid #343536;
-  content: "";
+  content: '';
   display: inline-block;
   height: 16px;
   vertical-align: text-bottom;
   width: 0;
   margin-right: 6px;
 }
-.ArticleUpDownContent::after{
+.ArticleUpDownContent::after {
   border-right: 2px solid #343536;
-  content: "";
+  content: '';
   display: inline-block;
   height: 16px;
   vertical-align: text-bottom;
@@ -96,7 +96,7 @@
   padding: 0 2px;
 }
 .ArticleUpIcon:hover {
-  color: #D04135;
+  color: #d04135;
 }
 .ArticleIconText {
   line-height: 15px;
@@ -112,7 +112,7 @@
   padding: 0 8px;
 }
 .ArticleDownIcon:hover {
-  color: #0D568B;
+  color: #0d568b;
 }
 .ArticleMiddleIcon {
   line-height: 48px;
@@ -177,13 +177,13 @@
   word-break: break-word;
   width: 816px;
   img {
-    width: 816px!important;
+    width: 816px !important;
   }
   ul {
-    list-style-type: square!important;
+    list-style-type: square !important;
   }
   ol {
-    list-style-type: decimal!important;
+    list-style-type: decimal !important;
   }
 }
 .trendingHeader {
@@ -229,7 +229,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 308px;
-  background-color: #DBE0E5;
+  background-color: #dbe0e5;
   padding: 15px;
 }
 .ReplyVditorHeader {
@@ -255,4 +255,50 @@
 }
 .ReplyVditorBottomBtn {
   float: right;
+}
+.ArticleTagAndActionContent {
+  display: flex;
+  flex-direction: row;
+}
+.ArticleTagContent {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: 12px;
+}
+.TagItem {
+  width: auto;
+  display: inline-block !important;
+  display: inline;
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
+.ArticleActionContent {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  margin-right: -28px;
+}
+.ArticleActionItem {
+  color: #616161;
+  cursor: pointer;
+  line-height: 34px;
+  height: 34px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.ArticleActionItem:hover {
+  color: #333333;
+}
+.RelevantArticleContent {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
 }
