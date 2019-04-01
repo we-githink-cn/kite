@@ -236,6 +236,10 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 8px;
+  max-width: 1380px;
+  min-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .ReplyVditorHeaderTitle {
   flex: 1;
@@ -247,11 +251,12 @@
   color: #333;
 }
 .ReplyVditorBottom {
-  display: flex;
-  flex-direction: row;
   margin-top: 8px;
-  flex: 1;
-  align-self: flex-end;
+  float: right;
+  max-width: 1380px;
+  min-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .ReplyVditorBottomBtn {
   float: right;
@@ -301,4 +306,79 @@
   flex-direction: column;
   flex: 1;
   padding: 12px;
+}
+.RelevantArticleBody {
+  padding: 15px;
+}
+.RelevantArticleText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 8px;
+}
+.RelevantArticleText:hover {
+  color: #4285f4;
+}
+.HotArticleContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.HotArticleBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.RelevantArticleQuestionBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 12px;
+}
+.RelevantArticleQuestionText:hover {
+  color: #4285f4;
+}
+.ArticleAuthorContent {
+  background-color: #f6f8fa;
+  color: rgba(0,0,0,.38);
+  font-size: 12px;
+  transition: all .15s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -20px;
+}
+.ArticleAuthorContent:hover {
+  box-shadow: 0 0 4px 1px #C0D2FA;
+}
+.ArticleAuthorBody {
+  display: flex;
+  flex-direction: row;
 }

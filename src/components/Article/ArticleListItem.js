@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { Icon, Image, Item, Button, Header, Modal } from 'semantic-ui-react';
 import * as Ant from 'antd';
-import GoodPng from '../../assets/good.png';
 import styles from './ArticleListItem.less';
 import UserCard from '../User/UserCard';
 import { AdCard } from '../Index/AdCard';
 import ArticleDetail from './ArticleDetail';
+import GoodPng from '../../assets/good.png';
 
 export default class ArticleListItem extends PureComponent {
   state = {
@@ -92,8 +92,7 @@ export default class ArticleListItem extends PureComponent {
                 </div>
                 <Item.Description className={styles.postContentDesc} onClick={this.handleItemClick}>
                   <div className={styles.postContentDescTitle}>
-                    {' '}
-                    Cute dogs come in a variety of shapes
+                    <img src={GoodPng} alt="" style={{ width: '20px', height: '20px'}} />Cute dogs come in a variety of shapes
                   </div>
                   <div style={{ color: '#AFAFAF', padding: '0', margin: '0' }}>
                     Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for
@@ -132,7 +131,6 @@ export default class ArticleListItem extends PureComponent {
             this.setState({ open: false });
           }}
           size="fullscreen"
-          id="articleItem"
         >
           <ArticleDetail handleWrapperCloseClick={this.handleWrapperCloseClick} />
         </Modal>
