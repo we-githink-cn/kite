@@ -366,19 +366,59 @@
 }
 .ArticleAuthorContent {
   background-color: #f6f8fa;
-  color: rgba(0,0,0,.38);
+  color: rgba(0, 0, 0, 0.38);
   font-size: 12px;
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   margin-right: -20px;
+  margin-top: 20px;
 }
 .ArticleAuthorContent:hover {
-  box-shadow: 0 0 4px 1px #C0D2FA;
+  box-shadow: 0 0 4px 1px #c0d2fa;
 }
 .ArticleAuthorBody {
   display: flex;
   flex-direction: row;
+  padding: 15px 0px 0px 0px;
+}
+
+.ArticleAuthorAtavar {
+  cursor: pointer;
+  margin-top: -15px;
+}
+.ArticleAuthorInfo {
+  flex: 1;
+  height: 44px;
+  overflow: hidden;
+  margin-left: 12px;
+}
+.ArticleAuthorInfo::before {
+  display: table;
+  content: '';
+}
+.ArticleAuthorInfoItem {
+  cursor: pointer;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  text-align: center;
+}
+.ArticleAuthorInfoItemText {
+  color: #333;
+  font-size: 14px;
+}
+.ArticleAuthorInfoItemTextDesc {
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.38);
+  margin-top: 6px;
+}
+.ArticleAuthorMoreIcon {
+  color: #333;
+  cursor: pointer;
 }
