@@ -578,7 +578,9 @@ export default class ArticleDetail extends PureComponent {
                         </div>
                       </div>
                       <div className={styles.ArticleAuthorAction}>
-                        <Button color="orange">关注</Button>
+                        <Button color="orange" compact>
+                          关注
+                        </Button>
                       </div>
                     </div>
                     <div className={styles.ArticleCommentContent}>
