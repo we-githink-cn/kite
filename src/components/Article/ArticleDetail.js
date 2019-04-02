@@ -18,6 +18,7 @@ export default class ArticleDetail extends PureComponent {
     visible: false,
     actionVisible: false,
     moreVisible: true,
+    avatarMore: false,
   };
 
   componentWillUnmount() {}
@@ -162,9 +163,22 @@ export default class ArticleDetail extends PureComponent {
     });
   };
 
+  handleAvatarMoreClick = () => {
+    const { avatarMore } = this.state;
+    if (avatarMore) {
+      this.setState({
+        avatarMore: false,
+      });
+    } else {
+      this.setState({
+        avatarMore: true,
+      });
+    }
+  };
+
   render() {
     const { handleWrapperCloseClick } = this.props;
-    const { visible, moreVisible, actionVisible } = this.state;
+    const { visible, moreVisible, actionVisible, avatarMore } = this.state;
     return (
       <div className={`article-detail`}>
         <Sidebar.Pushable as="div">
@@ -338,121 +352,233 @@ export default class ArticleDetail extends PureComponent {
                             <span className={styles.ArticleAuthorInfoItemText}>1.5k</span>
                             <span className={styles.ArticleAuthorInfoItemTextDesc}>评论</span>
                           </div>
-                          <AvatarList
-                            maxLength={15}
-                            style={{ marginLeft: '-42px' }}
-                            excessItemsStyle={{ color: '#FFFFFF', backgroundColor: '#499C54' }}
-                          >
-                            <AvatarList.Item
-                              tips="Jake"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"
-                            />
-                            <AvatarList.Item
-                              tips="Andy"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                            <AvatarList.Item
-                              tips="Niko"
-                              src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
-                            />
-                          </AvatarList>
+                          {avatarMore ? (
+                            <AvatarList
+                              style={{ marginLeft: '-38px', marginTop: '8px' }}
+                              excessItemsStyle={{ color: '#FFFFFF', backgroundColor: '#499C54' }}
+                            >
+                              <AvatarList.Item
+                                tips="Jake"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"
+                              />
+                              <AvatarList.Item
+                                tips="Andy"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                            </AvatarList>
+                          ) : (
+                            <AvatarList
+                              maxLength={15}
+                              style={{ marginLeft: '-42px' }}
+                              excessItemsStyle={{ color: '#FFFFFF', backgroundColor: '#499C54' }}
+                            >
+                              <AvatarList.Item
+                                tips="Jake"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"
+                              />
+                              <AvatarList.Item
+                                tips="Andy"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/veronika.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://react.semantic-ui.com/images/avatar/small/daniel.jpg"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                              <AvatarList.Item
+                                tips="Niko"
+                                src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png"
+                              />
+                            </AvatarList>
+                          )}
                         </div>
                         <div
                           style={{ marginRight: '8px' }}
                           className={styles.ArticleAuthorMoreIcon}
+                          onClick={this.handleAvatarMoreClick}
                         >
                           <Ant.Tooltip placement="top" title="更多">
                             <Icon name="caret down" size="large" />
                           </Ant.Tooltip>
                         </div>
+                      </div>
+                      <div className={styles.ArticleAuthorAction}>
+                        <Button color="orange">关注</Button>
                       </div>
                     </div>
                     <div className={styles.ArticleCommentContent}>
