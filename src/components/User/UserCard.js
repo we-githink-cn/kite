@@ -5,7 +5,7 @@ import { getUser } from '../../utils/utils';
 import styles from './UserCard.less';
 import svip6 from '../../assets/vip/svip6.png';
 
-export const UserCard = user => {
+export const UserCard = ({ user, handleAvatarClick }) => {
   let currentUser = getUser();
   return (
     <div className={styles.userCard}>
@@ -18,7 +18,7 @@ export const UserCard = user => {
             }}
           />
         </div>
-        <div className={styles.userCardAvatar}>
+        <div className={styles.userCardAvatar} onClick={handleAvatarClick}>
           <div
             className={styles.userAvatar}
             style={{
@@ -29,10 +29,10 @@ export const UserCard = user => {
         <div className={styles.userNameContent}>
           <span className={styles.userName}>Githinkcn</span>
           <div className={styles.userNameIcon}>
-            <Ant.Tooltip placement="top" title={!user.isAdmin ? '站长' : '社区管理员'}>
+            <Ant.Tooltip placement="top" title={user ? '站长' : '社区管理员'}>
               <Icon
                 name="user secret"
-                color={!user.isAdmin ? 'red' : 'green'}
+                color={user ? 'red' : 'green'}
                 style={{ lineHeight: '20px' }}
               />
             </Ant.Tooltip>
@@ -86,7 +86,7 @@ export const UserCard = user => {
             </Ant.Tooltip>
           </div>
           <div className={styles.userActionItemBtn}>
-            {!(user.uid === 'id') ? (
+            {!user ? (
               <Button compact color="orange" className={styles.userActionBtn}>
                 发新帖
               </Button>

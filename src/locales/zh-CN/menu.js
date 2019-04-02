@@ -42,6 +42,9 @@ export default {
   'menu.index': 'We!',
   'menu.index.index': 'We!',
   'menu.index.create': '创作',
+  'menu.index.user-list': '推荐作者',
   'menu.create': '添加文章',
   'menu.create.article': '添加文章',
+  'menu.full': 'We!',
+  'menu.full.userInfo': '作者信息',
 };

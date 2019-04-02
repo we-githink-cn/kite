@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Image, Pagination, Button, Label, Search, List } from 'semantic-ui-react';
 import * as Ant from 'antd';
+import router from 'umi/router';
 import styles from './Index.less';
 import { scrollToAnchor } from '../../utils/utils';
 import ArticleListItem from '../../components/Article/ArticleListItem';
@@ -56,6 +57,14 @@ export default class Index extends Component {
   handlePageChange = (event, { activePage }) => {
     const { articleList } = this.state;
     scrollToAnchor('postId');
+  };
+
+  handleUserListClick = () => {
+    router.push('/index/user-list');
+  };
+
+  handleAvatarClick = () => {
+    router.push('/full/userInfo');
   };
 
   render() {
@@ -251,7 +260,11 @@ export default class Index extends Component {
           </div>
           <div className={styles.postRight}>
             {/*用户信息卡*/}
-            {!isLogin ? <UserCard user={null} /> : <UnLoginCard />}
+            {!isLogin ? (
+              <UserCard user={null} handleAvatarClick={this.handleAvatarClick} />
+            ) : (
+              <UnLoginCard />
+            )}
             {/*广告位*/}
             <AdCard url={url} />
             {/*热门问答*/}
@@ -329,7 +342,13 @@ export default class Index extends Component {
                 </div>
               </div>
               <div className={styles.recCardBtn}>
-                <Button color="brown" compact fluid content="查看更多" />
+                <Button
+                  color="brown"
+                  compact
+                  fluid
+                  content="查看更多"
+                  onClick={this.handleUserListClick}
+                />
               </div>
             </div>
 

@@ -41,6 +41,30 @@ export default [
       },
     ],
   },
+  //full布局
+  {
+    path: '/full',
+    component: '../layouts/FullLayout',
+    routes: [
+      { path: '/full', redirect: '/full/userInfo' },
+      {
+        name: 'full',
+        icon: 'warning',
+        path: '/full',
+        routes: [
+          // exception
+          {
+            path: '/full/userInfo',
+            name: 'userInfo',
+            component: './User/UserInfo/UserInfo',
+          },
+        ],
+      },
+      {
+        component: '404',
+      },
+    ],
+  },
   //首页
   {
     path: '/',
@@ -62,6 +86,11 @@ export default [
             path: '/index/create',
             name: 'create',
             component: './Article/Create',
+          },
+          {
+            path: '/index/user-list',
+            name: 'user-list',
+            component: './User/UserList/UserList',
           },
         ],
       },
