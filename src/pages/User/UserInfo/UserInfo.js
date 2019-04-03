@@ -40,8 +40,8 @@ export default class UserInfo extends Component {
               <div className={styles.UserHeaderInfoAvatar}>
                 <Ant.Avatar
                   shape="square"
-                  size={72}
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  size={84}
+                  src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
                 />
               </div>
               <div className={styles.UserHeaderUserInfo}>
@@ -92,6 +92,64 @@ export default class UserInfo extends Component {
                   </div>
                   <div>
                     <span className={styles.userDesc}>大梦初醒，荒唐了一生。</span>
+                  </div>
+                </div>
+                <div className={styles.UserHeaderAction}>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="新手/第 8 号会员">
+                      <Icon name="user" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="粉丝 109.8k">
+                      <Icon name="chess queen" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="关注 9">
+                      <Icon name="heart" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="收获点赞 109.8k">
+                      <Icon name="thumbs up" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="文章 22 篇">
+                      <Icon name="book" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="济南">
+                      <Icon name="location arrow" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <a href="https://blog.githink.cn" target="_blank">
+                      <Ant.Tooltip placement="top" title="https://blog.githink.cn">
+                        <Icon name="linkify" />
+                      </Ant.Tooltip>
+                    </a>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <a href="https://github.com/githinkcn" target="_blank">
+                      <Ant.Tooltip placement="top" title="https://github.com/githinkcn">
+                        <Icon name="github" />
+                      </Ant.Tooltip>
+                    </a>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <Ant.Tooltip placement="top" title="549595297">
+                      <Icon name="qq" />
+                    </Ant.Tooltip>
+                  </div>
+                  <div className={styles.UserActionItem}>
+                    <a href="https://weibo.com/549595297" target="_blank">
+                      <Ant.Tooltip placement="top" title="549595297">
+                        <Icon name="weibo" />
+                      </Ant.Tooltip>
+                    </a>
                   </div>
                 </div>
               </div>
