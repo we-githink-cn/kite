@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import {
-  Input,
   Icon,
   Button,
-  Checkbox,
-  Dropdown,
-  Header,
-  Image,
-  Modal,
+  Tab,
+  Label, Menu,
   Popup,
 } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import router from 'umi/router';
 import styles from './UserInfo.less';
 import svip6 from '../../../assets/vip/svip6.png';
+
+const panes = [
+  { menuItem: { key: 'users', icon: 'users', content: 'Users' }, render: () => <Tab.Pane attached={false}>Tab 1 Content</Tab.Pane> },
+  { menuItem: (<Menu.Item key='messages'>
+      Messages<Label>15</Label>
+    </Menu.Item>), render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane> },
+  { menuItem: 'Tab 3', render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane> },
+]
 
 export default class UserInfo extends Component {
   state = {};
@@ -284,7 +288,7 @@ export default class UserInfo extends Component {
 
     switch (index) {
       case 0:
-        UserHeader = !isBack ? (
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -294,12 +298,10 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ) : (
-          UserBgContent
         );
         break;
       case 1:
-        UserHeader = !isBack ?(
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -309,12 +311,10 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ): (
-          UserBgContent
         );
         break;
       case 2:
-        UserHeader = !isBack ?(
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -324,12 +324,10 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ): (
-          UserBgContent
         );
         break;
       case 3:
-        UserHeader = !isBack ?(
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -339,12 +337,10 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ): (
-          UserBgContent
         );
         break;
       case 4:
-        UserHeader = !isBack ?(
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -354,12 +350,10 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ): (
-          UserBgContent
         );
         break;
       case 5:
-        UserHeader = !isBack ?(
+        UserHeader = (
           <div
             className={styles.UserHeader}
             style={{
@@ -369,13 +363,16 @@ export default class UserInfo extends Component {
           >
             {UserContent}
           </div>
-        ): (
-          UserBgContent
         );
         break;
       default:
     }
 
-    return <div className={styles.Content}>{UserHeader}</div>;
+    return <div className={styles.Content}>
+      { !isBack ? (UserHeader):(UserBgContent)}
+      <div className={styles.UserInfoContent}>
+        <Tab menu={{ color: 'red', pointing: true, inverted: true, attached: false, tabular: false }} panes={panes} />
+      </div>
+    </div>;
   }
 }
