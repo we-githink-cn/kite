@@ -380,7 +380,7 @@ export default class UserInfo extends Component {
           <div className={styles.UserPreviewInfoHeaderItem}>
             <div className={styles.UserPreviewInfoHeaderItemCnt}>6.0k</div>
             <div className={styles.UserPreviewInfoHeaderItemDesc}>
-              <a href="">个人主页</a>浏览
+              <a href="" style={{padding: '0 5px'}}>个人主页</a>浏览
             </div>
           </div>
         </div>
