@@ -6,6 +6,7 @@ import {
   Label, Menu,
   Popup,
 } from 'semantic-ui-react';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import * as Ant from 'antd';
 import router from 'umi/router';
 import styles from './UserInfo.less';
@@ -268,6 +269,96 @@ const UserBgContent = (<div
 </div>);
 const AllContent = (
   <div className={styles.AllContent}>
+    <VerticalTimeline>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2011 - present"
+        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+        icon={<Icon name='user' size='large'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Creative Director</h3>
+        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+        <p>
+          Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2010 - 2011"
+        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Art Director</h3>
+        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+        <p>
+          Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2008 - 2010"
+        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Web Designer</h3>
+        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+        <p>
+          User Experience, Visual Design
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        date="2006 - 2008"
+        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Web Designer</h3>
+        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+        <p>
+          User Experience, Visual Design
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="April 2013"
+        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
+        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+        <p>
+          Strategy, Social Media
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="November 2012"
+        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
+        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+        <p>
+          Creative Direction, User Experience, Visual Design
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        date="2002 - 2006"
+        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      >
+        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
+        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+        <p>
+          Creative Direction, Visual Design
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+        icon={<Icon name='user'/>}
+      />
+    </VerticalTimeline>
 
   </div>
 );
@@ -383,7 +474,49 @@ export default class UserInfo extends Component {
               <a href="" style={{padding: '0 5px'}}>个人主页</a>浏览
             </div>
           </div>
+          <div className={styles.UserPreviewInfoHeaderItem}>
+            <div className={styles.UserPreviewInfoHeaderItemCnt}>12.0k</div>
+            <div className={styles.UserPreviewInfoHeaderItemDesc}>
+              <a href="" style={{padding: '0 5px'}}>文章</a>+
+              <a href="" style={{padding: '0 5px'}}>评论</a>
+            </div>
+          </div>
+          <div className={styles.UserPreviewInfoHeaderItem}>
+            <div className={styles.UserPreviewInfoHeaderItemCnt}>212</div>
+            <div className={styles.UserPreviewInfoHeaderItemDesc}>
+              <a href="" style={{padding: '0 5px'}}>积分</a> +
+              <Popup trigger={<img src={svip6} className={styles.userVipImg} style={{padding: '0 5px'}}/>} size="mini">
+                <div>
+                  <span className={styles.userExpName}>黑钻会员：</span>
+                  <div className={styles.userExpBar}>
+                    <div
+                      className={styles.userExpNumber}
+                      style={{
+                        backgroundColor: '#4CAF50',
+                        width: (20000 / 20000) * 100 + '%',
+                      }}
+                    >
+                      20000/20000
+                    </div>
+                  </div>
+                </div>
+              </Popup>
+            </div>
+          </div>
+          <div className={styles.UserPreviewInfoHeaderItem}>
+            <div className={styles.UserPreviewInfoHeaderItemCnt}>1.0k</div>
+            <div className={styles.UserPreviewInfoHeaderItemDesc}>
+              <a href="" style={{padding: '0 5px'}}>问答</a>
+            </div>
+          </div>
+          <div className={styles.UserPreviewInfoHeaderItem}>
+            <div className={styles.UserPreviewInfoHeaderItemCnt}>1.0k</div>
+            <div className={styles.UserPreviewInfoHeaderItemDesc}>
+              <a href="" style={{padding: '0 5px'}}>粉丝</a>
+            </div>
+          </div>
         </div>
+        <div className={`${styles.UserHeaderPreviewDesc} vditor-reset`}>大梦初醒，荒唐了一生 😁</div>
       </div>
       <div className={styles.UserInfoContent}>
         <Tab menu={{ color: 'red', pointing: true,}} panes={panes} />
