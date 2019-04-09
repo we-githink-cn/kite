@@ -348,10 +348,6 @@ const AllContent = (
           Creative Direction, Visual Design
         </p>
       </VerticalTimelineElement>
-      <VerticalTimelineElement
-        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      />
     </VerticalTimeline>
 
   </div>
@@ -512,7 +508,7 @@ export default class UserInfo extends Component {
         </div>
         <div className={`${styles.UserHeaderPreviewDesc} vditor-reset`}>#大梦初醒，荒唐了一生# 🎸</div>
       </div>
-      <div className={styles.UserInfoContent}>
+      <div className={`${styles.UserInfoContent} user-info-tab`}>
         <Tab menu={{ color: 'red', pointing: true,}} panes={panes} />
       </div>
     </div>;
