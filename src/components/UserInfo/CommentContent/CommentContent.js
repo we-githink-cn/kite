@@ -119,7 +119,7 @@ export default class CommentContent extends PureComponent {
                   prevItem={{ content: <Icon name="angle left" />, icon: true }}
                   nextItem={{ content: <Icon name="angle right" />, icon: true }}
                   totalPages={totalPages}
-                  onPageChange={this.handlePageChange.bind(this)}
+                  onPageChange={this.handlePageStarChange.bind(this)}
                 />
               </div>
             </div>
@@ -229,7 +229,7 @@ export default class CommentContent extends PureComponent {
                   prevItem={{ content: <Icon name="angle left" />, icon: true }}
                   nextItem={{ content: <Icon name="angle right" />, icon: true }}
                   totalPages={totalPages}
-                  onPageChange={this.handlePageChange.bind(this)}
+                  onPageChange={this.handlePageStarChange.bind(this)}
                 />
               </div>
             </div>
