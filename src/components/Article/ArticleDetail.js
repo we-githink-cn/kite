@@ -19,14 +19,15 @@ export default class ArticleDetail extends PureComponent {
     actionVisible: false,
     moreVisible: true,
     avatarMore: false,
+    isPreview: false,
+    loading:false,
   };
 
   componentWillUnmount() {}
 
   componentDidMount() {
-    const contentEditor = this._initEditor({
-      id: 'ArticleContent',
-    });
+    const {isPreview} = this.state;
+
     const replyEditor = this._initReplyEditor({
       id: 'reply-content',
       show: true,
@@ -35,81 +36,97 @@ export default class ArticleDetail extends PureComponent {
       resize: true,
     });
     this.setState({
-      vditor: contentEditor,
       replyVditor: replyEditor,
+    });
+    if(!isPreview){
+      this._initArticle();
+    }
+  }
+
+  _initArticle = () => {
+    const contentEditor = this._initEditor({
+      id: 'ArticleContent',
+    });
+    this.setState({
+      vditor: contentEditor,
     });
     contentEditor.setValue(
       '### 安装依赖\n' +
-        '```shell\n' +
-        '1.安装 redux 依赖\n' +
-        'npm install --save redux @tarojs/redux @tarojs/redux-h5 redux-thunk redux-logger\n' +
-        '2.安装异步编程依赖\n' +
-        'npm install --save @tarojs/async-await\n' +
-        '3.安装dva\n' +
-        'npm install --save dva-core dva-loading\n' +
-        '4.安装 taro-ui\n' +
-        'npm install --save taro-ui\n' +
-        '```\n' +
-        '###### 安装Taro ui注意事项\n' +
-        '\n' +
-        'H5 配置 `esnextModules`，在 taro 项目的 `config/index.js` 中新增如下配置项：\n' +
-        '```json\n' +
-        'h5: {\n' +
-        "  esnextModules: ['taro-ui']\n" +
-        '}\n' +
-        '```\n' +
-        '在`app.js`引入所需样式\n' +
-        '```javascript\n' +
-        "import 'taro-ui/dist/style/index.scss' // 全局引入一次即可\n" +
-        '```\n' +
-        '\n' +
-        '### 编写插件\n' +
-        '###### 工程目录\n' +
-        '```\n' +
-        'src\n' +
-        '    │  app.js\n' +
-        '    │  app.scss\n' +
-        '    │  index.html\n' +
-        '    │\n' +
-        '    ├─asset\n' +
-        '    │  └─images\n' +
-        '    │\n' +
-        '    ├─components\n' +
-        '    │  │\n' +
-        '    │  └─login\n' +
-        '    │          login.js\n' +
-        '    │          login.scss\n' +
-        '    │\n' +
-        '    ├─config\n' +
-        '    │      index.js\n' +
-        '    │\n' +
-        '    ├─constants\n' +
-        '    │      common.js\n' +
-        '    │\n' +
-        '    ├─model\n' +
-        '    │      common.js\n' +
-        '    │      index.js\n' +
-        '    │      login.js\n' +
-        '    │\n' +
-        '    ├─pages\n' +
-        '    │  |\n' +
-        '    │  └─login\n' +
-        '    │         login.js\n' +
-        '    │         login.scss\n' +
-        '    │         service.js\n' +
-        '    │\n' +
-        '    └─utils\n' +
-        '            action.js\n' +
-        '            common.js\n' +
-        '            delay.js\n' +
-        '            dva.js\n' +
-        '            request.js\n' +
-        '\n' +
-        '```\n' +
-        '各js文件内容：\n' +
-        'http://code.githink.cn/Maozk/Taro-Kit'
+      '```shell\n' +
+      '1.安装 redux 依赖\n' +
+      'npm install --save redux @tarojs/redux @tarojs/redux-h5 redux-thunk redux-logger\n' +
+      '2.安装异步编程依赖\n' +
+      'npm install --save @tarojs/async-await\n' +
+      '3.安装dva\n' +
+      'npm install --save dva-core dva-loading\n' +
+      '4.安装 taro-ui\n' +
+      'npm install --save taro-ui\n' +
+      '```\n' +
+      '###### 安装Taro ui注意事项\n' +
+      '\n' +
+      'H5 配置 `esnextModules`，在 taro 项目的 `config/index.js` 中新增如下配置项：\n' +
+      '```json\n' +
+      'h5: {\n' +
+      "  esnextModules: ['taro-ui']\n" +
+      '}\n' +
+      '```\n' +
+      '在`app.js`引入所需样式\n' +
+      '```javascript\n' +
+      "import 'taro-ui/dist/style/index.scss' // 全局引入一次即可\n" +
+      '```\n' +
+      '\n' +
+      '### 编写插件\n' +
+      '###### 工程目录\n' +
+      '```\n' +
+      'src\n' +
+      '    │  app.js\n' +
+      '    │  app.scss\n' +
+      '    │  index.html\n' +
+      '    │\n' +
+      '    ├─asset\n' +
+      '    │  └─images\n' +
+      '    │\n' +
+      '    ├─components\n' +
+      '    │  │\n' +
+      '    │  └─login\n' +
+      '    │          login.js\n' +
+      '    │          login.scss\n' +
+      '    │\n' +
+      '    ├─config\n' +
+      '    │      index.js\n' +
+      '    │\n' +
+      '    ├─constants\n' +
+      '    │      common.js\n' +
+      '    │\n' +
+      '    ├─model\n' +
+      '    │      common.js\n' +
+      '    │      index.js\n' +
+      '    │      login.js\n' +
+      '    │\n' +
+      '    ├─pages\n' +
+      '    │  |\n' +
+      '    │  └─login\n' +
+      '    │         login.js\n' +
+      '    │         login.scss\n' +
+      '    │         service.js\n' +
+      '    │\n' +
+      '    └─utils\n' +
+      '            action.js\n' +
+      '            common.js\n' +
+      '            delay.js\n' +
+      '            dva.js\n' +
+      '            request.js\n' +
+      '\n' +
+      '```\n' +
+      '各js文件内容：\n' +
+      'http://code.githink.cn/Maozk/Taro-Kit'
     );
-  }
+    setTimeout(()=> {
+      this.setState({
+        loading: false
+      })
+    },1000)
+  };
 
   _initEditor = data => {
     return new Vditor(data.id, {
@@ -176,9 +193,18 @@ export default class ArticleDetail extends PureComponent {
     }
   };
 
+  handleArticleMoreClick =()=>{
+    this.setState({
+      isPreview: false,
+      loading: true
+    },() => {
+      this._initArticle();
+    })
+  };
+
   render() {
     const { handleWrapperCloseClick } = this.props;
-    const { visible, moreVisible, actionVisible, avatarMore } = this.state;
+    const { visible, moreVisible, actionVisible, avatarMore, isPreview } = this.state;
     return (
       <div className={`article-detail`}>
         <Sidebar.Pushable as="div">
@@ -232,10 +258,22 @@ export default class ArticleDetail extends PureComponent {
                         We创作介绍Android进阶：六、在子线程中直接使用 Toast 及其原理
                       </h2>
                     </div>
-                    <div className={`${styles.ArticleContent} article-content vditor-reset`}>
-                      <div id="ArticleContent" style={{ width: '816px!important' }} />
-                      <div className={styles.trendingHeader} />
-                    </div>
+                    {
+                      isPreview ? (<div style={{width: '816px'}}>
+                        <div className={styles.ArticleMore} onClick={this.handleArticleMoreClick}>
+                          点击展开正文内容
+                        </div>
+                        <div className={styles.trendingHeader} />
+                      </div>
+                      ):(
+                        <div className={`${styles.ArticleContent} article-content vditor-reset`}>
+                          <Ant.Spin spinning={this.state.loading} delay={500}>
+                            <div id="ArticleContent" style={{ width: '816px!important',minHeight: '50vh!important'}} />
+                          </Ant.Spin>
+                          <div className={styles.trendingHeader} />
+                        </div>
+                      )
+                    }
                     <div className={styles.ArticleTagAndActionContent}>
                       <div className={styles.ArticleTagContent}>
                         <div className={styles.TagItem}>
@@ -578,6 +616,9 @@ export default class ArticleDetail extends PureComponent {
                         </div>
                       </div>
                       <div className={styles.ArticleAuthorAction}>
+                        <Button color="green" compact>
+                          私信
+                        </Button>
                         <Button color="orange" compact>
                           关注
                         </Button>

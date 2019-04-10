@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import {Icon, Button, Tab, Label, Menu, Popup,} from 'semantic-ui-react';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import * as Ant from 'antd';
 import router from 'umi/router';
+import AllContent from '../../../components/UserInfo/AllContent/AllContent';
+import ArticleContent from '../../../components/UserInfo/ArticleContent/ArticleContent';
+import CommentContent from '../../../components/UserInfo/CommentContent/CommentContent';
+import QuestionContent from '../../../components/UserInfo/QuestionContent/QuestionContent';
+import OpusContent from '../../../components/UserInfo/OpusContent/OpusContent';
+import FollowContent from '../../../components/UserInfo/FollowContent/FollowContent';
+import ImageContent from "../../../components/UserInfo/ImageContent/ImageContent";
+import MoreContent from "../../../components/UserInfo/MoreContent/MoreContent";
 import styles from './UserInfo.less';
 import svip6 from '../../../assets/vip/svip6.png';
+
 //用户详细信息
 const UserContent = (<div className={styles.UserHeaderInfo}>
   <div className={styles.UserHeaderInfoAvatar}>
@@ -262,102 +269,33 @@ const UserBgContent = (<div
     </div>
   </div>
 </div>);
-const AllContent = (
-  <div className={styles.AllContent}>
-    <VerticalTimeline>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2011 - present"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}>
-        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2010 - 2011"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Art Director</h3>
-        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2008 - 2010"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-        <p>
-          User Experience, Visual Design
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="2006 - 2008"
-        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-        <p>
-          User Experience, Visual Design
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date="April 2013"
-        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-        <p>
-          Strategy, Social Media
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date="November 2012"
-        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-        <p>
-          Creative Direction, User Experience, Visual Design
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date="2002 - 2006"
-        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-        icon={<Icon name='user' size='big' style={{width: '60px',height: '60px',paddingTop: '15px'}}/>}
-      >
-        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-        <p>
-          Creative Direction, Visual Design
-        </p>
-      </VerticalTimelineElement>
-    </VerticalTimeline>
 
-  </div>
-);
 const panes = [
   { menuItem: { key: 'all', icon: 'hdd outline', content: '综合' }, render: () => <Tab.Pane attached={false}>
-      {AllContent}
+      <AllContent/>
     </Tab.Pane> },
-  { menuItem: (<Menu.Item key='messages'>Messages<Label>15</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane> },
-  { menuItem: 'Tab 3', render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane> },
+  { menuItem: (<Menu.Item key='article'><Icon name='file alternate outline'/> 文章<Label color='red'>15</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <ArticleContent />
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='comment'><Icon name='comment outline'/> 评论<Label color='red'>1.1k</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <CommentContent/>
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='question'><Icon name='question circle outline'/> 问答<Label color='red'>3</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <QuestionContent/>
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='design'><Icon name='diamond'/> 作品<Label color='red'>3</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <OpusContent/>
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='images'><Icon name='images outline'/> 美图<Label color='red'>1.1k</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <ImageContent/>
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='eye'><Icon name='eye'/> 关注<Label color='red'>45.4k</Label></Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <FollowContent/>
+    </Tab.Pane> },
+  { menuItem: (<Menu.Item key='more'><Icon name='ellipsis horizontal'/> 更多</Menu.Item>), render: () => <Tab.Pane attached={false}>
+      <MoreContent/>
+    </Tab.Pane> },
+
 ];
 
 export default class UserInfo extends Component {
@@ -509,7 +447,7 @@ export default class UserInfo extends Component {
         <div className={`${styles.UserHeaderPreviewDesc} vditor-reset`}>#大梦初醒，荒唐了一生# 🎸</div>
       </div>
       <div className={`${styles.UserInfoContent} user-info-tab`}>
-        <Tab menu={{ color: 'red', pointing: true,}} panes={panes} />
+        <Tab activeIndex={2} menu={{ color: 'red', pointing: true,}} panes={panes} />
       </div>
     </div>;
   }
