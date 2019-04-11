@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Image, Pagination, Button, Label, Search, List } from 'semantic-ui-react';
+import { Feed, Icon, Image, Pagination, Button, Label, Search, List } from 'semantic-ui-react';
 import * as Ant from 'antd';
 
 import styles from './IndexQuestion.less';
@@ -131,6 +131,38 @@ export default class IndexQuestion extends Component {
                     <Icon name="arrow alternate circle down" size="large" />
                   </div>
                 </div>
+              </div>
+              <div className={styles.QuestionContentBody}>
+                <Feed>
+                  <Feed.Event>
+                    <Feed.Label image="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                    <Feed.Content>
+                      <Feed.Summary>
+                        <a>Joe Henderson</a> posted on his page
+                        <Feed.Date>3 days ago</Feed.Date>
+                      </Feed.Summary>
+                      <Feed.Extra text>
+                        Ours is a life of constant reruns. We're always circling back to where
+                        we'd we started, then starting all over again. Even if we don't run extra
+                        laps that day, we surely will come back for more of the same another day
+                        soon.
+                      </Feed.Extra>
+                      <Feed.Extra images>
+                        <a>
+                          <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
+                        </a>
+                        <a>
+                          <img src="https://react.semantic-ui.com/images/wireframe/image.png" />
+                        </a>
+                      </Feed.Extra>
+                      <Feed.Meta>
+                        <Feed.Like>
+                          <Icon name="like" />5 Likes
+                        </Feed.Like>
+                      </Feed.Meta>
+                    </Feed.Content>
+                  </Feed.Event>
+                </Feed>
               </div>
             </div>
 
