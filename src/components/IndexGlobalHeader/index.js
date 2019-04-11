@@ -19,6 +19,9 @@ export default class GlobalHeader extends PureComponent {
       case '首页':
         router.push('/');
         break;
+      case '问答':
+        router.push('/index/question');
+        break;
     }
     this.setState({ activeItem: name });
   };
@@ -37,11 +40,15 @@ export default class GlobalHeader extends PureComponent {
     return (
       <div className={styles.header}>
         <Row>
-          <Col span={8} className={styles.logo} onClick={()=>{
-            router.push('/')
-          }}>
-              <img src={logo} alt="logo" width="32" />
-              <span className={styles.title}>We!</span>
+          <Col
+            span={8}
+            className={styles.logo}
+            onClick={() => {
+              router.push('/');
+            }}
+          >
+            <img src={logo} alt="logo" width="32" />
+            <span className={styles.title}>We!</span>
           </Col>
           <Col span={8}>
             <div className={styles.menu}>

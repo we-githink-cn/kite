@@ -6,16 +6,9 @@ import styles from './Index.less';
 import { scrollToAnchor } from '../../utils/utils';
 import ArticleListItem from '../../components/Article/ArticleListItem';
 import UserCard from '../../components/User/UserCard';
-import logo from '../../assets/black_logo.svg';
 import UnLoginCard from '../../components/User/UnLoginCard';
 import RecCard from '../../components/Index/RecCard';
 import { AdCard } from '../../components/Index/AdCard';
-
-const options = [
-  { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
-  { key: 'delete', icon: 'delete', text: 'Remove Post', value: 'delete' },
-  { key: 'hide', icon: 'hide', text: 'Hide Post', value: 'hide' },
-];
 
 export default class Index extends Component {
   state = {
@@ -198,7 +191,7 @@ export default class Index extends Component {
         </div>
         <div className={styles.postWrapper} id="postId">
           <div className={styles.postContent}>
-            <div className={styles.trendingHeader}>
+            <div className="GlobalLineHeader">
               <Ant.Breadcrumb>
                 <Ant.Breadcrumb.Item href="">
                   <Icon name="hotjar" color="red" />
@@ -269,7 +262,7 @@ export default class Index extends Component {
             <AdCard url={url} />
             {/*热门问答*/}
             <div className={styles.marginTop20}>
-              <div className={styles.trendingHeader}>
+              <div className="GlobalLineHeader">
                 <h4>
                   <Icon name="question circle" color="violet" /> 热门问答
                 </h4>
@@ -322,6 +315,48 @@ export default class Index extends Component {
                         </List.Description>
                       </List.Content>
                     </List.Item>
+                    <List.Item>
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                      />
+                      <List.Content>
+                        <List.Header as="a">Elliot Fu</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching The Godfather Part 2 yesterday.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                      />
+                      <List.Content>
+                        <List.Header as="a">Elliot Fu</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching The Godfather Part 2 yesterday.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <Image
+                        size="mini"
+                        src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                      />
+                      <List.Content>
+                        <List.Header as="a">Elliot Fu</List.Header>
+                        <List.Description>
+                          <div className={styles.questCardDesc}>
+                            Last seen watching The Godfather Part 2 yesterday.
+                          </div>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
                   </List>
                 </div>
               </div>
@@ -329,7 +364,7 @@ export default class Index extends Component {
 
             {/*推荐作者*/}
             <div className={styles.marginTop20}>
-              <div className={styles.trendingHeader}>
+              <div className="GlobalLineHeader">
                 <h4>
                   <Icon name="star" color="teal" /> 推荐作者
                 </h4>
@@ -354,7 +389,7 @@ export default class Index extends Component {
 
             {/*热门标签*/}
             <div className={styles.marginTop20}>
-              <div className={styles.trendingHeader}>
+              <div className="GlobalLineHeader">
                 <h4>
                   <Icon name="tag" color="red" /> 热门标签
                 </h4>

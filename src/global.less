@@ -50,18 +50,26 @@ ol {
   }
 }
 
-
 @media only screen and (min-width: 1170px) {
-  .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content .vertical-timeline-element-date, .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date {
-    left: auto!important;
+  .vertical-timeline--two-columns
+    .vertical-timeline-element.vertical-timeline-element--right
+    .vertical-timeline-element-content
+    .vertical-timeline-element-date,
+  .vertical-timeline--two-columns
+    .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
+    .vertical-timeline-element-content
+    .vertical-timeline-element-date {
+    left: auto !important;
     right: 144% !important;
     text-align: right;
     font-weight: 700;
   }
 }
 
-@media only screen and (min-width: 1170px){
-  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns
+    .vertical-timeline-element-content
+    .vertical-timeline-element-date {
     position: absolute;
     width: 100%;
     left: 144% !important;
@@ -71,8 +79,35 @@ ol {
     font-size: 1rem;
   }
 }
+
+.GlobalLineHeader {
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #eee;
+  padding: 8px 15px;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.GlobalPagesWrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+.GlobalPagesContent {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: #dadfe4;
+  border-radius: 4px;
+}
+.GlobalPages {
+  align-self: center;
+  margin: 0 auto -1px auto;
+}
 .vditor-reset {
-  font-family: Helvetica Neue,Luxi Sans,DejaVu Sans,Tahoma,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+  font-family: Helvetica Neue, Luxi Sans, DejaVu Sans, Tahoma, Hiragino Sans GB, Microsoft Yahei,
+    sans-serif;
   word-wrap: break-word;
   overflow: auto;
   line-height: 1.65;
@@ -143,13 +178,13 @@ ol {
   .ui.comments .comment {
     position: relative;
     background: 0 0;
-    margin: .5em 0 0;
-    padding: .5em 0 0;
+    margin: 0.5em 0 0;
+    padding: 0.5em 0 0;
     border: none;
     border-top: none;
     line-height: 1.2;
   }
-  .ui.comments .comment>.content {
+  .ui.comments .comment > .content {
     display: block;
     border-bottom: 1px #eee solid;
     padding-bottom: 10px;
@@ -159,7 +194,7 @@ ol {
   .vditor {
     display: block;
     flex-direction: column;
-    border: 0px solid #d1d5da!important;
+    border: 0px solid #d1d5da !important;
     border-radius: 3px;
     box-sizing: border-box;
   }
@@ -168,7 +203,7 @@ ol {
     border-bottom: 1px solid #d1d5da;
     padding: 0 5px;
     border-radius: 3px 3px 0 0;
-    display: none!important;
+    display: none !important;
   }
   .vditor-textarea {
     position: absolute;
@@ -187,13 +222,13 @@ ol {
     border-radius: 0 0 3px 3px;
   }
   .vditor-counter {
-    display: none!important;
+    display: none !important;
     padding: 0 3px;
     position: absolute;
     bottom: 10px;
     right: 20px;
     color: #24292e;
-    background-color: hsla(0,0%,100%,.6);
+    background-color: hsla(0, 0%, 100%, 0.6);
     border-radius: 3px;
     font-size: 12px;
     -webkit-user-select: none;
@@ -203,32 +238,31 @@ ol {
   }
   .vditor-preview {
     flex: 1;
-    overflow-x: hidden!important;
+    overflow-x: hidden !important;
     padding: 10px;
-    box-shadow: inset 0px 0 #d1d5da!important;
+    box-shadow: inset 0px 0 #d1d5da !important;
     box-sizing: border-box;
     border-radius: 0 0 3px 0;
   }
-
 }
 .article-detail {
   .pushable {
     height: 100%;
     overflow-x: hidden;
-    overflow: hidden!important;
-    padding: 0!important;
+    overflow: hidden !important;
+    padding: 0 !important;
   }
 }
 .user-info-tab {
   .ui.segment {
     position: relative;
     background: #fff;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
     margin: 1rem 0;
-    padding: 0!important;
-    border-radius: .28571429rem;
-    border: 0px solid rgba(34, 36, 38, .15) !important;
+    padding: 0 !important;
+    border-radius: 0.28571429rem;
+    border: 0px solid rgba(34, 36, 38, 0.15) !important;
   }
   .vertical-timeline::before {
     content: '';
@@ -237,7 +271,7 @@ ol {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #DCE0E4;
+    background: #dce0e4;
   }
 
   .vertical-timeline-element-icon {
@@ -247,19 +281,19 @@ ol {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px #DCE0E4, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
+    box-shadow: 0 0 0 4px #dce0e4, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+      0 3px 0 4px rgba(0, 0, 0, 0.05);
   }
 
   .vertical-timeline-element-content {
     position: relative;
     margin-left: 60px;
     background: #fff;
-    border-radius: .25em;
+    border-radius: 0.25em;
     padding: 1em;
-    box-shadow: 0 3px 0 #FFF;
-    border: 1px #DCE0E4 solid;
+    box-shadow: 0 3px 0 #fff;
+    border: 1px #dce0e4 solid;
   }
-
 
   .vertical-timeline-element-content:hover {
     border: 1px #333333 solid;
@@ -273,7 +307,7 @@ ol {
     height: 0;
     width: 0;
     border: 7px solid transparent;
-    border-right: 7px solid #DCE0E4;
+    border-right: 7px solid #dce0e4;
   }
 
   @media only screen and (min-width: 1170px) {
@@ -281,18 +315,22 @@ ol {
       top: 24px;
       left: 100%;
       border-color: transparent;
-      border-left-color: #DCE0E4;
+      border-left-color: #dce0e4;
     }
   }
 
   @media only screen and (min-width: 1170px) {
-    .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content::before, .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content::before {
+    .vertical-timeline--two-columns
+      .vertical-timeline-element.vertical-timeline-element--right
+      .vertical-timeline-element-content::before,
+    .vertical-timeline--two-columns
+      .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
+      .vertical-timeline-element-content::before {
       top: 24px;
       left: auto;
       right: 100%;
       border-color: transparent;
-      border-right-color: #DCE0E4;
+      border-right-color: #dce0e4;
     }
   }
-
 }

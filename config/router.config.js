@@ -76,11 +76,17 @@ export default [
         icon: 'warning',
         path: '/index',
         routes: [
-          // exception
+          //首页
           {
             path: '/index/index',
             name: 'index',
             component: './Home/Index',
+          },
+          //问答
+          {
+            path: '/index/question',
+            name: 'question',
+            component: './Home/IndexQuestion',
           },
           {
             path: '/index/create',
