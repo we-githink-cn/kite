@@ -109,7 +109,55 @@ export default class IndexQuestion extends Component {
               />
             </div>
           </div>
-          <div className={styles.IndexQuestionContent} />
+          <div className={styles.IndexQuestionContent}>
+            <div className={styles.QuestionContent}>
+              <div className={styles.QuestionItemAction}>
+                <div className={styles.QuestionItemActionIcon}>
+                  <div
+                    className={`${styles.QuestionItemActionIconItem} ${
+                      styles.QuestionItemActionIconItemUp
+                    }`}
+                    onClick={this.handleUpClick}
+                  >
+                    <Icon name="arrow alternate circle up" size="large" />
+                  </div>
+                  <div className={styles.QuestionItemActionText}>49.8k</div>
+                  <div
+                    className={`${styles.QuestionItemActionIconItem} ${
+                      styles.QuestionItemActionIconItemDown
+                    }`}
+                    onClick={this.handleDownClick}
+                  >
+                    <Icon name="arrow alternate circle down" size="large" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.QuestionContent}>
+              <div className={styles.QuestionItemAction}>
+                <div className={styles.QuestionItemActionIcon}>
+                  <div
+                    className={`${styles.QuestionItemActionIconItem} ${
+                      styles.QuestionItemActionIconItemUp
+                    }`}
+                    onClick={this.handleUpClick}
+                  >
+                    <Icon name="arrow alternate circle up" size="large" />
+                  </div>
+                  <div className={styles.QuestionItemActionText}>49.8k</div>
+                  <div
+                    className={`${styles.QuestionItemActionIconItem} ${
+                      styles.QuestionItemActionIconItemDown
+                    }`}
+                    onClick={this.handleDownClick}
+                  >
+                    <Icon name="arrow alternate circle down" size="large" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="GlobalPagesContent" style={{ backgroundColor: '#FFF' }}>
             <div className="GlobalPages">
               <Pagination
