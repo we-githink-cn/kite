@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Icon, Image, Item, Button, Header, Modal } from 'semantic-ui-react';
+import { Icon, Item, Modal } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import styles from './ArticleListItem.less';
-import UserCard from '../User/UserCard';
-import { AdCard } from '../Index/AdCard';
 import ArticleDetail from './ArticleDetail';
 import GoodPng from '../../assets/good.png';
 
