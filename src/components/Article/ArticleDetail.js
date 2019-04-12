@@ -19,7 +19,7 @@ export default class ArticleDetail extends PureComponent {
     actionVisible: false,
     moreVisible: true,
     avatarMore: false,
-    isPreview: false,
+    isPreview: true,
     loading:false,
   };
 
@@ -121,18 +121,19 @@ export default class ArticleDetail extends PureComponent {
       '各js文件内容：\n' +
       'http://code.githink.cn/Maozk/Taro-Kit'
     );
-    setTimeout(()=> {
-      this.setState({
-        loading: false
-      })
-    },1000)
   };
 
   _initEditor = data => {
+    let that = this;
     return new Vditor(data.id, {
       preview: {
-        delay: 100,
+        delay: 500,
         show: true,
+        parse: (element) =>{
+          that.setState({
+            loading: false
+          })
+        }
       },
       height: '100%',
       counter: 102400,

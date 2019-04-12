@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Feed, Icon, } from 'semantic-ui-react';
+import { Feed, Icon, Label } from 'semantic-ui-react';
 import * as Ant from 'antd';
+import questionIcon from '../../assets/q&a.png';
 
 import styles from './Index.less';
 
@@ -27,6 +28,9 @@ export default class IndexQuestion extends PureComponent {
     const {open} = this.state;
     return (
       <div className={styles.QuestionContent}>
+        <Ant.Tooltip placement="top" title='已被采纳'>
+          <Label as='a' color='olive' corner='right' icon='checkmark'/>
+        </Ant.Tooltip>
         <div className={styles.QuestionItemAction}>
           <div className={styles.QuestionItemActionIcon}>
             <div
@@ -58,11 +62,13 @@ export default class IndexQuestion extends PureComponent {
               />
               <Feed.Content style={{paddingLeft:'8px'}}>
                 <Feed.Summary>
-                  <a>Joe Henderson</a> posted on his page
+                  <a>Joe Henderson</a>
                 </Feed.Summary>
-                <Feed.Date style={{paddingTop: '8px'}}>3 days ago</Feed.Date>
+                <Feed.Date style={{paddingTop: '8px'}}>
+                  3 days ago
+                </Feed.Date>
                 <Feed.Extra text>
-                  Ours is a life of constant reruns. We're always circling back to where
+                  <img src={questionIcon} style={{width: '16px',height: '16px'}} alt=""/><a href="" className={styles.RewardTagContent}>&nbsp;# 悬赏问答 #&nbsp;</a>Ours is a life of constant reruns. We're always circling back to where
                   we'd we started, then starting all over again. Even if we don't run extra
                   laps that day, we surely will come back for more of the same another day
                   soon.
@@ -82,11 +88,11 @@ export default class IndexQuestion extends PureComponent {
                       5.1k 评论
                     </div>
                     <div className={styles.ActionItemText}>
-                      <Icon name="share" />
-                      1.1k 分享
+                      <Icon name="eye" />
+                      1.1k 浏览
                     </div>
                     <div className={styles.ActionItemText}>
-                      <Icon name="star" />
+                      <Icon name="bookmark" />
                       1k 收藏
                     </div>
                   </div>

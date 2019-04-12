@@ -12,6 +12,8 @@ import ImageContent from '../../../components/UserInfo/ImageContent/ImageContent
 import MoreContent from '../../../components/UserInfo/MoreContent/MoreContent';
 import styles from './UserInfo.less';
 import svip6 from '../../../assets/vip/svip6.png';
+import officialMedal from "../../../assets/medal/official_medal.png";
+import userArticleMedal from "../../../assets/medal/user_article_medal.png";
 
 //用户详细信息
 const UserContent = (
@@ -44,8 +46,20 @@ const UserContent = (
       </div>
       <div className={styles.UserHeaderOtherInfo}>
         <Ant.Tooltip placement="top" title={true ? '站长' : '社区管理员'}>
-          <Icon name="user secret" color={true ? 'red' : 'green'} style={{ lineHeight: '20px' }} />
+          <Icon name="user secret" color={true ? 'red' : 'green'} style={{ lineHeight: '20px', fontSize: '16px'}} />
         </Ant.Tooltip>
+
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="WE 认证">
+            <img src={officialMedal} className='GlobalAwardImg' style={{height: '19px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
+
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="优质作者">
+            <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
 
         <div className={styles.userVip}>
           <Popup trigger={<img src={svip6} className={styles.userVipImg} />} size="mini">
@@ -176,9 +190,21 @@ const UserBgContent = (
               <Icon
                 name="user secret"
                 color={true ? 'red' : 'green'}
-                style={{ lineHeight: '20px' }}
+                style={{ lineHeight: '20px', fontSize: '16px' }}
               />
             </Ant.Tooltip>
+
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="WE 认证">
+                <img src={officialMedal} className='GlobalAwardImg' style={{height: '19px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
+
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="优质作者">
+                <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
 
             <div className={styles.userVip}>
               <Popup trigger={<img src={svip6} className={styles.userVipImg} />} size="mini">
@@ -457,7 +483,7 @@ export default class UserInfo extends Component {
 
     return (
       <div className={styles.Content}>
-        {!isBack ? UserHeader : UserBgContent}
+        {isBack ? UserHeader : UserBgContent}
         <div className={styles.UserPreviewHeader}>
           <div className={styles.UserPreviewInfoHeader}>
             <div className={styles.UserPreviewInfoHeaderItem}>

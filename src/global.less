@@ -79,7 +79,16 @@ ol {
     font-size: 1rem;
   }
 }
-
+.GlobalAward {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*垂直居中*/
+}
+.GlobalAwardImg {
+  vertical-align: middle;
+  align-items: center;
+  padding: 0 4px;
+}
 .GlobalLineHeader {
   border-radius: 3px 3px 0 0;
   border-bottom: 1px solid #eee;
@@ -332,5 +341,13 @@ ol {
       border-color: transparent;
       border-right-color: #dce0e4;
     }
+  }
+}
+.user-card {
+  .ui.accordion .title:not(.ui) {
+    padding: 0!important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    color: rgba(0,0,0,.87);
   }
 }

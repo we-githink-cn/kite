@@ -8,7 +8,7 @@ import styles from './index.less';
 import RightContent from './RightContent';
 
 export default class GlobalHeader extends PureComponent {
-  state = { activeItem: 'home' };
+  state = {  };
 
   componentWillUnmount() {
     this.triggerResizeEvent.cancel();
@@ -22,8 +22,12 @@ export default class GlobalHeader extends PureComponent {
       case '问答':
         router.push('/index/question');
         break;
+      default:
+
     }
-    this.setState({ activeItem: name });
+    this.setState({
+      activeItem: name
+    })
   };
 
   /* eslint-disable*/
