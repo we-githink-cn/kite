@@ -52,11 +52,14 @@ export default [
         icon: 'warning',
         path: '/full',
         routes: [
-          // exception
           {
             path: '/full/userInfo',
             name: 'userInfo',
             component: './User/UserInfo/UserInfo',
+          },{
+            path: '/full/opus',
+            name: 'userInfo',
+            component: './Home/IndexOpus',
           },
         ],
       },

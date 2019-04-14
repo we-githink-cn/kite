@@ -11,10 +11,9 @@ import {
   Pagination,
 } from 'semantic-ui-react';
 import * as Ant from 'antd';
+import { scrollToAnchor } from '../../../utils/utils';
 
 import styles from './CommentContent.less';
-import { scrollToAnchor } from '../../../utils/utils';
-import ArticleListItem from '../ArticleContent/ArticleContent';
 
 export default class CommentContent extends PureComponent {
   state = {

@@ -23,6 +23,10 @@ export default class Index extends Component {
       { key: '1' },
       { key: '1' },
       { key: '1' },
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
+      { key: '1' },
     ],
   };
 

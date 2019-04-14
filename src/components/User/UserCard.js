@@ -8,6 +8,8 @@ import officialMedal from '../../assets/medal/official_medal.png';
 import userArticleMedal from "../../assets/medal/user_article_medal.png";
 import userQuestionMedal from "../../assets/medal/user_question_medal.png";
 import userInfoMedal from "../../assets/medal/user_info_medal.png";
+import desginGoldMedal from "../../assets/medal/desgin_gold_medal.png";
+import desginSilverMedal from "../../assets/medal/desgin_silver_medal.png";
 export default class UserInfo extends Component {
 
   state = { activeIndex: null };
@@ -88,15 +90,33 @@ export default class UserInfo extends Component {
             <Accordion.Content active={activeIndex === 0}>
               <List  verticalAlign='middle'>
                 <List.Item>
+                  <Image avatar src={userInfoMedal} />
+                  <List.Content>
+                    <List.Header as='a'>We创作社区 · 全能奖章</List.Header>
+                  </List.Content>
+                </List.Item>
+                <List.Item>
                   <Image avatar src={userArticleMedal} />
                   <List.Content>
-                    <List.Header as='a'>We创作社区·优质作者</List.Header>
+                    <List.Header as='a'>We创作社区 · 优质作者</List.Header>
                   </List.Content>
                 </List.Item>
                 <List.Item>
                   <Image avatar src={userQuestionMedal} />
                   <List.Content>
-                    <List.Header as='a'>We创作社区·优质答者</List.Header>
+                    <List.Header as='a'>We创作社区 · 优质答者</List.Header>
+                  </List.Content>
+                </List.Item>
+                <List.Item>
+                  <Image avatar src={desginGoldMedal} />
+                  <List.Content>
+                    <List.Header as='a'>设计板块 · 金质奖章</List.Header>
+                  </List.Content>
+                </List.Item>
+                <List.Item>
+                  <Image avatar src={desginSilverMedal} />
+                  <List.Content>
+                    <List.Header as='a'>设计板块 · 银质奖章</List.Header>
                   </List.Content>
                 </List.Item>
               </List>

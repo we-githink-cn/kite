@@ -114,6 +114,10 @@ export default class IndexQuestion extends Component {
             <QuestionItem />
             <QuestionItem />
             <QuestionItem />
+            <QuestionItem />
+            <QuestionItem />
+            <QuestionItem />
+            <QuestionItem />
 
           </div>
           <div className="GlobalPagesContent" style={{ backgroundColor: '#FFF' }}>
@@ -144,7 +148,7 @@ export default class IndexQuestion extends Component {
           <div className={styles.marginTop20}>
             <div className="GlobalLineHeader">
               <h4>
-                <Icon name="file alternate outline" color="violet" /> 相关文章
+                <Icon name="file alternate outline" color="violet" /> 热议文章
               </h4>
             </div>
             <div className={`${styles.questCardSearch} quest`}>

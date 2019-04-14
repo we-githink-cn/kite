@@ -12,8 +12,12 @@ import ImageContent from '../../../components/UserInfo/ImageContent/ImageContent
 import MoreContent from '../../../components/UserInfo/MoreContent/MoreContent';
 import styles from './UserInfo.less';
 import svip6 from '../../../assets/vip/svip6.png';
-import officialMedal from "../../../assets/medal/official_medal.png";
+import officialMedal from '../../../assets/medal/official_medal.png';
 import userArticleMedal from "../../../assets/medal/user_article_medal.png";
+import userQuestionMedal from "../../../assets/medal/user_question_medal.png";
+import userInfoMedal from "../../../assets/medal/user_info_medal.png";
+import desginGoldMedal from "../../../assets/medal/desgin_gold_medal.png";
+import desginSilverMedal from "../../../assets/medal/desgin_silver_medal.png";
 
 //用户详细信息
 const UserContent = (
@@ -21,7 +25,7 @@ const UserContent = (
     <div className={styles.UserHeaderInfoAvatar}>
       <Ant.Avatar
         shape="square"
-        size={84}
+        size={90}
         src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
       />
     </div>
@@ -54,10 +58,29 @@ const UserContent = (
             <img src={officialMedal} className='GlobalAwardImg' style={{height: '19px'}} alt=""/>
           </Ant.Tooltip>
         </div>
-
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="全能奖章">
+            <img src={userInfoMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
         <div className='GlobalAward'>
           <Ant.Tooltip placement="top" title="优质作者">
-            <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+            <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '23px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="优质答者">
+            <img src={userQuestionMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="金质奖章">
+            <img src={desginGoldMedal} className='GlobalAwardImg' style={{height: '20px'}} alt=""/>
+          </Ant.Tooltip>
+        </div>
+        <div className='GlobalAward'>
+          <Ant.Tooltip placement="top" title="银质奖章">
+            <img src={desginSilverMedal} className='GlobalAwardImg' style={{height: '20px'}} alt=""/>
           </Ant.Tooltip>
         </div>
 
@@ -199,12 +222,32 @@ const UserBgContent = (
                 <img src={officialMedal} className='GlobalAwardImg' style={{height: '19px'}} alt=""/>
               </Ant.Tooltip>
             </div>
-
             <div className='GlobalAward'>
-              <Ant.Tooltip placement="top" title="优质作者">
-                <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+              <Ant.Tooltip placement="top" title="全能奖章">
+                <img src={userInfoMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
               </Ant.Tooltip>
             </div>
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="优质作者">
+                <img src={userArticleMedal} className='GlobalAwardImg' style={{height: '24px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="优质答者">
+                <img src={userQuestionMedal} className='GlobalAwardImg' style={{height: '22px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="金质奖章">
+                <img src={desginGoldMedal} className='GlobalAwardImg' style={{height: '20px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
+            <div className='GlobalAward'>
+              <Ant.Tooltip placement="top" title="银质奖章">
+                <img src={desginSilverMedal} className='GlobalAwardImg' style={{height: '20px'}} alt=""/>
+              </Ant.Tooltip>
+            </div>
+
 
             <div className={styles.userVip}>
               <Popup trigger={<img src={svip6} className={styles.userVipImg} />} size="mini">
@@ -483,7 +526,7 @@ export default class UserInfo extends Component {
 
     return (
       <div className={styles.Content}>
-        {isBack ? UserHeader : UserBgContent}
+        {!isBack ? UserHeader : UserBgContent}
         <div className={styles.UserPreviewHeader}>
           <div className={styles.UserPreviewInfoHeader}>
             <div className={styles.UserPreviewInfoHeaderItem}>

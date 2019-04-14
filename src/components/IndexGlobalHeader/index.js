@@ -22,6 +22,9 @@ export default class GlobalHeader extends PureComponent {
       case '问答':
         router.push('/index/question');
         break;
+      case '作品':
+        router.push('/full/opus');
+        break;
       default:
 
     }
@@ -70,10 +73,10 @@ export default class GlobalHeader extends PureComponent {
                   icon="question circle outline"
                 />
                 <Menu.Item
-                  name="关注"
-                  active={activeItem === '关注'}
+                  name="作品"
+                  active={activeItem === '作品'}
                   onClick={this.handleItemClick}
-                  icon="heart outline"
+                  icon="stumbleupon circle"
                 />
                 <Menu.Item
                   name="最新"
