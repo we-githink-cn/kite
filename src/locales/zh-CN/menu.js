@@ -48,4 +48,5 @@ export default {
   'menu.create.article': '添加文章',
   'menu.full': 'We!',
   'menu.full.userInfo': '作者信息',
+  'menu.full.opus': '作品',
 };

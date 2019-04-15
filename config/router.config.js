@@ -58,7 +58,7 @@ export default [
             component: './User/UserInfo/UserInfo',
           },{
             path: '/full/opus',
-            name: 'userInfo',
+            name: 'opus',
             component: './Home/IndexOpus',
           },
         ],
