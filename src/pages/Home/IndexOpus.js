@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Icon, Image, Label, Menu, Search} from 'semantic-ui-react'
+import { Card, Icon, Image, Label, Menu, Search, Popup, List,} from 'semantic-ui-react'
 import * as Ant from 'antd';
 import styles from './IndexOpus.less'
 
@@ -160,14 +160,32 @@ export default class IndexQuestion extends Component {
                     </Card.Description>
                   </Card.Content>
                   <Card.Content extra>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                    <span style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}} className={styles.OpusCardItemIcon}>
                       <Icon name='heart' /> 112.3k
-                    </a>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
-                      <Icon name='ellipsis vertical' />
-                    </a>
+                    </span>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
                     <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
-                  </Card.Content></Card>
+                  </Card.Content>
+                </Card>
                 <Card style={{width: '200px'}}>
                   <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
                   <Card.Content>
@@ -184,11 +202,29 @@ export default class IndexQuestion extends Component {
                     <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
                       <Icon name='heart' /> 112.3k
                     </a>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
-                      <Icon name='ellipsis vertical' />
-                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
                     <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
-                  </Card.Content></Card>
+                  </Card.Content>
+                </Card>
                 <Card style={{width: '200px'}}>
                   <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
                   <Card.Content>
@@ -205,11 +241,29 @@ export default class IndexQuestion extends Component {
                     <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
                       <Icon name='heart' /> 112.3k
                     </a>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
-                      <Icon name='ellipsis vertical' />
-                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
                     <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
-                  </Card.Content></Card>
+                  </Card.Content>
+                </Card>
                 <Card style={{width: '200px'}}>
                   <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
                   <Card.Content>
@@ -226,11 +280,29 @@ export default class IndexQuestion extends Component {
                     <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
                       <Icon name='heart' /> 112.3k
                     </a>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
-                      <Icon name='ellipsis vertical' />
-                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
                     <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
-                  </Card.Content></Card>
+                  </Card.Content>
+                </Card>
                 <Card style={{width: '200px'}}>
                   <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
                   <Card.Content>
@@ -247,11 +319,146 @@ export default class IndexQuestion extends Component {
                     <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
                       <Icon name='heart' /> 112.3k
                     </a>
-                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
-                      <Icon name='ellipsis vertical' />
-                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
                     <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
-                  </Card.Content></Card>
+                  </Card.Content>
+                </Card>
+                <Card style={{width: '200px'}}>
+                  <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
+                  <Card.Content>
+                    <Image floated='left' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
+                    <Card.Header>Matthew</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Joined in 2015</span>
+                    </Card.Meta>
+                    <Card.Description>
+                      Steve wants to add you to the group <strong>best friends</strong>
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                      <Icon name='heart' /> 112.3k
+                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
+                    <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
+                  </Card.Content>
+                </Card>
+                <Card style={{width: '200px'}}>
+                  <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
+                  <Card.Content>
+                    <Image floated='left' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
+                    <Card.Header>Matthew</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Joined in 2015</span>
+                    </Card.Meta>
+                    <Card.Description>
+                      Steve wants to add you to the group <strong>best friends</strong>
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                      <Icon name='heart' /> 112.3k
+                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
+                    <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
+                  </Card.Content>
+                </Card>
+                <Card style={{width: '200px'}}>
+                  <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
+                  <Card.Content>
+                    <Image floated='left' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
+                    <Card.Header>Matthew</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Joined in 2015</span>
+                    </Card.Meta>
+                    <Card.Description>
+                      Steve wants to add you to the group <strong>best friends</strong>
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                      <Icon name='heart' /> 112.3k
+                    </a>
+                    <Popup  on='hover' trigger={
+                      <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px'}}>
+                        <Icon name='ellipsis vertical'/>
+                      </a>
+                    } position='top center'>
+                      <Popup.Content>
+                        <List divided>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='comment' /> 12.3k
+                            </a>
+                          </List.Item>
+                          <List.Item>
+                            <a style={{marginRight: '8px',lineHeight:'26px',fontSize: '12px',color:'#989898'}}>
+                              <Icon name='eye' /> 2.3k
+                            </a>
+                          </List.Item>
+                        </List>
+                      </Popup.Content>
+                    </Popup>
+                    <Label as='a' style={{float:'right',fontSize:'10px'}} color='orange'>生活 · 美食</Label>
+                  </Card.Content>
+                </Card>
               </Card.Group>
             </div>
           </div>
