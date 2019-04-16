@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import {
-  Card,
-  Icon,
-  Image,
-  Label,
-  Menu,
-  Search,
-  Popup,
-  List,
-  Modal,
-  Header,
-} from 'semantic-ui-react';
+import {Card, Icon, Image, Label, Menu, Search, Popup, List, Modal, Header, Button, Divider} from 'semantic-ui-react';
 import * as Ant from 'antd';
+import ImageGallery from 'react-image-gallery';
+import Vditor from 'vditor';
+import {connect} from "dva";
+
 import styles from './IndexOpus.less';
 
+@connect(({ mark }) => ({
+  mark: mark,
+}))
 export default class IndexQuestion extends Component {
   state = {
     open: false,
+    mark: null,
+    html: null
   };
 
   componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'mark/fetch',
+      callback: (res) => {
+        this.setState({
+          mark: res
+        })
+      }
+    });
+    dispatch({
+      type: 'mark/fetchHtml',
+      callback: (res) => {
+        console.log(res);
+        this.setState({
+          html: res
+        })
+      }
+    });
     window.addEventListener('scroll', e => {
       //监听事件内容
       if (this.getScrollHeight() == this.getWindowHeight() + this.getDocumentTop()) {
@@ -75,8 +91,48 @@ export default class IndexQuestion extends Component {
     return scrollHeight;
   }
 
+
+
   render() {
-    const { activeItem, open } = this.state;
+    const { activeItem, open, html } = this.state;
+    const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ];
     return (
       <div className={styles.OpusWrapper}>
         <div className={styles.OpusCardWrapper}>
@@ -720,27 +776,62 @@ export default class IndexQuestion extends Component {
             </div>
           </div>
         </div>
-        <Modal
-          open={open}
-          dimmer="blurring"
-          closeIcon
-          onClose={() => {
-            this.setState({ open: false });
-          }}
-        >
-          <Modal.Header>Select a Photo</Modal.Header>
-          <Modal.Content image>
-            <Image
-              wrapped
-              size="medium"
-              src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
-            />
-            <Modal.Description>
-              <Header>Default Profile Image</Header>
-              <p>We've found the following gravatar image associated with your e-mail address.</p>
-              <p>Is it okay to use this photo?</p>
-            </Modal.Description>
-          </Modal.Content>
+        <Modal open={true} closeIcon style={{width:'800px'}} onClose={() => { this.setState({ open: false });}}>
+          <div className={styles.OpusDetailWrapper}>
+            <ul className={styles.OpusDetailNav}>
+              <li className={styles.OpusDetailNavPrev}>
+                <span>
+                  <Icon className={styles.OpusDetailNavPrevIcon} name='angle left'/>
+                </span>
+              </li>
+              <li className={styles.OpusDetailNavNext}>
+                <span>
+                  <Icon className={styles.OpusDetailNavNextIcon} name='angle right'/>
+                </span>
+              </li>
+            </ul>
+            <div className={styles.OpusDetailHeader}>
+              <div className={styles.OpusDetailHeaderUserInfo}>
+                <Header as='h2'>
+                  <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' />
+                  <Header.Content>
+                    Account Settings
+                    <Header.Subheader><a>Manage</a> your preferences</Header.Subheader>
+                  </Header.Content>
+                </Header>
+              </div>
+              <div className={styles.OpusDetailHeaderUserInfoAction}>
+                <Ant.Tooltip placement="top" title='收藏'>
+                  <Button icon inverted color='olive'>
+                    <Icon name='star'/>
+                  </Button>
+                </Ant.Tooltip>
+                <Ant.Tooltip placement="top" title='喜欢'>
+                  <Button as='div' labelPosition='right'>
+                      <Button color='red'>
+                        <Icon name='heart' />
+                        Like
+                      </Button>
+                      <Label as='a' basic color='red' pointing='left'>
+                        2,048
+                      </Label>
+                  </Button>
+                </Ant.Tooltip>
+              </div>
+            </div>
+            <div className={styles.OpusDetailImageContent}>
+              <ImageGallery showNav={false} lazyLoad={true} autoPlay={true} slideDuration={600} items={images} />
+            </div>
+            <div className={styles.OpusDetailInfoContent}>
+              <div className={styles.OpusDetailMainContent}>
+                <div className={`${styles.OpusDetailHtml} vditor-reset`}  dangerouslySetInnerHTML = {{ __html:html }}/>
+                <Divider />
+              </div>
+              <div className={styles.OpusDetailMateContent}>
+
+              </div>
+            </div>
+          </div>
         </Modal>
       </div>
     );

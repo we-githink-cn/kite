@@ -60,6 +60,7 @@
     "react-dom": "^16.7.0",
     "react-fittext": "^1.0.0",
     "react-icons": "^3.5.0",
+    "react-image-gallery": "^0.8.16",
     "react-media": "^1.9.2",
     "react-vertical-timeline-component": "^2.3.1",
     "semantic-ui-css": "^2.4.1",

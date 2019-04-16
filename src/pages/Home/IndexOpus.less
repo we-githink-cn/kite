@@ -45,3 +45,87 @@
 .OpusCardItemIcon:hover {
   color: #d04135;
 }
+
+
+.OpusDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #F3F3F3;
+  min-height: 120vh;
+  .OpusDetailNav {
+    li {
+      position: absolute;
+      top: 0;
+      span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 278px 26px;
+        text-align: center;
+      }
+    }
+    .OpusDetailNavPrev {
+      left: -90px;
+    }
+    .OpusDetailNavNext {
+      right: -90px;
+    }
+    .OpusDetailNavPrevIcon{
+      font-size: 26px;
+      color: #C3CEE3;
+    }
+    .OpusDetailNavPrevIcon:hover{
+      color: #FFFFFF;
+    }
+    .OpusDetailNavNextIcon{
+      font-size: 26px;
+      color: #C3CEE3;
+    }
+    .OpusDetailNavNextIcon:hover{
+      color: #FFFFFF;
+    }
+  }
+  .OpusDetailHeader {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    align-items:center;/*垂直居中*/
+    width: 740px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .OpusDetailHeaderUserInfo {
+    flex: 1;
+    width: 575px;
+  }
+  .OpusDetailHeaderUserInfoAction {
+    z-index: 999;
+  }
+  .OpusDetailImageContent {
+    background-color: white;
+    margin: 20px -20px 20px;
+    height: 560px;
+    width: 800px;
+  }
+  .OpusDetailInfoContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .OpusDetailMainContent {
+    width: 510px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .OpusDetailMateContent {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    background-color: #2eabff;
+  }
+  .OpusDetailHtml {
+
+  }
+}
+
