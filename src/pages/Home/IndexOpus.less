@@ -51,8 +51,9 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #F3F3F3;
+  background-color: #ffffff;
   min-height: 120vh;
+  border-radius: 4px;
   .OpusDetailNav {
     li {
       position: absolute;
@@ -102,9 +103,9 @@
     z-index: 999;
   }
   .OpusDetailImageContent {
-    background-color: white;
+    background-color: #f3f3f3;
     margin: 20px -20px 20px;
-    height: 560px;
+    padding-bottom: 5px;
     width: 800px;
   }
   .OpusDetailInfoContent {
@@ -122,10 +123,126 @@
     display: flex;
     flex-direction: column;
     height: 100px;
-    background-color: #2eabff;
   }
   .OpusDetailHtml {
 
+  }
+  .ArticleCommentContent {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 12px;
+  }
+  .ArticleCommentBody {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  .ReplyContent {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+  }
+  .ReplyContentInput {
+    color: #4285f4;
+    cursor: pointer;
+    border: 1px solid #eee;
+    line-height: 40px;
+    border-radius: 3px;
+    padding: 0 10px;
+    height: 40px;
+    flex: 1;
+    margin-left: 8px;
+  }
+  .ReplyVditorContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 308px;
+    background-color: #dbe0e5;
+    padding: 15px;
+  }
+  .ReplyVditorHeader {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+    max-width: 800px;
+    min-width: 770px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ReplyVditorHeaderTitle {
+    flex: 1;
+  }
+  .ReplyVditorHeaderIcon {
+    color: #616161;
+  }
+  .ReplyVditorHeaderIcon:hover {
+    color: #333;
+  }
+  .ReplyVditorBottom {
+    margin-top: 8px;
+    float: right;
+    max-width: 800px;
+    min-width: 770px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ReplyVditorBottomBtn {
+    float: right;
+  }
+  .OpusKeyContent {
+    clear: both;
+    margin-top: -23px;
+    p {
+      margin: 0;
+      padding: 30px 0 0;
+      font-size: 13px;
+      text-align: center;
+      color: #bbb;
+      border-top: 1px solid #ddd;
+      -webkit-transition: color ease .2s;
+      transition: color ease .2s;
+      span {
+        display: inline-block;
+        margin: 0 20px 5px;
+      }
+    }
+  }
+  .OpusDetailMateShareContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .OpusDetailMateTagsContent {
+    display: flex;
+    flex-direction: row;
+    .OpusDetailMateTagsIcon {
+      width: 24px;
+    }
+    .OpusDetailMateTags {
+      flex: 1;
+      height: 100px;
+      flex-wrap: wrap;
+      ol{
+        list-style: none;
+      }
+
+      li {
+        float: left;
+        line-height: 1.5;
+        margin-right: 8px;
+        span {
+          color: #999;
+        }
+        span:hover {
+          color: #434e59;
+        }
+      }
+    }
   }
 }
 

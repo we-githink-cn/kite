@@ -198,6 +198,13 @@ ol {
     border-bottom: 1px #eee solid;
     padding-bottom: 10px;
   }
+  .ui.comments .comment .text {
+    margin: .25em 0 .7em 0;
+    font-size: 1em;
+    word-wrap: break-word;
+    color: rgba(0,0,0,.87);
+    line-height: 1.3;
+  }
 }
 .article-content {
   .vditor {
@@ -255,6 +262,14 @@ ol {
   }
 }
 .article-detail {
+  .pushable {
+    height: 100%;
+    overflow-x: hidden;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+}
+.opus-detail {
   .pushable {
     height: 100%;
     overflow-x: hidden;
@@ -776,4 +791,9 @@ ol {
   .image-gallery-index {
     font-size: .8em;
     padding: 5px 10px; }
+}
+.image-gallery-image {
+  img {
+    max-height: 600px;
+  }
 }

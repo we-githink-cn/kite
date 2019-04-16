@@ -123,7 +123,7 @@ export default class ArticleListItem extends PureComponent {
             </Item>
           </Item.Group>
         </div>
-        <Modal
+        <Modal style={{margin: '3rem 0 3rem 0!important'}}
           open={open}
           onClose={() => {
             this.setState({ open: false });

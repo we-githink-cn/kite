@@ -160,13 +160,13 @@ export default class ArticleDetail extends PureComponent {
       placeholder: data.placeholder,
     });
   };
-
   handleReplyOpenClick = () => {
     this.setState({
       visible: true,
     });
     scrollToAnchor('reply-content');
   };
+
 
   handleReplyCloseClick = () => {
     this.setState({
