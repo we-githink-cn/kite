@@ -1040,26 +1040,60 @@ export default class IndexQuestion extends Component {
                           <Icon name='tag' color='grey'/>
                         </div>
                         <div className={styles.OpusDetailMateTags}>
-                          <ol>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                            <li>
-                              <span>blog illustration</span>
-                            </li>
-                          </ol>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计的
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计的
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            大众设计的
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            头像
+                          </Label>
+                          <Label as='a' style={{marginBottom: '6px'}}>
+                            UI/UX
+                          </Label>
                         </div>
                       </div>
                     </div>
