@@ -79,10 +79,10 @@ export default class GlobalHeader extends PureComponent {
                   icon="stumbleupon circle"
                 />
                 <Menu.Item
-                  name="最新"
-                  active={activeItem === '最新'}
+                  name="图圈"
+                  active={activeItem === 'Feed'}
                   onClick={this.handleItemClick}
-                  icon="clock outline"
+                  icon="camera retro"
                 />
                 <Menu.Item
                   name="济南"
