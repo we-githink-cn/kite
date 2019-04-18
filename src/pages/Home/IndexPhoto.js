@@ -36,7 +36,23 @@ export default class Index extends Component {
                   <Icon name='ellipsis horizontal'/>
                 </div>
               </div>
-
+              <div className={styles.PhotoItemImageContent}>
+                <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1268563040,17122181&fm=26&gp=0.jpg"  alt=""/>
+              </div>
+              <div className={styles.PhotoItemActionContent}>
+                <div className={styles.PhotoItemActionItem}>
+                  <Icon name='heart outline'/>
+                </div>
+                <div className={styles.PhotoItemActionItem}>
+                  <Icon name='comment outline'/>
+                </div>
+                <div className={styles.PhotoItemActionItem}>
+                  <Icon name='paper plane outline'/>
+                </div>
+                <div className={styles.PhotoItemActionItem}>
+                  <Icon name='bookmark outline'/>
+                </div>
+              </div>
             </div>
             <div className={styles.PhotoItemContent}>
 
