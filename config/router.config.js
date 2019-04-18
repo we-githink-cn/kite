@@ -101,6 +101,11 @@ export default [
             name: 'user-list',
             component: './User/UserList/UserList',
           },
+          {
+            path: '/index/photo',
+            name: 'photo',
+            component: './Home/IndexPhoto',
+          },
         ],
       },
       {

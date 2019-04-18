@@ -43,6 +43,7 @@ export default {
   'menu.index.index': 'We!',
   'menu.index.question': '问答',
   'menu.index.create': '创作',
+  'menu.index.photo': '图圈',
   'menu.index.user-list': '推荐作者',
   'menu.create': '添加文章',
   'menu.create.article': '添加文章',

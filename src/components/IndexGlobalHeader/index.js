@@ -25,6 +25,9 @@ export default class GlobalHeader extends PureComponent {
       case '作品':
         router.push('/full/opus');
         break;
+      case '图圈':
+        router.push('/index/photo');
+        break;
       default:
 
     }
@@ -80,7 +83,7 @@ export default class GlobalHeader extends PureComponent {
                 />
                 <Menu.Item
                   name="图圈"
-                  active={activeItem === 'Feed'}
+                  active={activeItem === '图圈'}
                   onClick={this.handleItemClick}
                   icon="camera retro"
                 />

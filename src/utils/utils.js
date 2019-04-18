@@ -206,3 +206,15 @@ export const getUser  = () => {
 export const setUser =(user)=> {
   localStorage.setItem("we_user",JSON.stringify(user));
 }
+
+export const patternMark = (markdown) =>{
+  const pattern = /!\[(.*?)\]\((.*?)\)/mg;
+  const result = [];
+  let matcher;
+  while ((matcher = pattern.exec(markdown)) !== null) {
+    result.push({
+      url: matcher[2]
+    });
+  };
+  return result;
+};

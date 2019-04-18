@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Icon, Image, Label, Menu, Search, Popup, List, Modal } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import { connect } from 'dva';
+import {patternMark} from '../../utils/utils';
 import OpusDetail from '../../components/Opus/OpusDetail';
 import styles from './IndexOpus.less';
 
@@ -13,10 +14,19 @@ export default class IndexOpus extends Component {
     open: false,
     mark: null,
     html: null,
+    images: [],
   };
 
   componentDidMount() {
     const { dispatch } = this.props;
+    dispatch({
+      type: 'mark/fetchHtml',
+      callback: res => {
+        this.setState({
+          html: res,
+        });
+      },
+    });
     dispatch({
       type: 'mark/fetch',
       callback: res => {
@@ -25,16 +35,6 @@ export default class IndexOpus extends Component {
         });
       },
     });
-    dispatch({
-      type: 'mark/fetchHtml',
-      callback: res => {
-        console.log(res);
-        this.setState({
-          html: res,
-        });
-      },
-    });
-
     window.addEventListener('scroll', e => {
       //监听事件内容
       if (this.getScrollHeight() == this.getWindowHeight() + this.getDocumentTop()) {
@@ -44,6 +44,7 @@ export default class IndexOpus extends Component {
   }
 
   componentWillUnmount() {}
+
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -91,8 +92,7 @@ export default class IndexOpus extends Component {
   }
 
   render() {
-    const { activeItem, open, html } = this.state;
-
+    const { activeItem, open, html, mark } = this.state;
     return (
       <div className={styles.OpusWrapper}>
         <div className={styles.OpusCardWrapper}>
@@ -207,7 +207,7 @@ export default class IndexOpus extends Component {
               <Card.Group style={{ marginTop: '4px' }}>
                 <Card style={{ width: '200px' }}>
                   <Image
-                    src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+                    src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555589767191&di=c03b4121904a5bee45ccfad8b14a6bdc&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201611_20_12%2Fa1z9dp066999374244.gif'
                     onClick={item => {
                       this.setState({
                         open: true,

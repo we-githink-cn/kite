@@ -334,23 +334,34 @@ export default class OpusDetail extends PureComponent {
                 <div className={styles.OpusDetailMateContent}>
                   {/*分享*/}
                   <div className={styles.OpusDetailMateShareContent}>
-                    <Button compact icon>
-                      <Icon name="qq" />
-                    </Button>
-                    <Button compact icon>
-                      <Icon name="weibo" />
-                    </Button>
-                    <Button compact icon>
-                      <Icon name="wechat" />
-                    </Button>
-                    <Button compact icon>
-                      <Icon name="github" />
-                    </Button>
-                    <Button compact icon>
-                      <Icon name="users" />
-                    </Button>
+                    <Ant.Tooltip placement="top" title='QQ'>
+                      <Button compact icon>
+                        <Icon name="qq" />
+                      </Button>
+                    </Ant.Tooltip>
+                    <Ant.Tooltip placement="top" title='微博'>
+                      <Button compact icon>
+                        <Icon name="weibo" />
+                      </Button>
+                    </Ant.Tooltip>
+                    <Ant.Tooltip placement="top" title='微信'>
+                      <Button compact icon>
+                        <Icon name="wechat" />
+                      </Button>
+                    </Ant.Tooltip>
+                    <Ant.Tooltip placement="top" title='GitHub'>
+                      <Button compact icon>
+                        <Icon name="github" />
+                      </Button>
+                    </Ant.Tooltip>
+                    <Ant.Tooltip placement="top" title='团队'>
+                      <Button compact icon>
+                        <Icon name="users" />
+                      </Button>
+                    </Ant.Tooltip>
                   </div>
                   {/*作品信息*/}
+                  {/*标签*/}
                   <div className={styles.OpusDetailMateTagsContent}>
                     <div className={styles.OpusDetailMateTagsIcon}>
                       <Icon name="tag" color="grey" />
@@ -412,6 +423,7 @@ export default class OpusDetail extends PureComponent {
                       </Label>
                     </div>
                   </div>
+                  {/*颜色*/}
                   <div className={styles.OpusDetailMateColorContent}>
                     <div className={styles.OpusDetailMateColorIcon}>
                       <Icon name="magic" color="grey" />
@@ -445,6 +457,7 @@ export default class OpusDetail extends PureComponent {
                       </ul>
                     </div>
                   </div>
+                  {/*浏览*/}
                   <div className={styles.OpusDetailMateItemIconContent}>
                     <div className={styles.OpusDetailMateItemIcon}>
                       <Icon name="eye" color="grey" />
@@ -453,6 +466,7 @@ export default class OpusDetail extends PureComponent {
                       <span>3978 浏览</span>
                     </div>
                   </div>
+                  {/*喜欢*/}
                   <div className={styles.OpusDetailMateItemIconContent}>
                     <div className={styles.OpusDetailMateItemIcon}>
                       <Icon name="heart" color="grey" />
@@ -461,6 +475,7 @@ export default class OpusDetail extends PureComponent {
                       <span>6534 喜欢</span>
                     </div>
                   </div>
+                  {/*收藏*/}
                   <div className={styles.OpusDetailMateItemIconContent}>
                     <div className={styles.OpusDetailMateItemIcon}>
                       <Icon name="star" color="grey" />
@@ -469,6 +484,7 @@ export default class OpusDetail extends PureComponent {
                       <span>7918 收藏</span>
                     </div>
                   </div>
+                  {/*时间*/}
                   <div className={styles.OpusDetailMateItemIconContent}>
                     <div className={styles.OpusDetailMateItemIcon}>
                       <Icon name="calendar alternate" color="grey" />
@@ -490,16 +506,16 @@ export default class OpusDetail extends PureComponent {
                     </div>
                     <div className={styles.OpusDetailAuthorMoreOpusImages}>
                       <div className={styles.OpusDetailAuthorMoreOpusImagesItem}>
-                        <Image src="http://www.jq22.com/demo/pictureViewer201808310052/images/4.png" />
+                        <Image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2735633715,2749454924&fm=27&gp=0.jpg" />
                       </div>
                       <div className={styles.OpusDetailAuthorMoreOpusImagesItem}>
-                        <Image src="http://www.jq22.com/demo/pictureViewer201808310052/images/2.png" />
+                        <Image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2735633715,2749454924&fm=27&gp=0.jpg" />
                       </div>
                       <div className={styles.OpusDetailAuthorMoreOpusImagesItem}>
-                        <Image src="http://www.jq22.com/demo/pictureViewer201808310052/images/3.png" />
+                        <Image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2735633715,2749454924&fm=27&gp=0.jpg" />
                       </div>
                       <div className={styles.OpusDetailAuthorMoreOpusImagesItem}>
-                        <Image src="http://www.jq22.com/demo/pictureViewer201808310052/images/1.png" />
+                        <Image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2735633715,2749454924&fm=27&gp=0.jpg" />
                       </div>
                     </div>
                   </div>
