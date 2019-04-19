@@ -9,60 +9,6 @@
   .PhotoMainContent {
     display: flex;
     flex-direction: column;
-    .PhotoItemContent{
-      background-color: rgb(255,255,255);
-      padding: 0;
-      margin-bottom: 60px;
-      border-radius: 3px;
-      border: 1px solid #e6e6e6;
-      width: 592px;
-      height: 600px;
-      .PhotoItemHeader {
-        display: flex;
-        padding: 16px;
-        .PhotoItemHeaderAvatar {
-          flex: 1;
-        }
-        .PhotoItemHeaderIcon {
-          flex: 0 0 50px;
-          width: 50px;
-          line-height: 40px;
-          align-items: center;
-          text-align: right;
-        }
-      }
-      .PhotoItemImageContent {
-        display: flex;
-        align-items: center; /*垂直居中*/
-        justify-content: center; /*水平居中*/
-        width: 592px;
-        max-height: 592px;
-        img {
-          width:100%;
-          height:100%;
-          max-width: 591px;
-          overflow: hidden;
-          vertical-align: middle;
-          align-items: center;
-          max-height: 592px;
-          object-fit: cover;
-        }
-      }
-      .PhotoItemActionContent {
-        display: flex;
-        flex-direction: row;
-        width: 592px;
-        padding: 16px;
-        .PhotoItemActionItem {
-          margin-right: 16px;
-          font-size: 24px;
-        }
-        .PhotoItemActionItem:last-child {
-          margin-left: auto;
-          margin-right: 0!important;
-        }
-      }
-    }
   }
 }
 .PhotoMateWrapper {
@@ -71,10 +17,102 @@
   margin-left: 28px;
   display: flex;
   flex-direction: column;
-  background-color: #2eabff;
-  height: 100vh;
-
+  .PutContent {
+    padding: 6px;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .PutBody {
+    padding: 15px;
+    background-color: #f6f8fa;
+    display: flex;
+    flex-direction: column;
+  }
+  .ReplyContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .ReplyContentInput {
+    color: #4285f4;
+    cursor: pointer;
+    border: 1px solid #eee;
+    line-height: 40px;
+    border-radius: 3px;
+    padding: 0 10px;
+    height: 40px;
+    flex: 1;
+    margin-left: 8px;
+  }
+  .recCard {
+    overflow-wrap: break-word;
+    background-color: rgb(255, 255, 255);
+    color: rgb(26, 26, 27);
+    fill: rgb(26, 26, 27);
+    border-radius: 5px 5px 4px 4px;
+    overflow: visible;
+    margin-top: 10px;
+  }
+  .recCardContent {
+    width: 100%;
+    padding: 12px;
+  }
+  .recCardBtn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
 }
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  min-width: 678px;
+  max-width: 980px;
+}
+.weFlex {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  min-width: 678px;
+  max-width: 980px;
+}
+.weFlex1 {
+  flex: 1;
+  min-width: 1px;
+  align-self: center;
+}
+.ftH5 {
+  font-weight: 600;
+  color: #333;
+  margin-right: 5px;
+}
+.ftGray {
+  color: rgba(0, 0, 0, 0.54);
+}
+.ftGreen {
+  color: #569e3d;
+}
+.module {
+  margin-bottom: 20px;
+  border-radius: 3px;
+  width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  min-width: 1px;
+}
+.moduleHeader {
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #eee;
+  padding: 8px 15px;
+  font-size: 14px;
+  line-height: 19px;
+}
+.postModule {
+  padding: 15px;
+}
+
 .TestGif {
   background:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555589767191&di=c03b4121904a5bee45ccfad8b14a6bdc&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201611_20_12%2Fa1z9dp066999374244.gif') center no-repeat;
   width:100%;

@@ -1,15 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  Icon,
-  Image,
-  Label,
-  Header,
-  Button,
-  Divider,
-  Comment,
-  Sidebar,
-  Popup,
-} from 'semantic-ui-react';
+import {Icon, Image, Label, Header, Button, Divider, Comment, Sidebar, Popup,} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import ImageGallery from 'react-image-gallery';
 import Vditor from 'vditor';
