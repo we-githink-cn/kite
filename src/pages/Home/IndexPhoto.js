@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Modal, Button, Dropdown, Checkbox } from 'semantic-ui-react';
+import { Icon, Modal, Header, Image, Button, Dropdown, Checkbox } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import Vditor from 'vditor';
 import router from 'umi/router';
@@ -403,7 +403,37 @@ export default class Index extends Component {
           style={{ width: '642px', borderRadius: '8px', marginTop: '4rem', marginBottom: '4rem' }}
         >
           <Modal.Content>
-            <div className={styles.DetailWrapper} />
+            <div className={styles.DetailWrapper}>
+              <div className={styles.DetailContent}>
+                <div className={styles.DetailHeaderWrapper}>
+                  <div className={styles.DetailHeaderAvatar}>
+                    <Header as='h2'>
+                      <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' />
+                      <Header.Content>
+                        Patrick
+                        <Header.Subheader>Manage your preferences</Header.Subheader>
+                      </Header.Content>
+                    </Header>
+                  </div>
+                  <div className={styles.DetailHeaderAction}>
+                    <Button compact color='orange'>关 注</Button>
+                    <Dropdown trigger={<Icon name='angle down' size='large'/>} pointing='top left' icon={null} >
+                      <Dropdown.Menu>
+                        <Dropdown.Item text='复制圈图链接' icon='copy'/>
+                        <Dropdown.Item text='复制圈图链接' icon='copy'/>
+                        <Dropdown.Item text='复制圈图链接' icon='copy'/>
+                        <Dropdown.Item text='复制圈图链接' icon='copy'/>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                </div>
+                <div className={`${styles.DetailText} vditor-reset`} dangerouslySetInnerHTML={{ __html: '<p>Kotlin 是一个用于现代多平台应用的静态编程语言，由 JetBrains 开发。Kotlin可以编译成Java字节码，也可以编译成JavaScript，方便在没有JVM的设备上运行。Kotlin已正式成为Android官方支持开发语言。此外，Kotlin还是一门融合了面向对象与函数式编程的语言，支持泛型、安全的空判断，并且Kotlin与Java可以做到完全的交互。</p>' }}/>
+                <div className={styles.DetailImageContent}>
+                  <img src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg'  alt=""/>
+                  <span><Icon name='clone outline' className={styles.DetailImageIcon}/></span>
+                </div>
+              </div>
+            </div>
           </Modal.Content>
         </Modal>
       </div>
