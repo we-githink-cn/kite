@@ -216,6 +216,57 @@
         }
       }
     }
+    .DetailActionWrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-top: 10px;
+      .DetailActionItem {
+        height: 44px;
+        line-height: 44px;
+        margin-right: 24px;
+        .DetailActionItemText {
+          color: #657786;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1;
+          margin-left: 6px;
+          position: relative;
+          vertical-align: text-bottom;
+        }
+      }
+    }
+    .DetailCommentWrapper {
+      margin-top: 30px;
+      background-color: #F5F8FA;
+      padding: 20px 30px;
+      margin-left: -35px;
+      margin-right: -35px;
+      border-bottom: 1px solid #e6ecf0;
+      border-top: 1px solid #e6ecf0;
+      .ReplyContent {
+        display: flex;
+        flex-direction: row;
+      }
+      .ReplyContentInput {
+        color: #4285f4;
+        cursor: pointer;
+        border: 1px solid #eee;
+        line-height: 40px;
+        border-radius: 3px;
+        padding: 0 10px;
+        height: 40px;
+        flex: 1;
+        margin-left: 8px;
+        background-color: #FFF;
+      }
+    }
+    .DetailCommentBody {
+      width: 100%;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Modal, Header, Image, Button, Dropdown, Checkbox } from 'semantic-ui-react';
+import { Icon, Modal, Header, Image, Button, Comment, Dropdown, Checkbox } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import Vditor from 'vditor';
 import router from 'umi/router';
@@ -434,15 +434,17 @@ export default class Index extends Component {
                 </div>
                 <div className={styles.DetailLikeAndShareContent}>
                   <div className={styles.DetailLikeAndShareText}>
-                    <Ant.Tooltip placement="top" title={'收藏'}>
-                      <Icon name='star outline'/>
-                    </Ant.Tooltip>
+                    {/*<Ant.Tooltip placement="top" title={'收藏'}>*/}
+                      {/*<Icon name='star outline'/>*/}
+                    {/*</Ant.Tooltip>*/}
+                    收藏
                       &nbsp;<strong style={{color: '#333'}}>2444</strong>
                   </div>
                   <div className={styles.DetailLikeAndShareText}>
-                    <Ant.Tooltip placement="top" title={'喜欢'}>
-                      <Icon name='heart outline'/>
-                    </Ant.Tooltip>
+                    {/*<Ant.Tooltip placement="top" title={'喜欢'}>*/}
+                      {/*<Icon name='heart outline'/>*/}
+                    {/*</Ant.Tooltip>*/}
+                    喜欢
                     &nbsp;<strong style={{color: '#333'}}>5677</strong>
                   </div>
                   <div className={styles.DetailAvatar}>
@@ -456,6 +458,181 @@ export default class Index extends Component {
                     </AvatarList>
                   </div>
                 </div>
+                <div className={styles.DetailActionWrapper}>
+                  <div className={styles.DetailActionItem}>
+                    <Icon name='comment outline' size='large'/> <span className={styles.DetailActionItemText}>24</span>
+                  </div>
+                  <div className={styles.DetailActionItem}>
+                    <Icon name='star outline' size='large'/> <span className={styles.DetailActionItemText}>25674</span>
+                  </div>
+                  <div className={styles.DetailActionItem}>
+                    <Icon name='heart outline' size='large'/> <span className={styles.DetailActionItemText}>66</span>
+                  </div>
+                  <div className={styles.DetailActionItem}>
+                    <Icon name='mail outline' size='large'/>
+                  </div>
+                </div>
+                <div className={styles.DetailCommentWrapper}>
+                  <div className={styles.ReplyContent}>
+                    <div className={styles.AuthorAvatar}>
+                      <Ant.Avatar
+                        shape="square"
+                        size="large"
+                        src="https://react.semantic-ui.com/images/avatar/small/matt.jpg"
+                      />
+                    </div>
+                    <div className={styles.ReplyContentInput} onClick={this.handlePutOpenClick}>
+                      发一条图圈？
+                    </div>
+                  </div>
+                </div>
+                <div className={`${styles.DetailCommentBody} article_comment`}>
+                    <Comment.Group threaded size='large'>
+                      <Comment>
+                        <Comment.Avatar
+                          as="a"
+                          src="https://react.semantic-ui.com/images/avatar/small/matt.jpg"
+                        />
+                        <Comment.Content>
+                          <Comment.Author as="a">Matt</Comment.Author>
+                          <Comment.Metadata>
+                            <span>Today at 5:42PM</span>
+                          </Comment.Metadata>
+                          <Comment.Text>
+                            2.手把手教你使用 Kotlin 打造通用 Android MVP 架构本场 Chat
+                            会从零开始教会大家如何使用 Kotlin 构建一个模块化的 MVP
+                            架构（附源码），什么是 MVP
+                            架构、模块间的通信、用户在视图上的操作到网络请求的整个数据流向。
+                            包括像 Anko、Retrofit、Dagger2、ARouter
+                            等一些第三方插件的使用和封装以及常见问题。最后使用框架完成注册登录流程。
+                          </Comment.Text>
+                          <Comment.Actions>
+                            <a>
+                              <Icon name="reply" />
+                              回复
+                            </a>
+                            <a>
+                              <Icon name="heart outline" />
+                              喜欢
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle up" />顶
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle down" />踩
+                            </a>
+                            <a>
+                              <Icon name="dont" />
+                              举报
+                            </a>
+                          </Comment.Actions>
+                        </Comment.Content>
+                      </Comment>
+                      <Comment>
+                        <Comment.Avatar
+                          as="a"
+                          src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                        />
+                        <Comment.Content>
+                          <Comment.Author as="a">Elliot Fu</Comment.Author>
+                          <Comment.Metadata>
+                            <span>Yesterday at 12:30AM</span>
+                          </Comment.Metadata>
+                          <Comment.Text>
+                            <p>This has been very useful for my research. Thanks as well!</p>
+                          </Comment.Text>
+                          <Comment.Actions>
+                            <a>
+                              <Icon name="reply" />
+                              回复
+                            </a>
+                            <a>
+                              <Icon name="heart outline" />
+                              喜欢
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle up" />顶
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle down" />踩
+                            </a>
+                            <a>
+                              <Icon name="dont" />
+                              举报
+                            </a>
+                          </Comment.Actions>
+                        </Comment.Content>
+                        <Comment.Group>
+                          <Comment>
+                            <Comment.Avatar
+                              as="a"
+                              src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                            />
+                            <Comment.Content>
+                              <Comment.Author as="a">Jenny Hess</Comment.Author>
+                              <Comment.Metadata>
+                                <span>Just now</span>
+                              </Comment.Metadata>
+                              <Comment.Text>Elliot you are always so right :)</Comment.Text>
+                              <Comment.Actions>
+                                <a>
+                                  <Icon name="reply" />
+                                  回复
+                                </a>
+                                <a>
+                                  <Icon name="heart outline" />
+                                  喜欢
+                                </a>
+                                <a>
+                                  <Icon name="arrow alternate circle up" />顶
+                                </a>
+                                <a>
+                                  <Icon name="arrow alternate circle down" />踩
+                                </a>
+                                <a>
+                                  <Icon name="dont" />
+                                  举报
+                                </a>
+                              </Comment.Actions>
+                            </Comment.Content>
+                          </Comment>
+                        </Comment.Group>
+                      </Comment>
+                      <Comment>
+                        <Comment.Avatar
+                          as="a"
+                          src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+                        />
+                        <Comment.Content>
+                          <Comment.Author as="a">Joe Henderson</Comment.Author>
+                          <Comment.Metadata>
+                            <span>5 days ago</span>
+                          </Comment.Metadata>
+                          <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
+                          <Comment.Actions>
+                            <a>
+                              <Icon name="reply" />
+                              回复
+                            </a>
+                            <a>
+                              <Icon name="heart outline" />
+                              喜欢
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle up" />顶
+                            </a>
+                            <a>
+                              <Icon name="arrow alternate circle down" />踩
+                            </a>
+                            <a>
+                              <Icon name="dont" />
+                              举报
+                            </a>
+                          </Comment.Actions>
+                        </Comment.Content>
+                      </Comment>
+                    </Comment.Group>
+                  </div>
               </div>
             </div>
           </Modal.Content>
