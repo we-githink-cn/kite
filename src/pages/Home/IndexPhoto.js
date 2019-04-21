@@ -3,11 +3,13 @@ import { Icon, Modal, Header, Image, Button, Dropdown, Checkbox } from 'semantic
 import * as Ant from 'antd';
 import Vditor from 'vditor';
 import router from 'umi/router';
-
+import RecCard from '../../components/Index/RecCard';
+import AvatarList from '../../components/AvatarList';
 import PhotoItem from '../../components/Photo/PhotoItem';
+import blackLogo from '../../assets/black_logo.svg'
 
 import styles from './IndexPhoto.less';
-import RecCard from '../../components/Index/RecCard';
+
 const options = [
   { key: 'English', text: 'English', value: 'English' },
   { key: 'French', text: 'French', value: 'French' },
@@ -207,12 +209,7 @@ export default class Index extends Component {
       fileList,
       currentTags,
     } = this.state;
-    const uploadButton = (
-      <div>
-        <Ant.Icon type="plus" />
-        <div className="ant-upload-text">Upload</div>
-      </div>
-    );
+
     const recList = [
       {
         avatar: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
@@ -432,9 +429,39 @@ export default class Index extends Component {
                   <img src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg'  alt=""/>
                   <span><Icon name='clone outline' className={styles.DetailImageIcon}/></span>
                 </div>
+                <div className={styles.DetailTimeContent}>
+                  <span className={styles.DetailTimeText}>2019-04-21 12:00</span>
+                </div>
+                <div className={styles.DetailLikeAndShareContent}>
+                  <div className={styles.DetailLikeAndShareText}>
+                    <Ant.Tooltip placement="top" title={'收藏'}>
+                      <Icon name='star outline'/>
+                    </Ant.Tooltip>
+                      &nbsp;<strong style={{color: '#333'}}>2444</strong>
+                  </div>
+                  <div className={styles.DetailLikeAndShareText}>
+                    <Ant.Tooltip placement="top" title={'喜欢'}>
+                      <Icon name='heart outline'/>
+                    </Ant.Tooltip>
+                    &nbsp;<strong style={{color: '#333'}}>5677</strong>
+                  </div>
+                  <div className={styles.DetailAvatar}>
+                    <AvatarList size="small" style={{marginLeft:'-130px!important'}} maxLength={5} excessItemsStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                      <AvatarList.Item tips="Jake" src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png" />
+                      <AvatarList.Item tips="Andy" src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png" />
+                      <AvatarList.Item tips="Niko" src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png" />
+                      <AvatarList.Item tips="Niko" src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png" />
+                      <AvatarList.Item tips="Niko" src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png" />
+                      <AvatarList.Item tips="Niko" src="https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png" />
+                    </AvatarList>
+                  </div>
+                </div>
               </div>
             </div>
           </Modal.Content>
+          <div className={styles.DetailFootWrapper}>
+            <img src={blackLogo} alt="logo"  width={32}/>
+          </div>
         </Modal>
       </div>
     );

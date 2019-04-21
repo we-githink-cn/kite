@@ -117,7 +117,8 @@
   padding: 10px 15px;
   .DetailContent {
     width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     .DetailHeaderWrapper {
       display: flex;
       flex-direction: row;
@@ -181,9 +182,53 @@
         color: #333;
       }
     }
+    .DetailTimeContent {
+      margin-top: 10px;
+      clear: both;
+      width: 100%;
+      .DetailTimeText {
+        font-size: 14px;
+        line-height: 24px;
+        overflow: hidden;
+        color: #657786;
+      }
+    }
+    .DetailLikeAndShareContent {
+      margin-top: 10px;
+      border-bottom: 1px solid #e6ecf0;
+      border-top: 1px solid #e6ecf0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      .DetailLikeAndShareText {
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #657786;
+        line-height: 44px;
+      }
+      .DetailAvatar {
+        border-left: 1px solid #e6ecf0;
+        flex: 1;
+        padding: 10px 0;
+        ul {
+          margin-left: -20px!important;
+        }
+      }
+    }
   }
 
-
+}
+.DetailFootWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+  padding: 10px;
+  width: 100%;
+  height: 64px;
+  background: #F5F8FA;
+  border-top: 1px solid #e6ecf0;
 }
 .TestGif {
   background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555589767191&di=c03b4121904a5bee45ccfad8b14a6bdc&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201611_20_12%2Fa1z9dp066999374244.gif')
