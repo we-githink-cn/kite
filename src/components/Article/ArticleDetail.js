@@ -1,4 +1,4 @@
-import React, { PureComponent, Suspense } from 'react';
+import React, { PureComponent } from 'react';
 import { Icon, Button, Comment, Label, Sidebar, Item } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import Vditor from 'vditor';
@@ -160,13 +160,13 @@ export default class ArticleDetail extends PureComponent {
       placeholder: data.placeholder,
     });
   };
+
   handleReplyOpenClick = () => {
     this.setState({
       visible: true,
     });
     scrollToAnchor('reply-content');
   };
-
 
   handleReplyCloseClick = () => {
     this.setState({

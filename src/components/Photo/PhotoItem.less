@@ -103,3 +103,226 @@
     }
   }
 }
+.DetailWrapper {
+  width: 100%;
+  padding: 10px 15px;
+  .DetailContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .DetailHeaderWrapper {
+      display: flex;
+      flex-direction: row;
+      .DetailHeaderAvatar {
+        flex: 1;
+      }
+      .DetailHeaderAction {
+        flex: 0 0 120px;
+        width: 120px;
+        height: 64px;
+        display:flex;
+        align-items:center;
+        i {
+          margin-left: 10px;
+        }
+        i:hover{
+          color: #2eabff;
+        }
+      }
+    }
+    .DetailText {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .DetailImageContent {
+      display: flex;
+      align-items: center; /*垂直居中*/
+      justify-content: center; /*水平居中*/
+      width: 570px;
+      max-height: 570px;
+      position: relative;
+      img {
+        width:100%;
+        height:100%;
+        max-width: 570px;
+        overflow: hidden;
+        vertical-align: middle;
+        align-items: center;
+        max-height: 570px;
+        object-fit: cover;
+        margin-left: -2px;
+        border-radius: 8px;
+      }
+      span {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 4px;
+        opacity: 0.6;
+        color: #666666;
+        .DetailImageIcon {
+          margin-left: 7px;
+          margin-top: 6px;
+        }
+      }
+      span:hover{
+        opacity: 1;
+        color: #333;
+      }
+    }
+    .DetailTimeContent {
+      margin-top: 10px;
+      clear: both;
+      width: 100%;
+      .DetailTimeText {
+        font-size: 14px;
+        line-height: 24px;
+        overflow: hidden;
+        color: #657786;
+      }
+    }
+    .DetailLikeAndShareContent {
+      margin-top: 10px;
+      border-bottom: 1px solid #e6ecf0;
+      border-top: 1px solid #e6ecf0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      .DetailLikeAndShareText {
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #657786;
+        line-height: 44px;
+      }
+      .DetailAvatar {
+        border-left: 1px solid #e6ecf0;
+        flex: 1;
+        padding: 10px 0;
+        ul {
+          margin-left: -20px!important;
+        }
+      }
+    }
+    .DetailActionWrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-top: 10px;
+      .DetailActionItem {
+        height: 44px;
+        line-height: 44px;
+        margin-right: 24px;
+        .DetailActionItemText {
+          color: #657786;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1;
+          margin-left: 6px;
+          position: relative;
+          vertical-align: text-bottom;
+        }
+      }
+    }
+    .DetailCommentWrapper {
+      margin-top: 30px;
+      background-color: #F5F8FA;
+      padding: 20px 30px;
+      margin-left: -35px;
+      margin-right: -35px;
+      border-bottom: 1px solid #e6ecf0;
+      border-top: 1px solid #e6ecf0;
+      .ReplyContent {
+        display: flex;
+        flex-direction: row;
+      }
+      .ReplyContentInput {
+        color: #4285f4;
+        cursor: pointer;
+        border: 1px solid #eee;
+        line-height: 40px;
+        border-radius: 3px;
+        padding: 0 10px;
+        height: 40px;
+        flex: 1;
+        margin-left: 8px;
+        background-color: #FFF;
+      }
+    }
+    .DetailCommentBody {
+      width: 100%;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+  }
+
+}
+.DetailLoadMoreWrapper {
+  width: 100%;
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 44px;
+  line-height: 44px;
+  font-weight: bold;
+  color: #8eafcb;
+  cursor: pointer;
+}
+.ReplyVditorContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 308px;
+  margin-right: -35px;
+  margin-left: -35px;
+  padding: 15px;
+}
+.ReplyVditorHeader {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  max-width: 620px;
+  min-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ReplyVditorHeaderTitle {
+  flex: 1;
+}
+.ReplyVditorHeaderIcon {
+  color: #616161;
+}
+.ReplyVditorHeaderIcon:hover {
+  color: #333;
+}
+.ReplyVditorBottom {
+  margin-top: 8px;
+  float: right;
+  max-width: 620px;
+  min-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ReplyVditorBottomBtn {
+  float: right;
+}
+.DetailLoadMoreWrapper:hover{
+  background-color: #8eafcb;
+  color: white;
+  opacity:.9;
+  transition:.5s;
+}
+.DetailFootWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+  padding: 10px;
+  width: 100%;
+  height: 64px;
+  background: #F5F8FA;
+  border-top: 1px solid #e6ecf0;
+}
