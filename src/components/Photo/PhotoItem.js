@@ -28,18 +28,20 @@ export default class PhotoItem extends Component {
   componentDidUpdate (prevProps, prevState) {}
 
   handleCommentClick =()=>{
-    const commentVditor = this._initCommentEditor({
-      id: 'detail-comment-content',
-      show: true,
-      height: 200,
-      placeholder: '请输入内容',
-      resize: true,
-    });
     this.setState({
-      commentVditor: commentVditor,
       commentVisible: true,
+    },()=>{
+      const commentVditor = this._initCommentEditor({
+        id: 'detail-comment-content',
+        show: true,
+        height: 200,
+        placeholder: '请输入内容',
+        resize: true,
+      });
+      this.setState({
+        commentVditor: commentVditor,
+      })
     });
-    commentVditor.setValue('');
   };
 
   handleCommentCancelClick = () => {
@@ -198,7 +200,7 @@ export default class PhotoItem extends Component {
                   </div>
                 </div>
                 <div className={styles.DetailCommentWrapper}>
-                  <div className={styles.ReplyContent} onClick={this.handleCommentClick} style={{display: !commentVisible ?'':'none'}}>
+                  <div className={styles.ReplyContent} onClick={this.handleCommentClick}>
                     <div className={styles.AuthorAvatar}>
                       <Ant.Avatar
                         shape="square"
@@ -208,38 +210,6 @@ export default class PhotoItem extends Component {
                     </div>
                     <div className={styles.ReplyContentInput}>
                       请输入内容...
-                    </div>
-                  </div>
-                  <div className={styles.ReplyVditorContent} style={{display: commentVisible ?'':'none'}}>
-                    <div className={styles.ReplyVditorHeader}>
-                      <div className={styles.ReplyVditorHeaderTitle}>
-                        <Icon name="share" style={{marginRight: '8px'}}/>
-                        <Label as="a" image>
-                          <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"/>
-                          Elliot
-                        </Label>
-                      </div>
-                      <div
-                        className={styles.ReplyVditorHeaderIcon}
-                        onClick={this.handleCommentCancelClick}
-                      >
-                        <Ant.Tooltip placement="left" title="取消">
-                          <Icon name="caret down" size="large"/>
-                        </Ant.Tooltip>
-                      </div>
-                    </div>
-                    <div
-                      id="detail-comment-content"
-                      style={{maxWidth: '620px', minWidth: '620px', margin: '0 auto'}}
-                    />
-                    <div className={styles.ReplyVditorBottom}>
-                      <Button.Group size="small" className={styles.ReplyVditorBottomBtn}>
-                        <Button positive>评论</Button>
-                        <Button.Or text="or" style={{marginBottom: '2px'}}/>
-                        <Button color="blue" onClick={this.handleCommentCancelClick}>
-                          取消
-                        </Button>
-                      </Button.Group>
                     </div>
                   </div>
                 </div>
@@ -404,6 +374,41 @@ export default class PhotoItem extends Component {
             </Ant.Spin>
           </div>
         </Modal>
+
+      <Modal open={commentVisible} closeIcon onClose={() => { this.setState({ commentVisible: false }); }} style={{ width: '652px', borderRadius: '8px', marginTop: '4rem', marginBottom: '4rem' }}>
+        <div className={styles.ReplyVditorContent}>
+          <div className={styles.ReplyVditorHeader}>
+            <div className={styles.ReplyVditorHeaderTitle}>
+              <Icon name="share" style={{marginRight: '8px'}}/>
+              <Label as="a" image>
+                <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"/>
+                Elliot
+              </Label>
+            </div>
+            <div
+              className={styles.ReplyVditorHeaderIcon}
+              onClick={this.handleCommentCancelClick}
+            >
+              <Ant.Tooltip placement="left" title="取消">
+                <Icon name="caret down" size="large"/>
+              </Ant.Tooltip>
+            </div>
+          </div>
+          <div
+            id="detail-comment-content"
+            style={{maxWidth: '620px', minWidth: '620px', margin: '0 auto'}}
+          />
+          <div className={styles.ReplyVditorBottom}>
+            <Button.Group size="small" className={styles.ReplyVditorBottomBtn}>
+              <Button positive>评论</Button>
+              <Button.Or text="or" style={{marginBottom: '2px'}}/>
+              <Button color="blue" onClick={this.handleCommentCancelClick}>
+                取消
+              </Button>
+            </Button.Group>
+          </div>
+        </div>
+      </Modal>
     </div>
     )
   }
