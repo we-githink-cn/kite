@@ -236,8 +236,6 @@ export default class Index extends Component {
         <div className={styles.PhotoMainWrapper}>
           <div className={styles.PhotoMainContent}>
             <PhotoItem src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg" onClick={this.handleOpenDetail}/>
-            <PhotoItem src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" onClick={this.handleOpenDetail}/>
-            <PhotoItem src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" onClick={this.handleOpenDetail}/>
           </div>
         </div>
         <div className={styles.PhotoMateWrapper}>

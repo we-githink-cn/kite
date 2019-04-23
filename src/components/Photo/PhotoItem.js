@@ -1,13 +1,14 @@
-import React, {Component, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
 import {Icon, Modal, Header, Image, Button, Comment, Dropdown, Checkbox, Sidebar, Label} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import Vditor from 'vditor';
+import AwesomeSlider from 'react-awesome-slider';
 import AvatarList from '../../components/AvatarList';
 import blackLogo from '../../assets/black_logo.svg'
 
 import styles from './PhotoItem.less';
 
-export default class PhotoItem extends Component {
+export default class PhotoItem extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ export default class PhotoItem extends Component {
       commentLoading: false,
       commentVditor:null,
       commentVisible: false,
+      open: false
     }
   }
 
@@ -79,12 +81,19 @@ export default class PhotoItem extends Component {
     });
   }
 
+  handleImagePreviewClick = () => {
+    this.setState({
+      open: true
+    })
+  };
+
   render() {
     const {src} = this.props;
     const {
       detailVisible,
       commentLoading,
       commentVisible,
+      open
     } = this.state;
     return (
       <div className={styles.PhotoItemContent}>
@@ -100,7 +109,7 @@ export default class PhotoItem extends Component {
         </div>
         <div className={styles.PhotoItemImageContent}>
           <img src={src}  alt=""/>
-          <span><Icon name='clone outline' className={styles.PhotoItemImageIcon}/></span>
+          <span onClick={this.handleImagePreviewClick}><Icon name='clone outline' className={styles.PhotoItemImageIcon} /></span>
         </div>
         <div className={styles.PhotoItemActionContent}>
           <div className={styles.PhotoItemActionItem}>
@@ -125,6 +134,32 @@ export default class PhotoItem extends Component {
             4 小时前
           </div>
         </div>
+        {/*图片预览*/}
+        <Modal open={open} basic className={styles.ImagePreview} onClose={()=>{this.setState({open:false})}} closeIcon>
+          <AwesomeSlider style={{position: 'relative'}}>
+            <div data-src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+            <div data-src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg" />
+            <div data-src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
+          </AwesomeSlider>
+          <div className={styles.ImagePreviewTextMate}>
+            <div className={`${styles.ImagePreviewText} vditor-reset`} dangerouslySetInnerHTML={{ __html: '<p>Kotlin 是一个用于现代多平台应用的静态编程语言，由 JetBrains 开发。Kotlin可以编译成Java字节码，也可以编译成JavaScript，方便在没有JVM的设备上运行。Kotlin已正式成为Android官方支持开发语言。此外，Kotlin还是一门融合了面向对象与函数式编程的语言，支持泛型、安全的空判断，并且Kotlin与Java可以做到完全的交互。</p>' }}/>
+          </div>
+          <div className={styles.ImagePreviewActionWrapper}>
+            <div className={styles.ImagePreviewActionItem}>
+              <Icon name='comment outline'/> 2326
+            </div>
+            <div className={styles.ImagePreviewActionItem}>
+              <Icon name='star outline'/> 989
+            </div>
+            <div className={styles.ImagePreviewActionItem}>
+              <Icon name='heart outline'/> 1232
+            </div>
+            <div className={styles.ImagePreviewActionItem}>
+              <Icon name='mail outline'/>
+            </div>
+          </div>
+        </Modal>
+        {/*详情*/}
         <Modal open={detailVisible} closeIcon onClose={() => { this.setState({ detailVisible: false }); }} style={{ width: '642px', borderRadius: '8px', marginTop: '4rem', marginBottom: '4rem' }}>
           <Modal.Content>
             <div className={styles.DetailWrapper}>
@@ -374,8 +409,8 @@ export default class PhotoItem extends Component {
             </Ant.Spin>
           </div>
         </Modal>
-
-      <Modal open={commentVisible} closeIcon onClose={() => { this.setState({ commentVisible: false }); }} style={{ width: '652px', borderRadius: '8px', marginTop: '4rem', marginBottom: '4rem' }}>
+        {/*评论*/}
+        <Modal open={commentVisible} closeIcon onClose={() => { this.setState({ commentVisible: false }); }} style={{ width: '652px', borderRadius: '8px', marginTop: '4rem', marginBottom: '4rem' }}>
         <div className={styles.ReplyVditorContent}>
           <div className={styles.ReplyVditorHeader}>
             <div className={styles.ReplyVditorHeaderTitle}>
@@ -409,7 +444,7 @@ export default class PhotoItem extends Component {
           </div>
         </div>
       </Modal>
-    </div>
+      </div>
     )
   }
 }
