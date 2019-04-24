@@ -60,6 +60,10 @@ export default [
             path: '/full/opus',
             name: 'opus',
             component: './Home/IndexOpus',
+          },{
+            path: '/full/city',
+            name: 'city',
+            component: './Home/IndexCity',
           },
         ],
       },

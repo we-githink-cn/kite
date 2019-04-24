@@ -1,0 +1,447 @@
+.articleContent {
+  width: 100%;
+  min-width: 1280px;
+  display: flex;
+  justify-content: center;
+  //background-color: #DADFE4;
+  background-color: #ffffff;
+}
+.articleContentBody {
+  margin-top: 32px;
+  display: flex;
+  min-width: 1180px;
+  max-width: 1180px;
+  margin-bottom: 16px;
+}
+.ArticleWrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.ArticleWrapperRight {
+  flex: 0 0 312px;
+  width: 312px;
+  margin-left: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.ArticleWrapperHeader {
+  height: 48px;
+  width: 100%;
+  min-width: 1280px;
+  background: rgb(3, 3, 3);
+}
+.ArticleHeaderContent {
+  box-sizing: border-box;
+  height: 100%;
+  max-width: 1280px;
+  padding: 0px 0px 0px 32px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.ArticleHeader {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.ArticleHeaderAction {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  width: 312px;
+  display: flex;
+  justify-content: flex-end;
+}
+.ArticleHeaderActionClose {
+  align-self: center;
+  text-align: center;
+}
+.ArticleHeaderActionClose:hover {
+  border-radius: 4px;
+  background-color: #283a43;
+}
+.ArticleUpDownContent {
+  fill: inherit;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px 2px;
+  line-height: 48px;
+}
+.ArticleUpDownContent::before {
+  border-right: 2px solid #343536;
+  content: '';
+  display: inline-block;
+  height: 16px;
+  vertical-align: text-bottom;
+  width: 0;
+  margin-right: 6px;
+}
+.ArticleUpDownContent::after {
+  border-right: 2px solid #343536;
+  content: '';
+  display: inline-block;
+  height: 16px;
+  vertical-align: text-bottom;
+  width: 0;
+}
+.ArticleUpIcon {
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(135, 138, 140);
+  padding: 0 2px;
+}
+.ArticleUpIcon:hover {
+  color: #d04135;
+}
+.ArticleIconText {
+  line-height: 15px;
+  text-align: center;
+  width: 32px;
+  margin: 0px 1px;
+  color: rgb(215, 218, 220);
+}
+.ArticleDownIcon {
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(135, 138, 140);
+  padding: 0 8px;
+}
+.ArticleDownIcon:hover {
+  color: #0d568b;
+}
+.ArticleMiddleIcon {
+  line-height: 48px;
+  color: rgb(135, 138, 140);
+  margin-left: 8px;
+  font-size: 18px;
+}
+.ArticleHeaderTitleContent {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-flex;
+  min-width: 0;
+  height: 48px;
+}
+.ArticleHeaderTitleBody {
+  display: flex;
+  min-width: 0px;
+  position: relative;
+  text-decoration: none;
+  word-break: break-word;
+}
+.ArticleHeaderTitle {
+  display: inline;
+  overflow-wrap: break-word;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 48px;
+  color: rgb(215, 218, 220);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 5px;
+  overflow: hidden;
+}
+.ArticleWrapperContent {
+  background: rgb(255, 255, 255);
+  //border-width: 1px;
+  //border-style: solid;
+  //border-color: rgb(237, 239, 241);
+  //border-image: initial;
+  //border-radius: 4px;
+  word-break: break-word;
+  min-height: 100vh;
+  width: 816px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.ArticleTitle {
+  margin-top: 16px;
+  flex: 1;
+  flex-direction: row;
+}
+.ArticleTitleH2 {
+  word-break: break-word;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 100%;
+}
+.ArticleMore {
+  background-color: #f6f8fa;
+  text-align: center;
+  color: #4285f4;
+  padding: 15px 0;
+  margin: 15px 0;
+  cursor: pointer;
+}
+.ArticleContent {
+  padding-top: 15px;
+  word-break: break-word;
+  width: 816px;
+  img {
+    width: 816px !important;
+  }
+  ul {
+    list-style-type: square !important;
+  }
+  ol {
+    list-style-type: decimal !important;
+  }
+}
+.trendingHeader {
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #eee;
+  padding: 8px 15px;
+  font-size: 14px;
+  line-height: 19px;
+}
+.ArticleCommentContent {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+.ArticleCommentBody {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.ReplyContent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+.ReplyContentInput {
+  color: #4285f4;
+  cursor: pointer;
+  border: 1px solid #eee;
+  line-height: 40px;
+  border-radius: 3px;
+  padding: 0 10px;
+  height: 40px;
+  flex: 1;
+}
+.AuthorAvatar {
+  margin-right: 12px;
+}
+.ReplyVditorContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 308px;
+  background-color: #dbe0e5;
+  padding: 15px;
+}
+.ReplyVditorHeader {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  max-width: 1380px;
+  min-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ReplyVditorHeaderTitle {
+  flex: 1;
+}
+.ReplyVditorHeaderIcon {
+  color: #616161;
+}
+.ReplyVditorHeaderIcon:hover {
+  color: #333;
+}
+.ReplyVditorBottom {
+  margin-top: 8px;
+  float: right;
+  max-width: 1380px;
+  min-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ReplyVditorBottomBtn {
+  float: right;
+}
+.ArticleTagAndActionContent {
+  display: flex;
+  flex-direction: row;
+}
+.ArticleTagContent {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: 12px;
+}
+.TagItem {
+  width: auto;
+  display: inline-block !important;
+  display: inline;
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
+.ArticleActionContent {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  margin-right: -28px;
+}
+.ArticleActionItem {
+  color: #616161;
+  cursor: pointer;
+  line-height: 34px;
+  height: 34px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.ArticleActionItem:hover {
+  color: #333333;
+}
+.RelevantArticleContent {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+.RelevantArticleBody {
+  padding: 15px;
+}
+.RelevantArticleText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 8px;
+}
+.RelevantArticleText:hover {
+  color: #4285f4;
+}
+.HotArticleContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.HotArticleBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.RelevantArticleQuestionBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 12px;
+}
+.RelevantArticleQuestionText:hover {
+  color: #4285f4;
+}
+.ArticleAuthorContent {
+  background-color: #f6f8fa;
+  color: rgba(0, 0, 0, 0.38);
+  font-size: 12px;
+  transition: all 0.15s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -20px;
+  margin-top: 20px;
+}
+.ArticleAuthorContent:hover {
+  box-shadow: 0 0 4px 1px #c0d2fa;
+}
+.ArticleAuthorBody {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0px 0px 0px;
+}
+
+.ArticleAuthorAtavar {
+  cursor: pointer;
+  margin-top: -15px;
+}
+.ArticleAuthorInfo {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 12px;
+}
+.ArticleAuthorInfo::before {
+  display: table;
+  content: '';
+}
+.ArticleAuthorInfoItem {
+  cursor: pointer;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  text-align: center;
+}
+.ArticleAuthorInfoItemText {
+  color: #333;
+  font-size: 14px;
+}
+.ArticleAuthorInfoItemTextDesc {
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.38);
+  margin-top: 6px;
+}
+.ArticleAuthorMoreIcon {
+  color: #333;
+  cursor: pointer;
+}
+.ArticleAuthorAction {
+  height: 40px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 0.38);
+  margin: 0 0 0 83px;
+  text-align: right;
+  border-top: 1px solid #eee;
+  padding-right: 8px;
+}
+.RewardTagContent {
+  color: #8EB662;
+  margin-right: 8px;
+}
+.RewardTagContent:hover {
+  color: #3F9F00;
+}

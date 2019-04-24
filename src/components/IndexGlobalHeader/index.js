@@ -28,6 +28,9 @@ export default class GlobalHeader extends PureComponent {
       case '图圈':
         router.push('/index/photo');
         break;
+      case '同城':
+        router.push('/full/city');
+        break;
       default:
 
     }
@@ -88,8 +91,8 @@ export default class GlobalHeader extends PureComponent {
                   icon="camera retro"
                 />
                 <Menu.Item
-                  name="济南"
-                  active={activeItem === '济南'}
+                  name="同城"
+                  active={activeItem === '同城'}
                   onClick={this.handleItemClick}
                   icon="dot circle outline"
                 />

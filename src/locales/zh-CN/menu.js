@@ -50,4 +50,5 @@ export default {
   'menu.full': 'We!',
   'menu.full.userInfo': '作者信息',
   'menu.full.opus': '作品',
+  'menu.full.city': '同城',
 };

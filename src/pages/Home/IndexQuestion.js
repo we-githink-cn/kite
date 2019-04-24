@@ -7,7 +7,7 @@ import UserCard from '../../components/User/UserCard';
 import UnLoginCard from '../../components/User/UnLoginCard';
 import { AdCard } from '../../components/Index/AdCard';
 import RecCard from '../../components/Index/RecCard';
-import QuestionItem from '../../components/QuestionItem/Index'
+import QuestionItem from '../../components/Question/Index'
 import router from 'umi/router';
 
 export default class IndexQuestion extends Component {

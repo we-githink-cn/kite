@@ -4,7 +4,7 @@ import * as Ant from 'antd';
 
 import styles from './QuestionContent.less';
 import {scrollToAnchor} from "../../../utils/utils";
-import QuestionItem from "../../../components/QuestionItem/Index";
+import QuestionItem from "../../Question/Index";
 
 export default class QuestionContent extends PureComponent {
   state = {

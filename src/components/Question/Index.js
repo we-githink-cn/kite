@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Feed, Icon, Label } from 'semantic-ui-react';
+import {Feed, Icon, Label, Modal} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import questionIcon from '../../assets/q&a.png';
+import QuestionDetail from "../Question/QuestionDetail";
 
 import styles from './Index.less';
 
@@ -22,6 +23,30 @@ export default class IndexQuestion extends PureComponent {
 
   handleDownClick = () => {
     console.log('handleDownClick');
+  };
+
+  handleWrapperCloseClick = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+  handleUserInfoClick = () => {
+    console.log('handleUserInfoClick');
+  };
+
+  handleItemClick = () => {
+    const { open } = this.state;
+    if (open) {
+      this.setState({
+        open: false,
+      });
+    } else {
+      this.setState({
+        open: true,
+      });
+    }
+    console.log('handleItemClick');
   };
 
   render() {
@@ -55,12 +80,12 @@ export default class IndexQuestion extends PureComponent {
         <div className={styles.QuestionContentBody}>
           <Feed>
             <Feed.Event>
-              <Ant.Avatar
+              <Ant.Avatar onClick={this.handleUserInfoClick}
                 src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg"
                 size="large"
                 shape="square"
               />
-              <Feed.Content style={{paddingLeft:'8px'}}>
+              <Feed.Content style={{paddingLeft:'8px'}} onClick={this.handleItemClick}>
                 <Feed.Summary>
                   <a>Joe Henderson</a>
                 </Feed.Summary>
@@ -101,6 +126,15 @@ export default class IndexQuestion extends PureComponent {
             </Feed.Event>
           </Feed>
         </div>
+        <Modal style={{margin: '3rem 0 3rem 0!important'}}
+               open={open}
+               onClose={() => {
+                 this.setState({ open: false });
+               }}
+               size="fullscreen"
+        >
+          <QuestionDetail handleWrapperCloseClick={this.handleWrapperCloseClick} />
+        </Modal>
       </div>
     )
   }

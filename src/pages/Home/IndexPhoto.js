@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {Icon, Modal, Header, Image, Button, Comment, Dropdown, Checkbox, Sidebar, Label} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import Vditor from 'vditor';
-import AvatarList from '../../components/AvatarList';
-import blackLogo from '../../assets/black_logo.svg'
 import RecCard from '../../components/Index/RecCard';
 import PhotoItem from '../../components/Photo/PhotoItem';
 import styles from './IndexPhoto.less';
@@ -16,7 +14,7 @@ const options = [
   { key: 'Chinese', text: 'Chinese', value: 'Chinese' },
 ];
 
-export default class Index extends Component {
+export default class IndexPhoto extends Component {
   constructor(props) {
     super(props);
     this.state = {
