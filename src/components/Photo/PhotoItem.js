@@ -24,6 +24,11 @@ export default class PhotoItem extends PureComponent {
     }
   }
 
+  static defaultProps = {
+    marginBottom: '40px',
+    marginTop: '0px'
+  };
+
   componentWillMount () {}
 
   componentDidMount () {}
@@ -118,7 +123,7 @@ export default class PhotoItem extends PureComponent {
   };
 
   render() {
-    const {src} = this.props;
+    const {src,marginBottom,marginTop} = this.props;
     const {
       detailVisible,
       commentLoading,
@@ -128,7 +133,7 @@ export default class PhotoItem extends PureComponent {
       modalComment
     } = this.state;
     return (
-      <div className={`${styles.PhotoItemContent}`}>
+      <div className={`${styles.PhotoItemContent}`} style={{marginBottom:marginBottom,marginTop:marginTop}}>
         <div className={styles.PhotoItemHeader} onClick={this.handleOpenDetail}>
           <div className={styles.PhotoItemHeaderAvatar}>
             <Header as='h4'>

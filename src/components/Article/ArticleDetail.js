@@ -794,6 +794,7 @@ export default class ArticleDetail extends PureComponent {
                         </Comment.Group>
                       </div>
                     </div>
+                    {/*相关文章*/}
                     <div className={styles.RelevantArticleContent}>
                       <div className={styles.trendingHeader}>
                         <h4>

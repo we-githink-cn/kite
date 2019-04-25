@@ -45,24 +45,82 @@
     }
   }
   .CityContentWrapper {
-    padding-top: 20px;
     width: 980px;
     display: flex;
     margin: 0 auto;
-    height: 100vh;
+    padding: 20px 24px 30px 24px;
     .CityMainWrapper {
       display: flex;
       flex-direction: column;
       flex: 1;
-      background-color: #569e3d;
+      .CityMainItem{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-bottom: 24px;
+      }
     }
     .CityMateWrapper {
       flex: 0 0 312px;
       width: 312px;
       margin-left: 28px;
+      margin-top: 11px;
       display: flex;
       flex-direction: column;
-      background-color: #d04135;
     }
   }
+}
+.RelevantArticleText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 8px;
+}
+.RelevantArticleText:hover {
+  color: #4285f4;
+}
+.HotArticleContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.HotArticleBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionContent {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.RelevantArticleQuestionBody {
+  overflow-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 4px 4px;
+  overflow: visible;
+  padding: 12px;
+}
+.RelevantArticleQuestionText {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #616161;
+  margin-left: 12px;
+}
+.RelevantArticleQuestionText:hover {
+  color: #4285f4;
 }

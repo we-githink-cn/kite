@@ -11,6 +11,10 @@ export default class IndexQuestion extends PureComponent {
     open: false,
   };
 
+  static defaultProps = {
+    width: '100%'
+  };
+
   componentWillUnmount() {}
 
   componentDidMount() {
@@ -51,8 +55,9 @@ export default class IndexQuestion extends PureComponent {
 
   render() {
     const {open} = this.state;
+    const {width} = this.props;
     return (
-      <div className={styles.QuestionContent}>
+      <div className={styles.QuestionContent} style={{width:width}}>
         <Ant.Tooltip placement="top" title='已被采纳'>
           <Label as='a' color='olive' corner='right' icon='checkmark'/>
         </Ant.Tooltip>

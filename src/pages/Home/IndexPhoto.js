@@ -201,12 +201,9 @@ export default class IndexPhoto extends Component {
     const {
       putVisible,
       previewVisible,
-      detailVisible,
       previewImage,
       fileList,
       currentTags,
-      commentLoading,
-      commentVisible,
     } = this.state;
 
     const recList = [
@@ -233,7 +230,7 @@ export default class IndexPhoto extends Component {
       <div className={styles.PhotoWrapper}>
         <div className={styles.PhotoMainWrapper}>
           <div className={styles.PhotoMainContent}>
-            <PhotoItem src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg" onClick={this.handleOpenDetail}/>
+            <PhotoItem src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg"/>
           </div>
         </div>
         <div className={styles.PhotoMateWrapper}>
