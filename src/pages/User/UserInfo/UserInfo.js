@@ -200,7 +200,7 @@ const UserBgContent = (
               <span className={styles.UserHeaderUserId}>549595297</span>
             </div>
             <div className={styles.UserHeaderUserNameContentAction}>
-              <Button color="green" compact>
+              <Button color="green" compact onClick={()=>{router.push('/full/chat')}}>
                 私信
               </Button>
               <Button color="orange" compact>

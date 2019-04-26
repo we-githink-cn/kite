@@ -64,6 +64,10 @@ export default [
             path: '/full/city',
             name: 'city',
             component: './Home/IndexCity',
+          },{
+            path: '/full/chat',
+            name: 'chat',
+            component: './Chat/Chat',
           },
         ],
       },

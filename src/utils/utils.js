@@ -198,8 +198,13 @@ export const scrollToAnchor = (anchorName) => {
     let anchorElement = document.getElementById(anchorName);
     if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
   }
-}
-
+};
+export const scrollToBottom =(anchorName)=> {
+  if (anchorName) {
+    let anchorElement = document.getElementById(anchorName);
+    anchorElement.scrollTop = anchorElement.scrollHeight;
+  }
+};
 export const getUser  = () => {
   return JSON.parse(localStorage.getItem("we_user"));
 }
@@ -217,4 +222,7 @@ export const patternMark = (markdown) =>{
     });
   };
   return result;
+};
+export const getCurrentTime =()=> {
+  return new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3');
 };

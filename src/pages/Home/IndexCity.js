@@ -27,7 +27,6 @@ export default class IndexCity extends Component {
   componentDidUpdate(prevProps, prevState) {}
 
   render() {
-    const {width} =this.props;
     return (
       <div className={styles.CityWrapper}>
         <div className={styles.CityHeaderWrapper} style={{ backgroundImage: `url(http://pic.vjshi.com/2017-01-20/1602e2b49097fc80fcf57247fa9bc1eb/00002.jpg?x-oss-process=style/watermark)`, }}>

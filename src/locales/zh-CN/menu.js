@@ -51,4 +51,5 @@ export default {
   'menu.full.userInfo': '作者信息',
   'menu.full.opus': '作品',
   'menu.full.city': '同城',
+  'menu.full.chat': '私信',
 };
