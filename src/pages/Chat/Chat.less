@@ -171,7 +171,7 @@
 
 .chat .chatMessage .file,
 .chat .chatMessage .fileImage {
-  font-size: 16px;
+  font-size: 24px;
   color: gray;
   cursor: pointer;
 }
@@ -229,4 +229,24 @@
 
   }
 
+}
+.FileBtn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 33px;
+}
+.FileBtn input{
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer
+}
+.FileBtn:hover {
+  text-decoration: none;
+  cursor: pointer
 }

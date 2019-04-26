@@ -226,3 +226,9 @@ export const patternMark = (markdown) =>{
 export const getCurrentTime =()=> {
   return new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3');
 };
+export const checkStr =(str,flag)=>{
+  if(str.indexOf(flag)!= -1){
+    return true;
+  }
+  return false
+}

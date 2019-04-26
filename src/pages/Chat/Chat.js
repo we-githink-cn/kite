@@ -11,6 +11,7 @@ export default class Chat extends Component {
     super(props);
     this.state = {
       message:'',
+      image:'',
       chatList: [{
         name: 'Olia',
         type: 'right',
@@ -99,6 +100,63 @@ export default class Chat extends Component {
 
   }
 
+  changeImage =()=>{
+    let that = this;
+    const {chatList} = this.state;
+    let file = document.getElementById("upload_file").files[0];
+    let files = document.getElementById("upload_file").files;
+    console.log(files)
+    let r = new FileReader();
+    r.readAsDataURL(file);
+    r.onload = function(){
+      that.setState({
+        image: r.result
+      });
+      console.log(r.result)
+      let item = {
+        name: 'Olia',
+        type: 'right',
+        time: getCurrentTime(),
+        message: r.result
+      };
+      chatList.push(item);
+      that.setState({
+        chatList:chatList,
+        message:''
+      });
+      animateScroll.scrollToBottom({
+        containerId: "chat-history"
+      });
+    }
+  }
+
+  changeVideo =()=>{
+    let that = this;
+    const {chatList} = this.state;
+    let file = document.getElementById("upload_video").files[0]
+    let r = new FileReader();
+    r.readAsDataURL(file);
+    r.onload = function(){
+      that.setState({
+        image: r.result
+      })
+      console.log(r.result)
+      let item = {
+        name: 'Olia',
+        type: 'right',
+        time: getCurrentTime(),
+        message: r.result
+      };
+      chatList.push(item);
+      that.setState({
+        chatList:chatList,
+        message:''
+      });
+      animateScroll.scrollToBottom({
+        containerId: "chat-history"
+      });
+    }
+  }
 
   render() {
     const {chatList,message} = this.state;
@@ -244,11 +302,13 @@ export default class Chat extends Component {
                     </div>
                     <div className={`${styles.chatMessage} clearfix`}>
                       <TextArea onInput={this.handleChangeMessage} placeholder="Type your message" value={message} rows={3} ref={ref => {this.addMessage=ref}}/>
-                      <Icon name='file outline' className={styles.file}/> &nbsp;&nbsp;&nbsp;
-                      <Ant.Upload onChange={this.handleUploadClick} ref={ref =>{this.Upload=ref}}>
-                        <Icon name='file image outline' className={styles.fileImage}/>
-                      </Ant.Upload>
-                      <Button icon='send' onClick={this.handleAddMessage}/>
+                      <div className={styles.FileBtn}><Icon size='large' className={styles.fileImage} name='file image outline'/>
+                        <input accept="image/*" name="upimage" title="" id="upload_file" multiple="multiple" onChange={this.changeImage} type="file"/>
+                      </div>
+                      <div className={styles.FileBtn}><Icon size='large' className={styles.fileImage} name='file video outline'/>
+                        <input accept="video/mp4" name="upvideo" title="" id="upload_video" onChange={this.changeVideo} type="file"/>
+                      </div>
+                      <Button icon='send' onClick={this.handleAddMessage} content='发送' color='olive'/>
                     </div>
                   </div>
                 </div>

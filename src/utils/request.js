@@ -149,7 +149,7 @@ export default function request(url, option) {
         return;
       }
       if (status >= 404 && status < 422) {
-        router.push('/exception/404');
+        //router.push('/exception/404');
       }
     });
 }
