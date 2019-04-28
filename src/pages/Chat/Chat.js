@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import {animateScroll} from "react-scroll";
-import {Button, Icon, Input, TextArea} from 'semantic-ui-react';
+import {emojify} from 'react-emojione';
+import EmojiPicker from 'emoji-picker-react';
+import 'emoji-picker-react/dist/universal/style.scss';
+import {Button, Icon, Input, TextArea,Popup} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import ChatItem from '../../components/Chat/ChatItem';
 import styles from './Chat.less';
 import {getCurrentTime} from "../../utils/utils";
+import addImages from '../../assets/addImages.png';
+import addVideo from '../../assets/addVideo.png';
 
 export default class Chat extends Component {
   constructor(props) {
@@ -12,6 +17,7 @@ export default class Chat extends Component {
     this.state = {
       message:'',
       image:'',
+      open: false,
       chatList: [{
         name: 'Olia',
         type: 'right',
@@ -62,8 +68,10 @@ export default class Chat extends Component {
   };
 
   handleAddMessage =()=>{
-    console.log(this.Upload)
     const {chatList,message} = this.state;
+    if(''===message){
+      return;
+    }
     let item = {
       name: 'Olia',
       type: 'right',
@@ -96,51 +104,45 @@ export default class Chat extends Component {
     },2000)
   };
 
-  handleUploadClick =({file})=>{
-
-  }
-
   changeImage =()=>{
     let that = this;
     const {chatList} = this.state;
-    let file = document.getElementById("upload_file").files[0];
     let files = document.getElementById("upload_file").files;
-    console.log(files)
-    let r = new FileReader();
-    r.readAsDataURL(file);
-    r.onload = function(){
-      that.setState({
-        image: r.result
-      });
-      console.log(r.result)
-      let item = {
-        name: 'Olia',
-        type: 'right',
-        time: getCurrentTime(),
-        message: r.result
-      };
-      chatList.push(item);
-      that.setState({
-        chatList:chatList,
-        message:''
-      });
-      animateScroll.scrollToBottom({
-        containerId: "chat-history"
-      });
+    for(let i = 0;i <files.length;i++){
+      let r = new FileReader();
+      r.readAsDataURL(files[i]);
+      r.onload = function(){
+        that.setState({
+          image: r.result
+        });
+        let item = {
+          name: 'Olia',
+          type: 'right',
+          time: getCurrentTime(),
+          message: r.result
+        };
+        chatList.push(item);
+        that.setState({
+          chatList:chatList,
+          message:''
+        });
+        animateScroll.scrollToBottom({
+          containerId: "chat-history"
+        });
+      }
     }
-  }
+  };
 
   changeVideo =()=>{
     let that = this;
     const {chatList} = this.state;
-    let file = document.getElementById("upload_video").files[0]
+    let file = document.getElementById("upload_video").files[0];
     let r = new FileReader();
     r.readAsDataURL(file);
     r.onload = function(){
       that.setState({
         image: r.result
       })
-      console.log(r.result)
       let item = {
         name: 'Olia',
         type: 'right',
@@ -158,8 +160,17 @@ export default class Chat extends Component {
     }
   }
 
+  handleEmojiClick =(code,object) =>{
+    let {message} = this.state;
+    message = message + ':'+object.name+':';
+    this.setState({
+      message:message
+    });
+  };
+
   render() {
     const {chatList,message} = this.state;
+
     return (
       <div className={`${styles.mainWrap} ${styles.navslide}`}>
         <div className="ui equal width left aligned padded grid stackable">
@@ -302,13 +313,16 @@ export default class Chat extends Component {
                     </div>
                     <div className={`${styles.chatMessage} clearfix`}>
                       <TextArea onInput={this.handleChangeMessage} placeholder="Type your message" value={message} rows={3} ref={ref => {this.addMessage=ref}}/>
-                      <div className={styles.FileBtn}><Icon size='large' className={styles.fileImage} name='file image outline'/>
+                      <div className={styles.FileBtn}><img src={addImages} className={styles.fileImage}  style={{width:'29px',marginRight:'10px'}} alt=""/>
                         <input accept="image/*" name="upimage" title="" id="upload_file" multiple="multiple" onChange={this.changeImage} type="file"/>
                       </div>
-                      <div className={styles.FileBtn}><Icon size='large' className={styles.fileImage} name='file video outline'/>
+                      <div className={styles.FileBtn}><img src={addVideo} className={styles.fileImage} style={{width:'24px',marginRight:'4px'}} alt=""/>
                         <input accept="video/mp4" name="upvideo" title="" id="upload_video" onChange={this.changeVideo} type="file"/>
                       </div>
-                      <Button icon='send' onClick={this.handleAddMessage} content='发送' color='olive'/>
+                      <Popup trigger={<div className={styles.FileBtn}>{emojify(':smile:',{style:{height: 26,top:0}})}</div>} on='hover' hoverable>
+                        <EmojiPicker onEmojiClick={this.handleEmojiClick} />
+                      </Popup>
+                      <Button icon='send' onClick={this.handleAddMessage} content='发送' color='green'/>
                     </div>
                   </div>
                 </div>
@@ -320,3 +334,4 @@ export default class Chat extends Component {
     )
   }
 }
+

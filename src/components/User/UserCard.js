@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Icon, Button, Popup, Accordion, Image, List } from 'semantic-ui-react';
 import * as Ant from 'antd';
+import router from 'umi/router';
 import { getUser } from '../../utils/utils';
 import styles from './UserCard.less';
 import svip6 from '../../assets/vip/svip6.png';
@@ -155,8 +156,8 @@ export default class UserInfo extends Component {
             </div>
             <div className={styles.userActionItemBtn}>
               {!user ? (
-                <Button compact color="orange" className={styles.userActionBtn}>
-                  发新帖
+                <Button compact color="green" onClick={()=>{router.push('/full/chat')}} className={styles.userActionBtn}>
+                  私 信
                 </Button>
               ) : (
                 <Button compact color="orange" className={styles.userActionBtn}>
