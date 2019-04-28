@@ -144,7 +144,7 @@ export default class OpusContent extends PureComponent {
       },
       {
         menuItem: (
-          <Menu.Item key="myAgreeQuestion">
+          <Menu.Item key="myStarOpus">
             收藏的作品 <Label color="red">15</Label>
           </Menu.Item>
         ),
@@ -152,14 +152,14 @@ export default class OpusContent extends PureComponent {
       },
       {
         menuItem: (
-          <Menu.Item key="myAnswer">
+          <Menu.Item key="myCommentOpus">
             收到的评论 <Label color="red">15</Label>
           </Menu.Item>
         ),
         render: () => <Tab.Pane />,
       },{
         menuItem: (
-          <Menu.Item key="myAnswer">
+          <Menu.Item key="myCategoryOpus">
             作品分类 <Label color="red">15</Label>
           </Menu.Item>
         ),
