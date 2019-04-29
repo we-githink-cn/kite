@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {animateScroll} from "react-scroll";
 import {emojify} from 'react-emojione';
 import EmojiPicker from 'emoji-picker-react';
-import 'emoji-picker-react/dist/universal/style.scss';
 import {Button, Icon, Input, TextArea,Popup} from 'semantic-ui-react';
 import * as Ant from 'antd';
 import ChatItem from '../../components/Chat/ChatItem';

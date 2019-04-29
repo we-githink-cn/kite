@@ -61,7 +61,6 @@ if (APP_TYPE === 'site') {
 export default {
   // add for transfer to umi
   history: 'hash',
-  "sass": {},
   plugins,
   define: {
     APP_TYPE: APP_TYPE || '',

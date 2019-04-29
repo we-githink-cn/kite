@@ -602,7 +602,7 @@ export default class UserInfo extends Component {
           </div>
         </div>
         <div className={`${styles.UserInfoContent} user-info-tab`}>
-          <Tab menu={{ color: 'red', pointing: true }} panes={panes} />
+          <Tab menu={{ color: 'red', pointing: true }} panes={panes} className='user-info-tab'/>
         </div>
       </div>
     );

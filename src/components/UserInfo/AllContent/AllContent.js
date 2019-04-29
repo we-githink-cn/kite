@@ -26,7 +26,7 @@ export default class AllContent extends PureComponent {
 
   render() {
     return (
-      <div className={styles.AllContent}>
+      <div className={`${styles.AllContent}`}>
         <div className="GlobalLineHeader">
           <Ant.Breadcrumb>
             <Ant.Breadcrumb.Item href="">

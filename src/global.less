@@ -324,7 +324,7 @@ ol {
     padding: 0 !important;
   }
 }
-.user-info-tab {
+.user-info-tab{
   .ui.segment {
     position: relative;
     background: #fff;
@@ -344,7 +344,6 @@ ol {
     width: 4px;
     background: #dce0e4;
   }
-
   .vertical-timeline-element-icon {
     position: absolute;
     top: 0;
@@ -353,9 +352,8 @@ ol {
     height: 40px;
     border-radius: 50%;
     box-shadow: 0 0 0 4px #dce0e4, inset 0 2px 0 rgba(0, 0, 0, 0.08),
-      0 3px 0 4px rgba(0, 0, 0, 0.05);
+    0 3px 0 4px rgba(0, 0, 0, 0.05);
   }
-
   .vertical-timeline-element-content {
     position: relative;
     margin-left: 60px;
@@ -365,11 +363,9 @@ ol {
     box-shadow: 0 3px 0 #fff;
     border: 1px #dce0e4 solid;
   }
-
   .vertical-timeline-element-content:hover {
     border: 1px #333333 solid;
   }
-
   .vertical-timeline-element-content::before {
     content: '';
     position: absolute;
@@ -380,7 +376,6 @@ ol {
     border: 7px solid transparent;
     border-right: 7px solid #dce0e4;
   }
-
   @media only screen and (min-width: 1170px) {
     .vertical-timeline--two-columns .vertical-timeline-element-content::before {
       top: 24px;
@@ -388,23 +383,24 @@ ol {
       border-color: transparent;
       border-left-color: #dce0e4;
     }
-  }
 
-  @media only screen and (min-width: 1170px) {
-    .vertical-timeline--two-columns
+    @media only screen and (min-width: 1170px) {
+      .vertical-timeline--two-columns
       .vertical-timeline-element.vertical-timeline-element--right
       .vertical-timeline-element-content::before,
-    .vertical-timeline--two-columns
+      .vertical-timeline--two-columns
       .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
       .vertical-timeline-element-content::before {
-      top: 24px;
-      left: auto;
-      right: 100%;
-      border-color: transparent;
-      border-right-color: #dce0e4;
+        top: 24px;
+        left: auto;
+        right: 100%;
+        border-color: transparent;
+        border-right-color: #dce0e4;
+      }
     }
   }
 }
+
 .user-card {
   .ui.accordion .title:not(.ui) {
     padding: 0 !important;
