@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Icon, Image, Pagination, Button, Label, Search, List } from 'semantic-ui-react';
 import * as Ant from 'antd';
 import router from 'umi/router';
-import styles from './Index.less';
 import { scrollToAnchor } from '../../utils/utils';
 import ArticleListItem from '../../components/Article/ArticleListItem';
 import UserCard from '../../components/User/UserCard';
@@ -10,6 +9,7 @@ import UnLoginCard from '../../components/User/UnLoginCard';
 import RecCard from '../../components/Index/RecCard';
 import { AdCard } from '../../components/Index/AdCard';
 
+import styles from './Index.less';
 export default class Index extends Component {
   state = {
     totalPages: 0,
@@ -388,6 +388,100 @@ export default class Index extends Component {
                   content="查看更多"
                   onClick={this.handleUserListClick}
                 />
+              </div>
+            </div>
+
+            {/*热门文集*/}
+            <div className={styles.marginTop20}>
+              <div className="GlobalLineHeader">
+                <h4>
+                  <Icon name="list alternate outline" color="grey" /> 热门文集
+                  <Ant.Tooltip placement="top" title="更多">
+                    <Icon
+                      name="ellipsis horizontal"
+                      style={{ float: 'right' }}
+                      onClick={() => {
+                        router.push('/index/collect');
+                      }}
+                    />
+                  </Ant.Tooltip>
+                </h4>
+              </div>
+              <div className={styles.tagCard}>
+                <div className={styles.tagCardContent}>
+                  <div className={`${styles.tagCardItem}`}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/joe.jpg" />
+                      IT
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      Docker
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                      Kubernetes
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      支付
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                      股票
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                      新闻
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      文学
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                      视频剪辑
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      动漫
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      女装大佬
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" />
+                      前方高能
+                    </Label>
+                  </div>
+                  <div className={styles.tagCardItem}>
+                    <Label as="a" image basic>
+                      <img src="https://react.semantic-ui.com/images/avatar/small/stevie.jpg" />
+                      运动
+                    </Label>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -56,15 +56,18 @@ export default [
             path: '/full/userInfo',
             name: 'userInfo',
             component: './User/UserInfo/UserInfo',
-          },{
+          },
+          {
             path: '/full/opus',
             name: 'opus',
             component: './Home/IndexOpus',
-          },{
+          },
+          {
             path: '/full/city',
             name: 'city',
             component: './Home/IndexCity',
-          },{
+          },
+          {
             path: '/full/chat',
             name: 'chat',
             component: './Chat/Chat',
@@ -113,6 +116,11 @@ export default [
             path: '/index/photo',
             name: 'photo',
             component: './Home/IndexPhoto',
+          },
+          {
+            path: '/index/collect',
+            name: 'collect',
+            component: './Collect/CollectList',
           },
         ],
       },
